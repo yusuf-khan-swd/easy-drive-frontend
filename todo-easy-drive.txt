@@ -9,6 +9,6 @@ Setup MUI
 
 Setup Pages for routing, by previous project routes.
 
-Add Api slices, from previous Vite with Shadcn project
+Done - Add Api slices, from previous Vite with Shadcn project
 
-Setup Redux, RTK Query
+Done - Setup Redux, RTK Query
