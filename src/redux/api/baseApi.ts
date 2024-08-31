@@ -5,5 +5,5 @@ export const baseApi = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }),
   endpoints: () => ({}),
-  // tagTypes: tagTypesList,
+  tagTypes: ["car", "booking", "user"],
 });
