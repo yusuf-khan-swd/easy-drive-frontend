@@ -1,0 +1,14 @@
+
+
+
+See, can axios be setup
+
+Setup Dashboard and Main Layout by MUI
+
+Setup MUI
+
+Setup Pages for routing, by previous project routes.
+
+Add Api slices, from previous Vite with Shadcn project
+
+Setup Redux, RTK Query
