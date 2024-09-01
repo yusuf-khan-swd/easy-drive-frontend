@@ -1,10 +1,13 @@
+"use client";
+import DashboardDrawer from "@/components/Dashboard/DashboardDrawer";
+// import { isLoggedIn } from '@/services/auth.services';
+
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <div>
-      <h1 className="text-4xl font-bold">Dashboard Layout</h1>
-      <div className="min-h-screen">{children}</div>
-    </div>
-  );
+  //  const router = useRouter();
+  //  if (!isLoggedIn()) {
+  //     return router.push('/login');
+  //  }
+  return <DashboardDrawer>{children} </DashboardDrawer>;
 };
 
 export default DashboardLayout;
