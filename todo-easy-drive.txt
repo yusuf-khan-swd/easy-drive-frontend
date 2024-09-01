@@ -7,7 +7,7 @@ Setup Dashboard and Main Layout by MUI
 
 Setup MUI
 
-Setup Pages for routing, by previous project routes.
+Done - Setup Pages for  admin and user routing, from previous project routes.
 
 Done - Add Api slices, from previous Vite with Shadcn project
 
