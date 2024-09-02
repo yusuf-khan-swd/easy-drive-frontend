@@ -56,14 +56,13 @@ const Navbar = () => {
       <AppBar position="static">
         <Container>
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+            <AdbIcon sx={{ display: { xs: "none", md: "flex" } }} />
             <Typography
               variant="h6"
               noWrap
               component={Link}
               href="/"
               sx={{
-                mr: 2,
                 display: { xs: "none", md: "flex" },
                 flexGrow: 1,
                 fontFamily: "monospace",
@@ -143,7 +142,8 @@ const Navbar = () => {
                 <Link key={page} href={page}>
                   <Button
                     onClick={handleCloseNavMenu}
-                    sx={{ m: 2, color: "white", display: "block" }}
+                    variant="text"
+                    sx={{ m: 1, color: "white", display: "block" }}
                   >
                     {page}
                   </Button>
