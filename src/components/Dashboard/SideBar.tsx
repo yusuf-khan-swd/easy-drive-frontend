@@ -4,12 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 // import { getUserInfo } from "@/services/auth.services";
 import assets from "@/assets";
+import { USER_ROLE } from "@/constants/role";
 import { TUserRole } from "@/types";
 import { useEffect, useState } from "react";
 import SidebarItem from "./SidebarItems";
 
 const SideBar = () => {
-  const [userRole, setUserRole] = useState("admin");
+  const [userRole, setUserRole] = useState(USER_ROLE.ADMIN);
 
   useEffect(() => {
     // const { role } = getUserInfo() as any;
