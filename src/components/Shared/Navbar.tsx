@@ -48,7 +48,7 @@ const Navbar = () => {
     // logoutUser(router);
   };
 
-  const pages = ["home", "cars", "blog"];
+  const pages = ["home", "cars", "about", "contact"];
   const settings = ["profile", "account", "dashboard", "logout"];
 
   return (
