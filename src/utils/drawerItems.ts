@@ -37,6 +37,11 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           icon: DashboardIcon,
         },
         {
+          title: "Car Type",
+          path: `${role}/manage-car-type`,
+          icon: TryIcon,
+        },
+        {
           title: "Cars",
           path: `${role}/manage-cars`,
           icon: CarRentalIcon,
@@ -61,11 +66,6 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           title: "Return Car",
           path: `${role}/manage-return-cars`,
           icon: CalendarMonthIcon,
-        },
-        {
-          title: "Car Type",
-          path: `${role}/manage-car-type`,
-          icon: TryIcon,
         }
       );
       break;
