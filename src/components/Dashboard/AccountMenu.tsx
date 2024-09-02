@@ -17,6 +17,8 @@ const menuStyles = {
     overflow: "visible",
     filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
     mt: 1.5,
+    // FIXME: There is warning: React does not recognize the `& .MuiAvatar-root`
+    // If i use lower case there is Error: Invalid attribute name: `& .muiavatar-root
     "& .MuiAvatar-root": {
       width: 32,
       height: 32,
