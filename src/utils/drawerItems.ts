@@ -4,12 +4,11 @@ import { DrawerItem, TUserRole } from "@/types/common";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import BookOnlineIcon from "@mui/icons-material/BookOnline";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import CarRentalIcon from "@mui/icons-material/CarRental";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import GroupIcon from "@mui/icons-material/Group";
 import KeyIcon from "@mui/icons-material/Key";
-import MedicalInformationIcon from "@mui/icons-material/MedicalInformation";
 import PersonIcon from "@mui/icons-material/Person";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import TryIcon from "@mui/icons-material/Try";
 
@@ -30,6 +29,67 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
   ];
 
   switch (role) {
+    case USER_ROLE.ADMIN:
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: `${role}`,
+          icon: DashboardIcon,
+        },
+        {
+          title: "Cars",
+          path: `${role}/manage-cars`,
+          icon: CarRentalIcon,
+        },
+
+        {
+          title: "Bookings",
+          path: `${role}/manage-bookings`,
+          icon: BookOnlineIcon,
+        },
+        {
+          title: "Manage Users",
+          path: `${role}/manage-users`,
+          icon: GroupIcon,
+        },
+        {
+          title: "Reviews",
+          path: `${role}/reviews`,
+          icon: ReviewsIcon,
+        },
+        {
+          title: "Return Car",
+          path: `${role}/manage-return-cars`,
+          icon: CalendarMonthIcon,
+        },
+        {
+          title: "Car Type",
+          path: `${role}/manage-car-type`,
+          icon: TryIcon,
+        }
+      );
+      break;
+
+    case USER_ROLE.USER:
+      roleMenus.push(
+        {
+          title: "Dashboard",
+          path: `${role}`,
+          icon: DashboardIcon,
+        },
+        {
+          title: "Booking",
+          path: `${role}/manage-bookings`,
+          icon: BookOnlineIcon,
+        },
+        {
+          title: "Payment History",
+          path: `${role}/manage-payments`,
+          icon: AttachMoneyIcon,
+        }
+      );
+      break;
+
     case USER_ROLE.SUPER_ADMIN:
       roleMenus.push(
         {
@@ -41,41 +101,6 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           title: "Manage Users",
           path: `${role}/manage-users`,
           icon: GroupIcon,
-        }
-      );
-      break;
-
-    case USER_ROLE.ADMIN:
-      roleMenus.push(
-        {
-          title: "Dashboard",
-          path: `${role}`,
-          icon: DashboardIcon,
-        },
-        {
-          title: "Specialties",
-          path: `${role}/specialties`,
-          icon: TryIcon,
-        },
-        {
-          title: "Doctors",
-          path: `${role}/doctors`,
-          icon: MedicalInformationIcon,
-        },
-        {
-          title: "Schedules",
-          path: `${role}/schedules`,
-          icon: CalendarMonthIcon,
-        },
-        {
-          title: "Appointments",
-          path: `${role}/appointments`,
-          icon: BookOnlineIcon,
-        },
-        {
-          title: "Reviews",
-          path: `${role}/reviews`,
-          icon: ReviewsIcon,
         }
       );
       break;
@@ -96,26 +121,6 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           title: "Appointments",
           path: `${role}/appointment`,
           icon: BookOnlineIcon,
-        }
-      );
-      break;
-
-    case USER_ROLE.PATIENT:
-      roleMenus.push(
-        {
-          title: "Appointments",
-          path: `${role}/appointments`,
-          icon: BookOnlineIcon,
-        },
-        {
-          title: "Prescriptions",
-          path: `${role}/prescriptions`,
-          icon: ReceiptLongIcon,
-        },
-        {
-          title: "Payment History",
-          path: `${role}/payment-history`,
-          icon: AttachMoneyIcon,
         }
       );
       break;
