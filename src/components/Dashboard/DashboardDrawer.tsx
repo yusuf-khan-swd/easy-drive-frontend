@@ -2,7 +2,7 @@
 
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
-import { Avatar, Badge, Stack } from "@mui/material";
+import { Badge, Stack } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -100,9 +100,7 @@ export default function DashboardDrawer({
                   <NotificationsNoneIcon color="action" />
                 </IconButton>
               </Badge>
-              <Avatar
-              // alt={data?.name} src={data?.profilePhoto}
-              />
+              {/* <Avatar alt={data?.name} src={data?.profilePhoto} /> */}
               <AccountMenu />
             </Stack>
           </Box>

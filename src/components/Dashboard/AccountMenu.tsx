@@ -1,5 +1,4 @@
 // import { logoutUser } from "@/services/actions/logoutUser";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Logout from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -52,7 +51,7 @@ export default function AccountMenu() {
   };
   const handleLogout = () => {
     setAnchorEl(null);
-    console.log('logout btn click');
+    console.log("logout btn click");
     // logoutUser(router);
   };
 
@@ -78,12 +77,13 @@ export default function AccountMenu() {
             //   size='small'
             sx={{
               background: "#ffffff",
-              "& svg": {
-                color: "primary.main",
-              },
+              // "& svg": {
+              //   color: "primary.main",
+              // },
             }}
           >
-            <KeyboardArrowDownIcon />
+            {/* <KeyboardArrowDownIcon /> */}
+            <Avatar alt="Account Menu" />
           </IconButton>
         </Tooltip>
       </Box>
