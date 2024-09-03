@@ -72,7 +72,7 @@ const ManageCars = () => {
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
             <Link href={`/dashboard/admin/cars/edit/${row._id}`}>
-              <IconButton aria-label="delete">
+              <IconButton aria-label="edit">
                 <EditIcon />
               </IconButton>
             </Link>
