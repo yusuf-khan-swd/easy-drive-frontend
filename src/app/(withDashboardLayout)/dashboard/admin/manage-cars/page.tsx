@@ -84,8 +84,10 @@ const ManageCars = () => {
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Button onClick={() => setIsModalOpen(true)}>Create New Cars</Button>
-        {/* <DoctorModal open={isModalOpen} setOpen={setIsModalOpen} /> */}
+        {/* TODO: See can modal can be add for create car */}
+        <Link href="/dashboard/admin/manage-cars/create">
+          <Button>Create New Cars</Button>
+        </Link>
         <TextField
           onChange={(e) => setSearchTerm(e.target.value)}
           size="small"
