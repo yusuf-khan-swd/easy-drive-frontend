@@ -93,13 +93,20 @@ const ManageCars = () => {
           placeholder="search cars"
         />
       </Stack>
-      {!isLoading ? (
-        <Box my={2}>
-          <DataGrid rows={cars} columns={columns} getRowId={(row) => row._id} />
-        </Box>
-      ) : (
-        <h1>Loading.....</h1>
-      )}
+      <Box my={2}>
+        <DataGrid
+          rows={cars}
+          columns={columns}
+          getRowId={(row) => row._id}
+          loading={isLoading}
+          slotProps={{
+            loadingOverlay: {
+              variant: "linear-progress",
+              noRowsVariant: "skeleton",
+            },
+          }}
+        />
+      </Box>
     </Box>
   );
 };
