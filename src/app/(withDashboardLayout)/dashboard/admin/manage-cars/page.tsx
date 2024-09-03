@@ -31,7 +31,6 @@ const ManageCars = () => {
   // const [deleteDoctor] = useDeleteDoctorMutation();
   const { data, isLoading } = useGetAllCarsQuery("");
   const cars = data?.data;
-  console.log(data?.data);
 
   // console.log(data);
   // const doctors = data?.doctors;
@@ -71,7 +70,7 @@ const ManageCars = () => {
             >
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Link href={`/dashboard/admin/cars/edit/${row._id}`}>
+            <Link href={`/dashboard/admin/manage-cars/edit/${row._id}`}>
               <IconButton aria-label="edit">
                 <EditIcon />
               </IconButton>
