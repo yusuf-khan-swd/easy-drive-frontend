@@ -21,6 +21,10 @@ export const validationSchema = z.object({
 
 const LoginPage = () => {
   const [error, setError] = useState("");
+  const [defaultValues, setDefaultValues] = useState({
+    email: "user@easy.com",
+    password: "Pa$$w0rd!",
+  });
 
   const handleLogin = async (values: FieldValues) => {
     console.log(values);
@@ -98,10 +102,7 @@ const LoginPage = () => {
             <EasyDriveForm
               onSubmit={handleLogin}
               resolver={zodResolver(validationSchema)}
-              defaultValues={{
-                email: "",
-                password: "",
-              }}
+              defaultValues={defaultValues}
             >
               <Grid container spacing={2} my={1}>
                 <Grid size={{ xs: 12, md: 6 }}>
