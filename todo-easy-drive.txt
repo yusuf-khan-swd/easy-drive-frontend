@@ -7,7 +7,7 @@ Done - Show All Cars from previous project
 
 Done - Logout, services auth token, user info functionality,
 
-Login and Register functionality
+Done - Login and Register Design and functionality
 
 Done - ManageCars Table. Show Minimum one Table. 
 
