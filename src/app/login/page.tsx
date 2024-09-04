@@ -1,10 +1,8 @@
 "use client";
 
+import logo from "@/assets/logo.png";
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
-// import { userLogin } from "@/services/actions/userLogin";
-// import { storeUserInfo } from "@/services/auth.services";
-import logo from "@/assets/logo.png";
 import { useLoginMutation } from "@/redux/api/authApi";
 import { storeUserInfo } from "@/services/auth.service";
 import { zodResolver } from "@hookform/resolvers/zod";
