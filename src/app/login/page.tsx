@@ -5,6 +5,7 @@ import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 // import { userLogin } from "@/services/actions/userLogin";
 // import { storeUserInfo } from "@/services/auth.services";
 import logo from "@/assets/logo.png";
+import { useLoginMutation } from "@/redux/api/authApi";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -12,6 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { FieldValues } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 export const validationSchema = z.object({
@@ -26,20 +28,23 @@ const LoginPage = () => {
     password: "Pa$$w0rd!",
   });
 
+  const [login] = useLoginMutation();
+
   const handleLogin = async (values: FieldValues) => {
-    console.log(values);
+    // console.log(values);
     try {
-      // const res = await userLogin(values);
-      // if (res?.data?.accessTokeLn) {
-      //   toast.success(res?.message);
-      //   storeUserInfo({ accessToken: res?.data?.accessToken });
-      //   // router.push("/dashboard");
-      // } else {
-      //   setError(res.message);
-      //   // console.log(res);
-      // }
+      const res = await login(values);
+      console.log(res?.data);
+      if (res?.data?.data?.token) {
+        toast.success(res?.data?.message);
+        // storeUserInfo({ accessToken: res?.data?.accessToken });
+        // router.push("/dashboard");
+      } else {
+        setError(res?.data?.message);
+        // console.log(res);
+      }
     } catch (err: any) {
-      console.error(err.message);
+      console.error(err?.message);
     }
   };
 
