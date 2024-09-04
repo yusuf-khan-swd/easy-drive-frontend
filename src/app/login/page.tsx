@@ -65,12 +65,16 @@ const LoginPage = () => {
             }}
           >
             <Box>
-              <Image src={logo} width={50} height={50} alt="logo" />
+              <Link href="/">
+                <Image src={logo} width={50} height={50} alt="logo" />
+              </Link>
             </Box>
             <Box>
-              <Typography variant="h6" fontWeight={600}>
-                Login PH HealthCare
-              </Typography>
+              <Link href="/">
+                <Typography variant="h6" fontWeight={600}>
+                  Login Easy Drive
+                </Typography>
+              </Link>
             </Box>
           </Stack>
 
