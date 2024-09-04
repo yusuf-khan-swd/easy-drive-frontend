@@ -3,7 +3,7 @@ import { Box, List, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 // import { getUserInfo } from "@/services/auth.services";
-import assets from "@/assets";
+import logo from "@/assets/logo.png";
 import { USER_ROLE } from "@/constants/role";
 import { TUserRole } from "@/types";
 import { useEffect, useState } from "react";
@@ -31,7 +31,7 @@ const SideBar = () => {
         component={Link}
         href="/"
       >
-        <Image src={assets.svgs.logo} width={40} height={40} alt="logo" />
+        <Image src={logo} width={40} height={40} alt="logo" />
         <Typography
           variant="h6"
           component="h1"
@@ -39,7 +39,7 @@ const SideBar = () => {
             cursor: "pointer",
           }}
         >
-          PH Health Care
+          Easy Drive
         </Typography>
       </Stack>
       <List>
