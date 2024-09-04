@@ -64,7 +64,7 @@ const CarCard = ({
           )}
         </div>
         {detailsPage ? (
-          <Link href={`/user/booking/${_id}`}>
+          <Link href={`/dashboard/user/booking/${_id}`}>
             <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
               Book Now
             </button>
