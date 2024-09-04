@@ -1,4 +1,5 @@
 // import { logoutUser } from "@/services/actions/logoutUser";
+import { removeUser } from "@/services/auth.service";
 import Logout from "@mui/icons-material/Logout";
 import Avatar from "@mui/material/Avatar";
 import Box from "@mui/material/Box";
@@ -53,8 +54,9 @@ export default function AccountMenu() {
   };
   const handleLogout = () => {
     setAnchorEl(null);
-    console.log("logout btn click");
-    // logoutUser(router);
+    removeUser();
+    router.push("/");
+    router.refresh();
   };
 
   return (
