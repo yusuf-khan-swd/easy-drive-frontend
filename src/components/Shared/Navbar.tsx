@@ -1,7 +1,5 @@
 "use client";
 
-// import useUserInfo from '@/hooks/useUserInfo';
-// import { logoutUser } from '@/services/actions/logoutUser';
 import logo from "@/assets/logo.png";
 import { getUserInfo, removeUser } from "@/services/auth.service";
 import MenuIcon from "@mui/icons-material/Menu";
