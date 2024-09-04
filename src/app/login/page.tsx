@@ -33,19 +33,16 @@ const LoginPage = () => {
   const handleLogin = async (values: FieldValues) => {
     // console.log(values);
     try {
-      const res: any = await login(values);
-      if (res?.data?.data?.token) {
-        toast.success(res?.data?.message);
+      const result = await login(values).unwrap();
+      if (result?.data?.token) {
+        toast.success("Login Success!!");
         // storeUserInfo({ accessToken: res?.data?.accessToken });
         // router.push("/dashboard");
-      } else {
-        setError(res?.error?.data?.message);
-        toast.error(res?.error?.data?.message);
-        // console.log(res);
       }
     } catch (error: any) {
-      toast.error(error?.message);
-      console.log("Error: ", error?.message);
+      setError(error?.data?.message);
+      toast.error(error?.data?.message || "login failed");
+      console.log("Error: ", error);
     }
   };
 
