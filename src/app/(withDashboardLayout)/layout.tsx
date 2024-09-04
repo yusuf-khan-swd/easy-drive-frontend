@@ -1,6 +1,5 @@
 "use client";
 
-import DashboardDrawer from "@/components/Dashboard/DashboardDrawer";
 import { isLoggedIn } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
 
@@ -11,7 +10,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return router.push("/login");
   }
 
-  return <DashboardDrawer>{children}</DashboardDrawer>;
+  return <div>{children}</div>;
 };
 
 export default DashboardLayout;
