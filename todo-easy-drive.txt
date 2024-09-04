@@ -3,7 +3,7 @@ Done - Car Details from previous project
 
 Done - Show All Cars from previous project
 
-services auth token and user info functionality
+Done - Logout, services auth token, user info functionality,
 
 Login and Register functionality
 
