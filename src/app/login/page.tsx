@@ -1,10 +1,10 @@
 "use client";
 
-import assets from "@/assets";
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 // import { userLogin } from "@/services/actions/userLogin";
 // import { storeUserInfo } from "@/services/auth.services";
+import logo from "@/assets/logo.png";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -65,7 +65,7 @@ const LoginPage = () => {
             }}
           >
             <Box>
-              <Image src={assets.svgs.logo} width={50} height={50} alt="logo" />
+              <Image src={logo} width={50} height={50} alt="logo" />
             </Box>
             <Box>
               <Typography variant="h6" fontWeight={600}>
