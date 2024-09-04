@@ -23,7 +23,8 @@ import { MouseEvent, useState } from "react";
 
 const Navbar = () => {
   const websiteName = "EasyDrive";
-  //  const userInfo = useUserInfo();
+  const { role } = getUserInfo() as any;
+
   const router = useRouter();
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
@@ -51,8 +52,6 @@ const Navbar = () => {
 
   const pages = ["home", "cars", "about", "contact"];
   const settings = ["profile", "account", "dashboard", "logout"];
-
-  const { role } = getUserInfo() as any;
 
   return (
     <div>
