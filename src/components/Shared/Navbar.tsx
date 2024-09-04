@@ -3,6 +3,7 @@
 // import useUserInfo from '@/hooks/useUserInfo';
 // import { logoutUser } from '@/services/actions/logoutUser';
 import logo from "@/assets/logo.png";
+import { getUserInfo, removeUser } from "@/services/auth.service";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -47,10 +48,15 @@ const Navbar = () => {
   const handleLogOut = () => {
     console.log("btn logout");
     // logoutUser(router);
+    removeUser();
+    router.push("/");
+    router.refresh();
   };
 
   const pages = ["home", "cars", "about", "contact"];
   const settings = ["profile", "account", "dashboard", "logout"];
+
+  const { role } = getUserInfo() as any;
 
   return (
     <div>
@@ -156,53 +162,58 @@ const Navbar = () => {
               ))}
             </Box>
             <Box sx={{ flexGrow: 0 }}>
-              <Button component={Link} href="/login">
-                Login
-              </Button>
-              <Tooltip title="Open settings">
-                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Account Menu" />
-                </IconButton>
-              </Tooltip>
-              <Menu
-                sx={{ mt: "45px" }}
-                id="menu-appbar"
-                anchorEl={anchorElUser}
-                anchorOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                keepMounted
-                transformOrigin={{
-                  vertical: "top",
-                  horizontal: "right",
-                }}
-                open={Boolean(anchorElUser)}
-                onClose={handleCloseUserMenu}
-              >
-                {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                    {setting === "logout" ? (
-                      <Button
-                        key="logout"
-                        color="error"
-                        onClick={handleLogOut}
-                        sx={{ boxShadow: 0 }}
-                      >
-                        Logout
-                      </Button>
-                    ) : (
-                      <Typography
-                        component={Link}
-                        href={setting}
-                        sx={{ textAlign: "center" }}
-                      >
-                        <span className="uppercase">{setting}</span>
-                      </Typography>
-                    )}
-                  </MenuItem>
-                ))}
-              </Menu>
+              {role ? (
+                <>
+                  <Tooltip title="Open settings">
+                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                      <Avatar alt="Account Menu" />
+                    </IconButton>
+                  </Tooltip>
+                  <Menu
+                    sx={{ mt: "45px" }}
+                    id="menu-appbar"
+                    anchorEl={anchorElUser}
+                    anchorOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    keepMounted
+                    transformOrigin={{
+                      vertical: "top",
+                      horizontal: "right",
+                    }}
+                    open={Boolean(anchorElUser)}
+                    onClose={handleCloseUserMenu}
+                  >
+                    {settings.map((setting) => (
+                      <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                        {setting === "logout" ? (
+                          <Button
+                            key="logout"
+                            color="error"
+                            onClick={handleLogOut}
+                            sx={{ boxShadow: 0 }}
+                          >
+                            Logout
+                          </Button>
+                        ) : (
+                          <Typography
+                            component={Link}
+                            href={setting}
+                            sx={{ textAlign: "center" }}
+                          >
+                            <span className="uppercase">{setting}</span>
+                          </Typography>
+                        )}
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </>
+              ) : (
+                <Button component={Link} href="/login">
+                  Login
+                </Button>
+              )}
             </Box>
           </Toolbar>
         </Container>
