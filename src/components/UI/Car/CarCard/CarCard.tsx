@@ -48,7 +48,7 @@ const CarCard = ({
         </p>
         <div className="mb-4">
           {detailsPage && features && (
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 items-center">
               <p>Features:</p>{" "}
               <div className="flex flex-wrap space-x-2">
                 {features.map((feature: string, index: number) => (
