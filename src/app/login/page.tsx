@@ -6,6 +6,7 @@ import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 // import { storeUserInfo } from "@/services/auth.services";
 import logo from "@/assets/logo.png";
 import { useLoginMutation } from "@/redux/api/authApi";
+import { storeUserInfo } from "@/services/auth.service";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -36,7 +37,7 @@ const LoginPage = () => {
       const result = await login(values).unwrap();
       if (result?.data?.token) {
         toast.success("Login Success!!");
-        // storeUserInfo({ accessToken: res?.data?.accessToken });
+        storeUserInfo({ accessToken: result?.data?.token });
         // router.push("/dashboard");
       }
     } catch (error: any) {
