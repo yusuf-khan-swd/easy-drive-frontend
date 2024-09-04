@@ -3,6 +3,7 @@
 import logo from "@/assets/logo.png";
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
+import { useSignupMutation } from "@/redux/api/authApi";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
@@ -10,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FieldValues } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 export const validationSchema = z.object({
@@ -21,9 +23,9 @@ export const validationSchema = z.object({
 });
 
 export const defaultValues = {
-  password: "",
   name: "",
   email: "",
+  password: "",
   phone: "",
   address: "",
 };
@@ -31,24 +33,21 @@ export const defaultValues = {
 const RegisterPage = () => {
   const router = useRouter();
 
+  const [register] = useSignupMutation();
+
   const handleRegister = async (values: FieldValues) => {
-    console.log(values);
+    // console.log(values);
     try {
-      // const res = await registerPatient(data);
-      // // console.log(res);
-      // if (res?.data?.id) {
-      //   toast.success(res?.message);
-      //   const result = await userLogin({
-      //     password: values.password,
-      //     email: values.email,
-      //   });
-      //   if (result?.data?.accessToken) {
-      //     storeUserInfo({ accessToken: result?.data?.accessToken });
-      //     router.push("/dashboard");
-      //   }
-      // }
-    } catch (err: any) {
-      console.error(err.message);
+      const result = await register(values).unwrap();
+      console.log({ result });
+      if (result?.data?._id) {
+        toast.success(result?.message);
+
+        router.push("/login");
+      }
+    } catch (error: any) {
+      console.log("Error: ", error?.message);
+      toast.error(error?.message);
     }
   };
 
