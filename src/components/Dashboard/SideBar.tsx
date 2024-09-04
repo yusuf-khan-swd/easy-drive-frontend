@@ -1,20 +1,20 @@
+import logo from "@/assets/logo.png";
+import { getUserInfo } from "@/services/auth.service";
+import { TUserRole } from "@/types";
 import { drawerItems } from "@/utils/drawerItems";
 import { Box, List, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
-// import { getUserInfo } from "@/services/auth.services";
-import logo from "@/assets/logo.png";
-import { USER_ROLE } from "@/constants/role";
-import { TUserRole } from "@/types";
 import { useEffect, useState } from "react";
 import SidebarItem from "./SidebarItems";
 
 const SideBar = () => {
-  const [userRole, setUserRole] = useState(USER_ROLE.ADMIN);
+  const [userRole, setUserRole] = useState("");
 
   useEffect(() => {
-    // const { role } = getUserInfo() as any;
-    // setUserRole(role);
+    const { role } = getUserInfo() as any;
+    // console.log(role);
+    setUserRole(role);
   }, []);
 
   return (
