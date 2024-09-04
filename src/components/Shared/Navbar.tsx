@@ -46,8 +46,6 @@ const Navbar = () => {
   };
 
   const handleLogOut = () => {
-    console.log("btn logout");
-    // logoutUser(router);
     removeUser();
     router.push("/");
     router.refresh();
