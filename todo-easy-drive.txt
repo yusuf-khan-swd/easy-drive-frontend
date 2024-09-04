@@ -1,7 +1,7 @@
 
-Cars Details from previous project
+Done - Car Details from previous project
 
-Show All Cars from previous project
+Done - Show All Cars from previous project
 
 services auth token and user info functionality
 
