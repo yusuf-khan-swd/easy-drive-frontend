@@ -12,6 +12,7 @@ import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
@@ -30,6 +31,7 @@ const LoginPage = () => {
   });
 
   const [login] = useLoginMutation();
+  const router = useRouter();
 
   const handleLogin = async (values: FieldValues) => {
     // console.log(values);
@@ -38,7 +40,7 @@ const LoginPage = () => {
       if (result?.data?.token) {
         toast.success("Login Success!!");
         storeUserInfo({ accessToken: result?.data?.token });
-        // router.push("/dashboard");
+        router.push("/dashboard");
       }
     } catch (error: any) {
       setError(error?.data?.message);
