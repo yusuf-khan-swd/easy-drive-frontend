@@ -6,7 +6,8 @@ import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 // import { userLogin } from "@/services/actions/userLogin";
 // import { storeUserInfo } from "@/services/auth.services";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Box, Button, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Container, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -99,7 +100,7 @@ const LoginPage = () => {
               }}
             >
               <Grid container spacing={2} my={1}>
-                <Grid item md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <EasyDriveInput
                     name="email"
                     label="Email"
@@ -107,7 +108,7 @@ const LoginPage = () => {
                     fullWidth={true}
                   />
                 </Grid>
-                <Grid item md={6}>
+                <Grid size={{ xs: 12, md: 6 }}>
                   <EasyDriveInput
                     name="password"
                     label="Password"
