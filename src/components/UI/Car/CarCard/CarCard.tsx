@@ -70,7 +70,7 @@ const CarCard = ({
             </button>
           </Link>
         ) : (
-          <Link href={`/car/${_id}`}>
+          <Link href={`/cars/${_id}`}>
             <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors duration-300">
               View Details
             </button>
