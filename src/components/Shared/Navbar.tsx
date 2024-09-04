@@ -2,7 +2,7 @@
 
 // import useUserInfo from '@/hooks/useUserInfo';
 // import { logoutUser } from '@/services/actions/logoutUser';
-import AdbIcon from "@mui/icons-material/Adb";
+import logo from "@/assets/logo.png";
 import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
@@ -17,6 +17,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { MouseEvent, useState } from "react";
@@ -56,7 +57,11 @@ const Navbar = () => {
       <AppBar position="static">
         <Container>
           <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: "none", md: "flex" } }} />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <Link href="/">
+                <Image src={logo} width={50} height={50} alt="logo" />
+              </Link>
+            </Box>{" "}
             <Typography
               variant="h6"
               noWrap
@@ -74,7 +79,6 @@ const Navbar = () => {
             >
               {websiteName}
             </Typography>
-
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
@@ -115,9 +119,11 @@ const Navbar = () => {
                 ))}
               </Menu>
             </Box>
-
-            <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <Link href="/">
+                <Image src={logo} width={50} height={50} alt="logo" />
+              </Link>
+            </Box>
             <Typography
               variant="h5"
               noWrap
@@ -136,7 +142,6 @@ const Navbar = () => {
             >
               {websiteName}
             </Typography>
-
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
                 <Link key={page} href={page}>
@@ -150,7 +155,6 @@ const Navbar = () => {
                 </Link>
               ))}
             </Box>
-
             <Box sx={{ flexGrow: 0 }}>
               <Button component={Link} href="/login">
                 Login
