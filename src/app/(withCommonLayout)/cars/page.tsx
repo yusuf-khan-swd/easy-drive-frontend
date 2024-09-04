@@ -1,26 +1,32 @@
-import { Box, Container } from "@mui/material";
+"use client";
+
+import LoadingSpinner from "@/components/Shared/LoadingSpinner";
+import CarCard from "@/components/UI/Car/CarCard/CarCard";
+import { useGetAllCarsQuery } from "@/redux/api/carApi";
+import { TCar } from "@/types/car";
+import { Box } from "@mui/material";
 
 const Car = () => {
+  const { data, isLoading } = useGetAllCarsQuery(undefined);
+  const cars = data?.data;
+
+  if (isLoading) return <LoadingSpinner />;
+
   return (
     <div>
-      <h1 className="text-4xl font-bold">Cars Page</h1>
-      <Container>
-        {/* <DashedLine />
-
-        <ScrollCategory specialties={searchParams.specialties} /> */}
-
-        <Box sx={{ mt: 2, p: 3, bgcolor: "secondary.light" }}>
-          {/* {data?.map((doctor: Doctor, index: number) => (
-            <Box key={doctor.id}>
-              <DoctorCard doctor={doctor} />
-
-              {index === data.length - 1 ? null : <DashedLine />}
-            </Box>
-          ))}
-
-          {data.length === 0 && <Box>No Doctor Found With This Specialty</Box>} */}
-        </Box>
-      </Container>
+      <Box sx={{ mt: 2, p: 3, bgcolor: "secondary.light" }}></Box>
+      <div className="mb-16 mt-4">
+        <h2 className="text-2xl font-bold text-center mb-6">Our Cars</h2>
+        {cars && cars?.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {cars?.map((car: TCar) => (
+              <CarCard key={car?._id} car={car} />
+            ))}
+          </div>
+        ) : (
+          <h3 className="text-2xl font-bold text-center">No cars available</h3>
+        )}
+      </div>
     </div>
   );
 };
