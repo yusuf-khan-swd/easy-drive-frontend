@@ -1,4 +1,8 @@
 
+services auth token and user info functionality
+
+Login and Register functionality
+
 Done - ManageCars Table. Show Minimum one Table. 
 
 See, can axios be setup
