@@ -1,3 +1,4 @@
+import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const USER_URL = "/users";
@@ -10,7 +11,7 @@ const userApi = baseApi.injectEndpoints({
         method: "POST",
         body: carData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["user"],
@@ -21,7 +22,7 @@ const userApi = baseApi.injectEndpoints({
         url: `${USER_URL}`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["user"],
@@ -33,7 +34,7 @@ const userApi = baseApi.injectEndpoints({
         method: "PUT",
         body: userData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["user"],
@@ -44,7 +45,7 @@ const userApi = baseApi.injectEndpoints({
         url: `${USER_URL}/${id}`,
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["user"],

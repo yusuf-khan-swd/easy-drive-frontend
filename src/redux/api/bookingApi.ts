@@ -1,3 +1,4 @@
+import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const BOOKING_URL = "/bookings";
@@ -10,7 +11,7 @@ const bookingApi = baseApi.injectEndpoints({
         method: "POST",
         body: bookingData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["booking"],
@@ -21,7 +22,7 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["booking"],
@@ -32,7 +33,7 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}/${id}`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["booking"],
@@ -43,7 +44,7 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}/my-bookings`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["booking"],
@@ -54,7 +55,7 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}/my-bookings/${id}`,
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["booking"],
@@ -65,7 +66,7 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}/${id}`,
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["booking"],

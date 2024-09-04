@@ -1,3 +1,4 @@
+import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const CAR_URL = "/cars";
@@ -10,7 +11,7 @@ const carApi = baseApi.injectEndpoints({
         method: "POST",
         body: carData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["car"],
@@ -21,7 +22,7 @@ const carApi = baseApi.injectEndpoints({
         url: `${CAR_URL}`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["car"],
@@ -32,7 +33,7 @@ const carApi = baseApi.injectEndpoints({
         url: `${CAR_URL}/${id}`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       providesTags: ["car"],
@@ -44,7 +45,7 @@ const carApi = baseApi.injectEndpoints({
         method: "PUT",
         body: carData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["car", "booking"],
@@ -56,7 +57,7 @@ const carApi = baseApi.injectEndpoints({
         method: "PUT",
         body: carData,
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["car"],
@@ -67,7 +68,7 @@ const carApi = baseApi.injectEndpoints({
         url: `${CAR_URL}/${id}`,
         method: "DELETE",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("easy-drive-token")}`,
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
       invalidatesTags: ["car"],
