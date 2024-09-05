@@ -56,13 +56,20 @@ const ManageBookings = () => {
       flex: 1,
       valueGetter: (value: any) => value?.name,
     },
+    {
+      field: "car.status",
+      headerName: "Status",
+      flex: 1,
+      renderCell: ({ row }) => row.car.status,
+    },
     { field: "date", headerName: "Date", flex: 1 },
     { field: "startTime", headerName: "StartTime", flex: 1 },
+    { field: "endTime", headerName: "EndTime", flex: 1 },
     { field: "totalCost", headerName: "TotalCost", flex: 1 },
     {
       field: "action",
       headerName: "Action",
-      flex: 1,
+      flex: 2,
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
@@ -96,7 +103,7 @@ const ManageBookings = () => {
           placeholder="search bookings"
         />
       </Stack>
-      <Box my={2}>
+      <Box sx={{ my: 2, minWidth: "840px" }}>
         <DataGrid
           rows={bookings}
           columns={columns}
