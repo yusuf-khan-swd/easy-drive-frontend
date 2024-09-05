@@ -30,6 +30,8 @@ export const defaultValues = {
   address: "",
 };
 
+//  TODO: For Login and register try to use server action because it is more secure
+
 const RegisterPage = () => {
   const router = useRouter();
 

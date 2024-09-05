@@ -21,6 +21,8 @@ export const validationSchema = z.object({
   password: z.string().min(6, "Must be at least 6 characters"),
 });
 
+//  TODO: For Login and register try to use server action because it is more secure
+
 const LoginPage = () => {
   const [error, setError] = useState("");
   const [defaultValues, setDefaultValues] = useState({
