@@ -7,7 +7,7 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { Box, IconButton, Stack, TextField } from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Link from "next/link";
 import { useState } from "react";
@@ -74,7 +74,14 @@ const ManageUser = () => {
   return (
     <Box>
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <div></div>
+        <Stack direction="row" spacing={2}>
+          <Link href="/dashboard/admin/manage-users/create-user">
+            <Button>User</Button>
+          </Link>
+          <Link href="/dashboard/admin/manage-users/create-admin">
+            <Button>Admin</Button>
+          </Link>
+        </Stack>
         <TextField
           onChange={(e) => setSearchTerm(e.target.value)}
           size="small"
