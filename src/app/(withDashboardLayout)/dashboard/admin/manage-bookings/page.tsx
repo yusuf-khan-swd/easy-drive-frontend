@@ -27,7 +27,7 @@ const ManageBookings = () => {
     query["searchTerm"] = searchTerm;
   }
 
-  const { data, isLoading } = useGetAllBookingsQuery(undefined);
+  const { data, isLoading, isError } = useGetAllBookingsQuery(undefined);
   const [deleteBooking] = useDeleteBookingMutation();
 
   const bookings = data?.data;
@@ -103,20 +103,24 @@ const ManageBookings = () => {
           placeholder="search bookings"
         />
       </Stack>
-      <Box sx={{ my: 2, minWidth: "840px" }}>
-        <DataGrid
-          rows={bookings}
-          columns={columns}
-          getRowId={(row) => row._id}
-          loading={isLoading}
-          slotProps={{
-            loadingOverlay: {
-              variant: "linear-progress",
-              noRowsVariant: "skeleton",
-            },
-          }}
-        />
-      </Box>
+      {isError || !bookings || bookings?.length < 1 ? (
+        <h2>No Data Available</h2>
+      ) : (
+        <Box sx={{ my: 2, minWidth: "840px" }}>
+          <DataGrid
+            rows={bookings}
+            columns={columns}
+            getRowId={(row) => row._id}
+            loading={isLoading}
+            slotProps={{
+              loadingOverlay: {
+                variant: "linear-progress",
+                noRowsVariant: "skeleton",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Box>
   );
 };
