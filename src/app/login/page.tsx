@@ -156,6 +156,15 @@ const LoginPage = () => {
                 Don&apos;t have an account?{" "}
                 <Link href="/register">Create an account</Link>
               </Typography>
+              <div className="mt-4 text-sm text-center">
+                <Link href="/privacy" className="text-gray-600 underline">
+                  Privacy Policy
+                </Link>{" "}
+                |
+                <Link href="/tos" className="text-gray-600 underline ml-2">
+                  Terms of Service
+                </Link>
+              </div>
             </EasyDriveForm>
           </Box>
         </Box>
