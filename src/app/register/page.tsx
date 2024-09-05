@@ -10,6 +10,7 @@ import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -33,6 +34,8 @@ export const defaultValues = {
 //  TODO: For Login and register try to use server action because it is more secure
 
 const RegisterPage = () => {
+  const [termsAccepted, setTermsAccepted] = useState(false);
+
   const router = useRouter();
 
   const [register] = useSignupMutation();
@@ -134,7 +137,22 @@ const RegisterPage = () => {
                   />
                 </Grid>
               </Grid>
+              <label className="inline-flex items-center">
+                <input
+                  type="checkbox"
+                  name="termsAccepted"
+                  onClick={() => setTermsAccepted(!termsAccepted)}
+                  className=""
+                />
+                <span className="ml-2 text-gray-700">
+                  I accept the{" "}
+                  <Link href="/terms" className="text-blue-500 underline">
+                    Terms & Conditions
+                  </Link>
+                </span>
+              </label>
               <Button
+                disabled={!termsAccepted}
                 sx={{
                   margin: "10px 0px",
                 }}
