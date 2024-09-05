@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-// TODO: Need update booking api for user
+// TODO: Need update booking api for admin and user
 
 const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;

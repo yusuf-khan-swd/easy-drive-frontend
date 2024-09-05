@@ -1,6 +1,8 @@
 
 -------------------- 11:27 AM 9/5/2024, th
 
+
+
 Done - ReturnCar functionality with MangeReturnCars table
 
 Done - MangeReturnCars table in admin
@@ -23,6 +25,7 @@ Done - Create Car from previous project
 
 Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
 
+Create Booking update api in server for admin and user
 
 ------------------- 
 Done - Secure Dashboard Layouts using user role
