@@ -1,6 +1,8 @@
 
 Done - FeaturedCars show 3 cars using slice
 
+Done - UpdateBooking design with get updated time and date value
+
 Manage Booking table in admin  
 
 Delete Car
