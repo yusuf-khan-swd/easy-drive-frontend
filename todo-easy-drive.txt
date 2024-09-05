@@ -1,6 +1,8 @@
 
 -------------------- 11:27 AM 9/5/2024, th
 
+Done - Update Footer
+
 Done - Terms & Condition ternary in register. Add PrivacyAndPolicyPage, TermOfServicePage, TermsAndConditionPage components from previous project
 
 Done - User UpdateBooking form page from admin UpdateBooking form page

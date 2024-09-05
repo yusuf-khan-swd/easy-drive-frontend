@@ -7,17 +7,19 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <Box bgcolor="rgb(17, 26, 34)" py={5}>
       <Container>
         <Stack direction="row" gap={4} justifyContent="center">
-          <Typography color="#fff" component={Link} href="/consultation">
-            Consultation
+          <Typography color="#fff" component={Link} href="/cars">
+            Cars
           </Typography>
-          <Typography color="#fff">Health Plans</Typography>
-          <Typography color="#fff">Medicine</Typography>
-          <Typography color="#fff">Diagnostics</Typography>
-          <Typography color="#fff">NGOs</Typography>
+          <Typography color="#fff">Explore</Typography>
+          <Typography color="#fff">About Us</Typography>
+          <Typography color="#fff">Help</Typography>
+          <Typography color="#fff">Account</Typography>
         </Stack>
 
         <Stack direction="row" gap={2} justifyContent="center" py={3}>
@@ -41,7 +43,7 @@ const Footer = () => {
           py={3}
         >
           <Typography component="p" color="white">
-            &copy;2024 Ph HealthCare. All Rights Reserved.
+            &copy;{year} EasyDrive . All Rights Reserved.
           </Typography>
           <Typography
             variant="h4"
@@ -50,14 +52,23 @@ const Footer = () => {
             fontWeight={600}
             color="white"
           >
-            P
             <Box component="span" color="primary.main">
-              H
-            </Box>{" "}
-            Health Care
+              E
+            </Box>
+            asy
+            <Box component="span" color="primary.main">
+              D
+            </Box>
+            rive
           </Typography>
           <Typography component="p" color="white">
-            Privacy Policy! Terms & Conditions
+            <Typography component={Link} href="/privacy" color="white">
+              Privacy Policy
+            </Typography>{" "}
+            |{" "}
+            <Typography component={Link} href="/terms" color="white">
+              Terms & Conditions
+            </Typography>
           </Typography>
         </Stack>
       </Container>
