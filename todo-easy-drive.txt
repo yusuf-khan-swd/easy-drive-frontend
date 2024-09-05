@@ -3,13 +3,13 @@ Done - FeaturedCars show 3 cars using slice
 
 Done - UpdateBooking design with get updated time and date value
 
-Manage Booking table in admin  
+Done - Manage Booking table in admin  
 
-Delete Car
+Done - Delete Car
 
-Update Car from previous project 
+Done - Update Car from previous project 
 
-Create Car from previous project
+Done - Create Car from previous project
 
 Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
 
