@@ -1,4 +1,8 @@
 
+-------------------- 11:27 AM 9/5/2024, th
+
+
+
 Done - FeaturedCars show 3 cars using slice
 
 Done - UpdateBooking design with get updated time and date value
@@ -13,6 +17,8 @@ Done - Create Car from previous project
 
 Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
 
+
+------------------- 
 Done - Secure Dashboard Layouts using user role
 
 Done - Car Booking from previous project
