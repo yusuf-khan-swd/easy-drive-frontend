@@ -38,7 +38,6 @@ const ManageReturnCar = () => {
   const [deleteBooking] = useDeleteBookingMutation();
 
   const bookings = data?.data;
-  console.log(bookings);
 
   const handleDelete = async (id: string) => {
     try {
@@ -80,7 +79,6 @@ const ManageReturnCar = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
-        console.log({ row });
         return (
           <Box>
             <IconButton
@@ -117,7 +115,7 @@ const ManageReturnCar = () => {
           placeholder="search bookings"
         />
       </Stack>
-      <Box sx={{ my: 2 }}>
+      <Box sx={{ my: 2, minWidth: "840px" }}>
         <DataGrid
           rows={bookings}
           columns={columns}
