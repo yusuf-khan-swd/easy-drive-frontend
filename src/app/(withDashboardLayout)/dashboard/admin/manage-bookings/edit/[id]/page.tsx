@@ -3,7 +3,7 @@
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
 const UpdateBooking = ({ params }: { params: { id: string } }) => {
@@ -17,8 +17,6 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const [startTime, setStartTime] = useState(booking?.startTime || "");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
-
-  if (isLoading) return <LoadingSpinner />;
 
   const {
     _id,
@@ -58,6 +56,15 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
       toast.error(error?.data?.message || "Car Booked failed");
     }
   };
+
+  useEffect(() => {
+    if (!isLoading && booking) {
+      setDate(booking?.date);
+      setStartTime(booking?.startTime);
+    }
+  }, [isLoading, booking]);
+
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <div>
