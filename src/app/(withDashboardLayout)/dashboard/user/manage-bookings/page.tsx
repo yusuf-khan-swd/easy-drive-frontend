@@ -35,7 +35,6 @@ const ManageBookings = () => {
   const [deleteBooking] = useDeleteBookingMutation();
 
   const bookings = data?.data;
-  console.log(bookings);
 
   const handleDelete = async (id: string) => {
     try {
@@ -77,7 +76,6 @@ const ManageBookings = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
-        console.log({ row });
         return (
           <Box>
             <IconButton

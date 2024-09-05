@@ -38,7 +38,6 @@ const ManageReturnCar = () => {
   const [deleteBooking] = useDeleteBookingMutation();
 
   const bookings = data?.data;
-  console.log({ bookings, isError });
 
   const handleDelete = async (id: string) => {
     try {
