@@ -84,7 +84,7 @@ const ManageBookings = () => {
             >
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Link href={`/dashboard/admin/manage-bookings/edit/${row._id}`}>
+            <Link href={`/dashboard/user/manage-bookings/edit/${row._id}`}>
               <IconButton aria-label="edit">
                 <EditIcon />
               </IconButton>
