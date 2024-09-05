@@ -10,10 +10,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
-// import DoctorModal from "./components/DoctorModal";
-
 const ManageCars = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
   // console.log(searchTerm);
@@ -27,17 +24,10 @@ const ManageCars = () => {
     query["searchTerm"] = searchTerm;
   }
 
-  // const { data, isLoading } = useGetAllDoctorsQuery({ ...query });
-  // const [deleteDoctor] = useDeleteDoctorMutation();
   const { data, isLoading } = useGetAllCarsQuery("");
   const [deleteCar] = useDeleteCarMutation();
 
   const cars = data?.data;
-
-  // console.log(data);
-  // const doctors = data?.doctors;
-  // const meta = data?.meta;
-  // console.log(doctors);
 
   const handleDelete = async (id: string) => {
     try {
