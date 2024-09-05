@@ -30,6 +30,8 @@ Create Profile Module in Backend and use this module to show Profile Data take i
 
 Create Booking update api in server for admin and user
 
+Create Get single booking api for user
+
 ------------------- 
 Done - Secure Dashboard Layouts using user role
 
