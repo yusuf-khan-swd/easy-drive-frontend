@@ -1,4 +1,12 @@
 
+Manage Booking table in admin  
+
+Delete Car
+
+Update Car from previous project 
+
+Create Car from previous project
+
 Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
 
 Done - Secure Dashboard Layouts using user role
