@@ -115,7 +115,7 @@ const ManageReturnCar = () => {
           placeholder="search bookings"
         />
       </Stack>
-      {isError || !bookings || bookings?.length < 1 ? (
+      {isError ? (
         <h2>No Data Available</h2>
       ) : (
         <Box sx={{ my: 2, minWidth: "840px" }}>
