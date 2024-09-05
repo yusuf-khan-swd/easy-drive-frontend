@@ -1,6 +1,6 @@
 "use client";
 
-import { useGetAllCarsQuery } from "@/redux/api/carApi";
+import { useDeleteCarMutation, useGetAllCarsQuery } from "@/redux/api/carApi";
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
@@ -30,6 +30,8 @@ const ManageCars = () => {
   // const { data, isLoading } = useGetAllDoctorsQuery({ ...query });
   // const [deleteDoctor] = useDeleteDoctorMutation();
   const { data, isLoading } = useGetAllCarsQuery("");
+  const [deleteCar] = useDeleteCarMutation();
+
   const cars = data?.data;
 
   // console.log(data);
@@ -38,16 +40,12 @@ const ManageCars = () => {
   // console.log(doctors);
 
   const handleDelete = async (id: string) => {
-    // console.log(id);
     try {
-      // const res = await deleteDoctor(id).unwrap();
-      const res = { id: 1 };
-      // console.log(res);
-      if (res?.id) {
-        toast.success("Doctor deleted successfully!!!");
-      }
-    } catch (err: any) {
-      console.error(err.message);
+      const result = await deleteCar(id).unwrap();
+      toast.success(result?.message || "Car deleted Successfully");
+    } catch (error: any) {
+      console.log("Error: ", error);
+      toast.error(error?.data?.message || "Car delete failed");
     }
   };
 
