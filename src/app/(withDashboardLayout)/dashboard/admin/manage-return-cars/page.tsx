@@ -7,7 +7,14 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  Stack,
+  TextField,
+  Tooltip,
+} from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Link from "next/link";
 import { useState } from "react";
@@ -75,11 +82,15 @@ const ManageReturnCar = () => {
             >
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Link href={`/dashboard/admin/manage-return-cars/edit/${row._id}`}>
-              <IconButton aria-label="edit">
-                <EditIcon />
-              </IconButton>
-            </Link>
+            <Tooltip title="Return Car">
+              <Link
+                href={`/dashboard/admin/manage-return-cars/edit/${row._id}`}
+              >
+                <IconButton aria-label="edit">
+                  <EditIcon />
+                </IconButton>
+              </Link>
+            </Tooltip>
             <Button size="small">Return</Button>
           </Box>
         );
