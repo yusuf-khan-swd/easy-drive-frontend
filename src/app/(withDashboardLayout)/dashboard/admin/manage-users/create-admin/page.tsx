@@ -33,7 +33,7 @@ export const defaultValues = {
 const CreateAdmin = () => {
   const router = useRouter();
 
-  const [createAdmin] = useCreateAdminMutation();
+  const [createAdmin, { isLoading }] = useCreateAdminMutation();
 
   const handleRegister = async (values: FieldValues) => {
     // console.log(values);
@@ -137,6 +137,7 @@ const CreateAdmin = () => {
                 }}
                 fullWidth={true}
                 type="submit"
+                disabled={isLoading}
               >
                 Add Admin
               </Button>

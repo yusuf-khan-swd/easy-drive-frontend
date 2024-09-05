@@ -33,7 +33,7 @@ export const defaultValues = {
 const CreateUser = () => {
   const router = useRouter();
 
-  const [register] = useSignupMutation();
+  const [register, { isLoading }] = useSignupMutation();
 
   const handleRegister = async (values: FieldValues) => {
     // console.log(values);
@@ -137,6 +137,7 @@ const CreateUser = () => {
                 }}
                 fullWidth={true}
                 type="submit"
+                disabled={isLoading}
               >
                 Register
               </Button>
