@@ -30,7 +30,7 @@ export const defaultValues = {
   address: "",
 };
 
-const RegisterPage = () => {
+const CreateUser = () => {
   const router = useRouter();
 
   const [register] = useSignupMutation();
@@ -154,4 +154,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default CreateUser;
