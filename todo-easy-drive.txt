@@ -1,4 +1,6 @@
 
+Done - FeaturedCars show 3 cars using slice
+
 Manage Booking table in admin  
 
 Delete Car
