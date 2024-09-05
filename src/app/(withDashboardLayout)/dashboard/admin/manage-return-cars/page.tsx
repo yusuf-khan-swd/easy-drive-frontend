@@ -117,7 +117,7 @@ const ManageReturnCar = () => {
           placeholder="search bookings"
         />
       </Stack>
-      <Box my={2}>
+      <Box sx={{ my: 2 }}>
         <DataGrid
           rows={bookings}
           columns={columns}
