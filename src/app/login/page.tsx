@@ -159,6 +159,24 @@ const LoginPage = () => {
             </EasyDriveForm>
           </Box>
         </Box>
+        <div className="text-center mt-8 space-y-3">
+          <div>
+            <p>
+              User Email: <span className="text-blue-600">user@easy.com</span>
+            </p>
+            <p>
+              User Password: <span className="text-blue-600">Pa$$w0rd!</span>
+            </p>
+          </div>
+          <div>
+            <p>
+              Admin Email: <span className="text-blue-600">admin@easy.com</span>
+            </p>
+            <p>
+              Admin Password: <span className="text-blue-600">Pa$$w0rd!</span>
+            </p>
+          </div>
+        </div>
       </Stack>
     </Container>
   );
