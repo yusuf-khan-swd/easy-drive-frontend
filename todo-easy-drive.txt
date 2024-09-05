@@ -1,4 +1,6 @@
 
+Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
+
 Done - Secure Dashboard Layouts using user role
 
 Done - Car Booking from previous project
