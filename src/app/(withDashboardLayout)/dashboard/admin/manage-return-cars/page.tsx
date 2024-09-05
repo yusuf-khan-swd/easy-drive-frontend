@@ -63,8 +63,15 @@ const ManageReturnCar = () => {
       flex: 1,
       valueGetter: (value: any) => value?.name,
     },
+    {
+      field: "car.status",
+      headerName: "Status",
+      flex: 1,
+      renderCell: ({ row }) => row.car.status,
+    },
     { field: "date", headerName: "Date", flex: 1 },
     { field: "startTime", headerName: "StartTime", flex: 1 },
+    { field: "endTime", headerName: "EndTime", flex: 1 },
     { field: "totalCost", headerName: "TotalCost", flex: 1 },
     {
       field: "action",
