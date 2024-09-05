@@ -11,10 +11,10 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
 
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
   const booking = data?.data;
-  console.log(booking);
   const car = booking?.car;
 
   const [date, setDate] = useState(booking?.date || "");
+  const [endTime, setEndTime] = useState(booking?.endTime || "");
   const [startTime, setStartTime] = useState(booking?.startTime || "");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
@@ -34,7 +34,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     const newErrors: { [key: string]: string } = {};
 
     if (!date) newErrors.date = "Date is required.";
-    if (!startTime) newErrors.time = "Time is required.";
+    if (!endTime) newErrors.time = "End Time is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -44,7 +44,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const bookingData = { carId: _id, date, startTime: startTime };
+        const bookingData = { carId: _id, date, endTime: endTime };
 
         console.log(bookingData);
         // const result = await createBooking(bookingData).unwrap();
@@ -78,7 +78,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
             className="bg-white border p-8 rounded shadow-md w-full max-w-md "
           >
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Pick a DateTime
+              Pick Return Time
             </h2>
 
             <div className="mb-4">
@@ -88,7 +88,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
               <input
                 type="date"
                 value={date}
-                onChange={(e) => setDate(e.target.value)}
+                disabled
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.date ? "border-red-500" : "border-gray-300"
                 }`}
@@ -97,6 +97,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
                 <p className="text-red-500 text-xs">{errors.date}</p>
               )}
             </div>
+            {/* Start Time */}
             <div className="mb-4">
               <label htmlFor="name" className="block text-gray-700">
                 Start Time
@@ -104,7 +105,19 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
               <input
                 type="time"
                 value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
+                disabled
+                className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm`}
+              />
+            </div>
+            {/* End Time */}
+            <div className="mb-4">
+              <label htmlFor="name" className="block text-gray-700">
+                End Time
+              </label>
+              <input
+                type="time"
+                value={endTime}
+                onChange={(e) => setEndTime(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.time ? "border-red-500" : "border-gray-300"
                 }`}
