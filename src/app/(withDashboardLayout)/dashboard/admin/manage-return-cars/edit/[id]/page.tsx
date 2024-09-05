@@ -2,6 +2,7 @@
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
+import { useReturnCarMutation } from "@/redux/api/carApi";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -9,6 +10,7 @@ import { toast } from "sonner";
 const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
+  const [returnCar] = useReturnCarMutation();
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
   const booking = data?.data;
   const car = booking?.car;
@@ -20,7 +22,6 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
 
   const {
-    _id,
     name,
     description,
     color,
@@ -44,17 +45,16 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const bookingData = { carId: _id, date, endTime: endTime };
+        const bookingData = { bookingId: booking?._id, endTime: endTime };
 
-        console.log(bookingData);
-        // const result = await createBooking(bookingData).unwrap();
-        // toast.success(result?.message || "Car Booked Successfully");
+        const result = await returnCar(bookingData).unwrap();
+        toast.success(result?.message || "Car return Successfully");
 
-        // router.push("/dashboard/admin/manage-return-cars");
+        router.push("/dashboard/admin/manage-return-cars");
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car Booked failed");
+      toast.error(error?.data?.message || "Car return failed");
     }
   };
 
