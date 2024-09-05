@@ -1,11 +1,13 @@
 
 -------------------- 11:27 AM 9/5/2024, th
 
+Done - ReturnCar functionality with MangeReturnCars table
 
+Done - MangeReturnCars table in admin
 
-MangeReturnCars table in admin
+Done - Create admin and user in Admin ManageUsers page
 
-MangeUsers table in admin
+Done - MangeUsers table in admin
 
 Done - FeaturedCars show 3 cars using slice
 
