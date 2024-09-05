@@ -91,7 +91,9 @@ const ManageReturnCar = () => {
                 </IconButton>
               </Link>
             </Tooltip>
-            <Button size="small">Return</Button>
+            <Link href={`/dashboard/admin/manage-return-cars/edit/${row._id}`}>
+              <Button size="small">Return</Button>
+            </Link>
           </Box>
         );
       },
