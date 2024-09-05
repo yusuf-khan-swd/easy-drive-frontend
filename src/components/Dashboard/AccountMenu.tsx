@@ -62,6 +62,13 @@ export default function AccountMenu() {
   return (
     <React.Fragment>
       <Box sx={{ display: "flex", alignItems: "center", textAlign: "center" }}>
+        {/* FIXME: Hydration failed. Expected server HTML to contain a matching <button> in <div>. 
+         <div>
+           <Tooltip>
+        ...
+          <eval>
+            <button>
+        */}
         <Tooltip
           title="Account settings"
           componentsProps={{
