@@ -76,7 +76,7 @@ const ManageReturnCar = () => {
     {
       field: "action",
       headerName: "Action",
-      flex: 1,
+      flex: 2,
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
