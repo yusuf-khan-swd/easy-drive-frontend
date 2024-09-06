@@ -2,6 +2,8 @@
 
 -------------------- 10:33 AM 9/6/2024
 
+Done - Change Password page design
+
 Done - Forgot Password page design
 
 Create getSingleUser api 
