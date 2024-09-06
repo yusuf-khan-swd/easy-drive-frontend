@@ -5,7 +5,8 @@ import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 import { zodResolver } from "@hookform/resolvers/zod";
 import CheckIcon from "@mui/icons-material/Check";
 import KeyIcon from "@mui/icons-material/Key";
-import { Alert, Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Alert, Box, Button, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
@@ -85,7 +86,7 @@ const ForgotPassword = () => {
             resolver={zodResolver(validationSchema)}
           >
             <Grid>
-              <Grid item xs={12} sm={12} md={6}>
+              <Grid size={{ xs: 12, md: 6 }}>
                 <EasyDriveInput
                   name="email"
                   type="email"
