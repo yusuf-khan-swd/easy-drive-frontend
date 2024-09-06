@@ -10,6 +10,7 @@ type TInputProps = {
   sx?: SxProps;
   placeholder?: string;
   required?: boolean;
+  disabled?: boolean;
 };
 
 const EasyDriveInput = ({
@@ -20,6 +21,7 @@ const EasyDriveInput = ({
   fullWidth,
   sx,
   required,
+  disabled = false,
 }: TInputProps) => {
   const { control } = useFormContext();
   return (
@@ -39,6 +41,7 @@ const EasyDriveInput = ({
           required={required}
           error={!!error?.message}
           helperText={error?.message}
+          disabled={disabled}
         />
       )}
     />
