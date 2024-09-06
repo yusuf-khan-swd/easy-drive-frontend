@@ -32,6 +32,17 @@ const ManageUsers = () => {
   const users = usersData?.data;
   const [deleteUser] = useDeleteUserMutation();
 
+  const handleMakeAdmin = async (id: string) => {
+    try {
+      console.log(id);
+      // const result = await deleteUser(id).unwrap();
+      // toast.success(result?.message || "Make Admin Successfully");
+    } catch (error: any) {
+      console.log("Error: ", error);
+      toast.error(error?.data?.message || "Make Admin failed");
+    }
+  };
+
   const handleDelete = async (id: string) => {
     try {
       const result = await deleteUser(id).unwrap();
@@ -66,7 +77,11 @@ const ManageUsers = () => {
                 <EditIcon />
               </IconButton>
             </Link>
-            <Button disabled={role === USER_ROLE.ADMIN} size="small">
+            <Button
+              onClick={() => handleMakeAdmin(id)}
+              disabled={role === USER_ROLE.ADMIN}
+              size="small"
+            >
               Make Admin
             </Button>
           </Box>
