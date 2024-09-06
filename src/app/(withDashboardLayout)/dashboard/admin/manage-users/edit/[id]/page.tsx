@@ -109,7 +109,7 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
             <Box>
               <Link href="/">
                 <Typography variant="h6" fontWeight={600}>
-                  user User
+                  Update User
                 </Typography>
               </Link>
             </Box>
@@ -165,14 +165,8 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
                 type="submit"
                 disabled={isLoading}
               >
-                Register
+                Update
               </Button>
-              <Typography component="p" fontWeight={300}>
-                Need an admin account?{" "}
-                <Link href="/dashboard/admin/manage-users/create-admin">
-                  Create Admin
-                </Link>
-              </Typography>
             </EasyDriveForm>
           </Box>
         </Box>
