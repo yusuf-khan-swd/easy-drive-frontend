@@ -65,6 +65,7 @@ const ManageUser = () => {
                 <EditIcon />
               </IconButton>
             </Link>
+            <Button size="small">Make Admin</Button>
           </Box>
         );
       },
