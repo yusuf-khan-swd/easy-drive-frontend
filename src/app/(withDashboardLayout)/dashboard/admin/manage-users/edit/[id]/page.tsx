@@ -120,7 +120,6 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
                     type="email"
                     fullWidth={true}
                     name="email"
-                    disabled
                   />
                 </Grid>
                 <Grid size={{ xs: 12, md: 6 }}>
