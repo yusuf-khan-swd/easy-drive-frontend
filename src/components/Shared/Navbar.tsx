@@ -51,7 +51,7 @@ const Navbar = () => {
   };
 
   const pages = ["home", "cars", "about", "contact"];
-  const settings = ["profile", "account", "dashboard", "logout"];
+  const settings = ["profile", "dashboard", "logout"];
 
   return (
     <div>
@@ -191,6 +191,14 @@ const Navbar = () => {
                           >
                             Logout
                           </Button>
+                        ) : setting === "profile" ? (
+                          <Typography
+                            component={Link}
+                            href={`/dashboard/${role}`}
+                            sx={{ textAlign: "center" }}
+                          >
+                            <span className="uppercase">{setting}</span>
+                          </Typography>
                         ) : (
                           <Typography
                             component={Link}
