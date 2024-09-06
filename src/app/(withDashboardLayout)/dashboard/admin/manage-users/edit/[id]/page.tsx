@@ -18,18 +18,9 @@ import { z } from "zod";
 const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
-  password: z.string().min(6, "Must be at least 6 characters"),
   phone: z.string().optional(),
   address: z.string().optional(),
 });
-
-const defaultValues = {
-  name: "",
-  email: "",
-  password: "",
-  phone: "",
-  address: "",
-};
 
 const UpdateUser = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
@@ -41,7 +32,6 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
   const [defaultValues, setDefaultValues] = useState({
     name: "",
     email: "",
-    password: "",
     phone: "",
     address: "",
   });
@@ -67,7 +57,6 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
   //     setDefaultValues({
   //       name: user?.name || "",
   //       email: user?.email || "",
-  //       password: user?.password || "",
   //       phone: user?.phone || "",
   //       address: user?.address || "",
   //     });
@@ -131,14 +120,7 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
                     type="email"
                     fullWidth={true}
                     name="email"
-                  />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <EasyDriveInput
-                    label="Password"
-                    type="password"
-                    fullWidth={true}
-                    name="password"
+                    disabled
                   />
                 </Grid>
                 <Grid size={{ xs: 12, md: 6 }}>
@@ -149,7 +131,7 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
                     name="phone"
                   />
                 </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
+                <Grid size={{ xs: 12, md: 12 }}>
                   <EasyDriveInput
                     label="Address"
                     fullWidth={true}
