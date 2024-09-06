@@ -8,7 +8,7 @@ Done - Forgot Password page design
 
 Create getSingleUser api 
 
-Update User
+Add UpdateUserPage functionality after api is done 
 
 -------------------- 11:27 AM 9/5/2024, th
 
