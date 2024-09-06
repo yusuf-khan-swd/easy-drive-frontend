@@ -8,7 +8,6 @@ import { z } from "zod";
 // import { useChangePasswordMutation } from '@/redux/api/authApi';
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
-import { removeUser } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -28,8 +27,6 @@ const ChangePassword = () => {
     console.log({ values });
     try {
       toast.success("Password Changed Successfully");
-      removeUser();
-      router.push("/login");
 
       // const res = await changePassword(values);
       //  if ('data' in res && res.data.status === 200) {
