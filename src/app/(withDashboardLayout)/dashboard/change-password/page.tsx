@@ -2,7 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import KeyIcon from "@mui/icons-material/Key";
-import { Box, Button, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid2";
 import { FieldValues } from "react-hook-form";
 import { z } from "zod";
 // import { useChangePasswordMutation } from '@/redux/api/authApi';
@@ -79,7 +80,7 @@ const ChangePassword = () => {
         resolver={zodResolver(validationSchema)}
       >
         <Grid>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <EasyDriveInput
               name="oldPassword"
               type="password"
@@ -88,7 +89,7 @@ const ChangePassword = () => {
               sx={{ mb: 2 }}
             />
           </Grid>
-          <Grid item xs={12} sm={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <EasyDriveInput
               name="newPassword"
               type="password"
