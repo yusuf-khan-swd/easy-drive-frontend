@@ -9,6 +9,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Tooltip from "@mui/material/Tooltip";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import * as React from "react";
 
@@ -110,10 +111,12 @@ export default function AccountMenu() {
         transformOrigin={{ horizontal: "right", vertical: "top" }}
         anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <MenuItem onClick={handleClose}>
-          <Avatar sx={{ background: "transparent", color: "primary.main" }} />
-          Profile
-        </MenuItem>
+        <Link href={"/dashboard"}>
+          <MenuItem onClick={handleClose}>
+            <Avatar sx={{ background: "transparent", color: "primary.main" }} />
+            Profile
+          </MenuItem>
+        </Link>
 
         <Divider />
 
