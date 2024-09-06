@@ -1,5 +1,6 @@
 "use client";
 
+import { USER_ROLE } from "@/constants/role";
 import {
   useDeleteUserMutation,
   useGetAllUsersQuery,
@@ -53,6 +54,7 @@ const ManageUsers = () => {
       align: "center",
       renderCell: ({ row }) => {
         const id = row._id;
+        const role = row.role;
 
         return (
           <Box>
@@ -64,7 +66,9 @@ const ManageUsers = () => {
                 <EditIcon />
               </IconButton>
             </Link>
-            <Button size="small">Make Admin</Button>
+            <Button disabled={role === USER_ROLE.ADMIN} size="small">
+              Make Admin
+            </Button>
           </Box>
         );
       },
