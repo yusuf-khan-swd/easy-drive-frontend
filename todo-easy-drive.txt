@@ -1,4 +1,13 @@
 
+
+-------------------- 10:33 AM 9/6/2024
+
+
+
+Create getSingleUser api 
+
+Update User
+
 -------------------- 11:27 AM 9/5/2024, th
 
 Done - Update Footer
