@@ -53,19 +53,19 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           icon: BookOnlineIcon,
         },
         {
+          title: "Return Car",
+          path: `${role}/manage-return-cars`,
+          icon: CalendarMonthIcon,
+        },
+        {
           title: "Manage Users",
           path: `${role}/manage-users`,
           icon: GroupIcon,
         },
         {
           title: "Reviews",
-          path: `${role}/reviews`,
+          path: `${role}/manage-reviews`,
           icon: ReviewsIcon,
-        },
-        {
-          title: "Return Car",
-          path: `${role}/manage-return-cars`,
-          icon: CalendarMonthIcon,
         }
       );
       break;
