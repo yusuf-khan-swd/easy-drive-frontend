@@ -13,7 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
-const ManageUser = () => {
+const ManageUsers = () => {
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
   // console.log(searchTerm);
@@ -107,4 +107,4 @@ const ManageUser = () => {
   );
 };
 
-export default ManageUser;
+export default ManageUsers;
