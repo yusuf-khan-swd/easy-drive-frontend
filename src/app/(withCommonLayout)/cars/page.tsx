@@ -8,7 +8,6 @@ import { Box } from "@mui/material";
 
 const Car = () => {
   const { data: cars, isLoading } = useGetAllCarsQuery(undefined);
-  console.log(cars);
 
   if (isLoading) return <LoadingSpinner />;
 
