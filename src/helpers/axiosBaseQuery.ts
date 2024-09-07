@@ -9,9 +9,10 @@ export const axiosBaseQuery =
   ): BaseQueryFn<
     {
       url: string;
-      method: AxiosRequestConfig["method"];
+      method?: AxiosRequestConfig["method"];
       data?: AxiosRequestConfig["data"];
       params?: AxiosRequestConfig["params"];
+      headers?: AxiosRequestConfig["headers"];
       meta?: IMeta;
       contentType?: string;
     },
@@ -28,11 +29,11 @@ export const axiosBaseQuery =
         headers: {
           "Content-Type": contentType || "application/json",
         },
-        withCredentials: true,
+        // withCredentials: true,
       });
       return result;
     } catch (axiosError) {
-      let err = axiosError as AxiosError;
+      const err = axiosError as AxiosError;
       return {
         error: {
           status: err.response?.status,
