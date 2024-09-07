@@ -73,7 +73,7 @@ const Navbar = () => {
                 flexGrow: 1,
                 fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
@@ -126,17 +126,17 @@ const Navbar = () => {
               </Link>
             </Box>
             <Typography
-              variant="h5"
+              variant="h6"
               noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
+              component={Link}
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
                 flexGrow: 1,
                 fontFamily: "monospace",
                 fontWeight: 700,
-                letterSpacing: ".3rem",
+                letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
               }}
