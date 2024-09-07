@@ -64,7 +64,8 @@ instance.interceptors.response.use(
     //   return responseObject;
     // }
 
-    // return Promise.reject(error); // ! this line already been comment out previously
+    // ?  Use this bellow line code if we do not want modify error in axios interceptor.
+    // return Promise.reject(error); // ! This line already been comment out previously
 
     return {
       error: {
