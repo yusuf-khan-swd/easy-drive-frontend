@@ -37,14 +37,17 @@ const LoginPage = () => {
     // console.log(values);
     try {
       const result = await login(values).unwrap();
-      if (result?.data?.token) {
-        toast.success("Login Success!!");
-        storeUserInfo({ accessToken: result?.data?.token });
+      console.log(result);
+      if (result?.token) {
+        toast.success(result?.message || "Login Success!!");
+        storeUserInfo({ accessToken: result?.token });
         router.push("/dashboard");
+      } else {
+        toast.error(result?.message || "login failed");
       }
     } catch (error: any) {
-      setError(error?.data?.message);
-      toast.error(error?.data?.message || "login failed");
+      setError(error?.message);
+      toast.error(error?.message || "login failed");
       console.log("Error: ", error);
     }
   };
