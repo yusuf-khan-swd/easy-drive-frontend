@@ -6,8 +6,7 @@ import { TCar } from "@/types/car";
 import CarCard from "../../Car/CarCard/CarCard";
 
 const FeaturedCars = () => {
-  const { data, isLoading } = useGetAllCarsQuery(undefined);
-  const cars = data?.data;
+  const { data: cars, isLoading } = useGetAllCarsQuery(undefined);
 
   if (isLoading) return <LoadingSpinner />;
 
