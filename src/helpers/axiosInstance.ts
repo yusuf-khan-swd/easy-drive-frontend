@@ -1,5 +1,5 @@
 import { authKey } from "@/constants/authKey";
-import { IGenericErrorResponse, ResponseSuccessType } from "@/types";
+import { ResponseSuccessType } from "@/types";
 import { getFromLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
@@ -13,9 +13,11 @@ instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     const accessToken = getFromLocalStorage(authKey);
+    console.log("access token in interceptor ", accessToken);
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
+    console.log("config headers ", config.headers.Authorization);
     return config;
   },
   function (error) {
@@ -30,8 +32,9 @@ instance.interceptors.response.use(
   function (response) {
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
+    console.log("interceptor response ", response);
     const responseObject: ResponseSuccessType = {
-      // message: response?.data?.message,
+      message: response?.data?.message,
       data: response?.data?.data,
       meta: response?.data?.meta,
     };
@@ -41,17 +44,35 @@ instance.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     // console.log(error);
-    if (error?.response?.status === 403) {
-    } else {
-      const responseObject: IGenericErrorResponse = {
-        statusCode: error?.response?.data?.statusCode || 500,
-        message: error?.response?.data?.message || "Something went wrong",
-        errorMessages: error?.response?.data?.message,
-      };
-      return responseObject;
-    }
+    console.log("interceptor error ", error?.response);
+    // ! comment out if else block and use gpt solution
+    // if (error?.response?.status === 403) {
+    //   console.log("403 error ", error?.response);
+    //   // ? I have added this code otherwise there is problem with error response or can remove the if else block
+    //   const responseObject: IGenericErrorResponse = {
+    //     statusCode: error?.response?.data?.statusCode || 500,
+    //     message: error?.response?.data?.message || "Something went wrong",
+    //     errorMessages: error?.response?.data?.errorMessages,
+    //   };
+    //   return responseObject;
+    // } else {
+    //   const responseObject: IGenericErrorResponse = {
+    //     statusCode: error?.response?.data?.statusCode || 500,
+    //     message: error?.response?.data?.message || "Something went wrong",
+    //     errorMessages: error?.response?.data?.errorMessages,
+    //   };
+    //   return responseObject;
+    // }
 
-    // return Promise.reject(error);
+    // return Promise.reject(error); // ! this line already been comment out previously
+
+    return {
+      error: {
+        statusCode: error?.response?.status || 500,
+        data: error?.response?.data || error.message,
+        errorMessages: error?.response?.data?.errorMessages || [],
+      },
+    };
   }
 );
 
