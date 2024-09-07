@@ -10,7 +10,7 @@ export const axiosBaseQuery =
     {
       url: string;
       method?: AxiosRequestConfig["method"];
-      data?: AxiosRequestConfig["data"];
+      data?: AxiosRequestConfig["data"]; // ! I think this data property is making redux to send body data in data property instead of sending body data in body property
       params?: AxiosRequestConfig["params"];
       headers?: AxiosRequestConfig["headers"];
       meta?: IMeta;
@@ -29,9 +29,11 @@ export const axiosBaseQuery =
         headers: {
           "Content-Type": contentType || "application/json",
         },
-        // withCredentials: true,
+        // withCredentials: true, // TODO: comment out this line for cors error need to solve the issue
       });
-      return result;
+      // return result; // ! previously only send result
+      return { data: result.data }; // ? gpt solution for :  baseQuery returned an object containing neither a valid error and result. At least one of them should not be undefined
+      // ? It needs to return an object with either the shape { data: <value> } or { error: <value> } that may contain an optional meta property.
     } catch (axiosError) {
       const err = axiosError as AxiosError;
       return {
