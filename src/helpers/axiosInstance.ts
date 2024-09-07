@@ -44,6 +44,10 @@ instance.interceptors.response.use(
     // Any status codes that falls outside the range of 2xx cause this function to trigger
     // Do something with response error
     // console.log(error);
+
+    // ?  Use this bellow line code if we do not want modify error in axios interceptor.
+    // return Promise.reject(error); // ! This line already been comment out previously
+
     console.log("interceptor error ", error?.response);
     // ! comment out if else block and use gpt solution
     // if (error?.response?.status === 403) {
@@ -63,9 +67,6 @@ instance.interceptors.response.use(
     //   };
     //   return responseObject;
     // }
-
-    // ?  Use this bellow line code if we do not want modify error in axios interceptor.
-    // return Promise.reject(error); // ! This line already been comment out previously
 
     return {
       error: {
