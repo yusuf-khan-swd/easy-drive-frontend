@@ -37,19 +37,33 @@ const LoginPage = () => {
     // console.log(values);
     try {
       const result = await login(values).unwrap();
-      console.log(result);
-      if (result?.token) {
-        toast.success(result?.message || "Login Success!!");
-        storeUserInfo({ accessToken: result?.token });
+      console.log({ result });
+      if (result?.data?.token) {
+        storeUserInfo({ accessToken: result?.data?.token });
+        toast.success(result?.data?.message || "Login Success!!");
         router.push("/dashboard");
-      } else {
-        toast.error(result?.message || "login failed");
       }
     } catch (error: any) {
-      setError(error?.message);
-      toast.error(error?.message || "login failed");
       console.log("Error: ", error);
+      setError(error?.data?.message);
+      toast.error(error?.data?.message || "login failed");
     }
+    // ! Below code is for axiosBaseQuery
+    // try {
+    //   const result = await login(values).unwrap();
+    //   console.log(result);
+    //   if (result?.token) {
+    //     toast.success(result?.message || "Login Success!!");
+    //     storeUserInfo({ accessToken: result?.token });
+    //     router.push("/dashboard");
+    //   } else {
+    //     toast.error(result?.message || "login failed");
+    //   }
+    // } catch (error: any) {
+    //   setError(error?.message);
+    //   toast.error(error?.message || "login failed");
+    //   console.log("Error: ", error);
+    // }
   };
 
   return (
