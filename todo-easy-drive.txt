@@ -1,6 +1,7 @@
 
 -------------------- 3:38 PM 9/7/2024
 
+Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
 
 -------------------- 10:33 AM 9/6/2024
 
