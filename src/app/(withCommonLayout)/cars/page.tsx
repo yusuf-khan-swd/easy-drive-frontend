@@ -7,8 +7,8 @@ import { TCar } from "@/types/car";
 import { Box } from "@mui/material";
 
 const Car = () => {
-  const { data, isLoading } = useGetAllCarsQuery(undefined);
-  const cars = data?.data;
+  const { data: cars, isLoading } = useGetAllCarsQuery(undefined);
+  console.log(cars);
 
   if (isLoading) return <LoadingSpinner />;
 
