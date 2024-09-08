@@ -5,10 +5,14 @@ import ReviewForm from "@/components/Common/Review/ReviewForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
+import { getUserInfo } from "@/services/auth.service";
+import { Typography } from "@mui/material";
+import Link from "next/link";
 
 const CarDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   const { data, isLoading } = useGetSingleCarQuery(id || "");
+  const { email } = getUserInfo();
 
   const car = data?.data;
 
@@ -22,7 +26,16 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
           <div className="grid grid-cols-1 gap-8">
             <CarCard car={car} detailsPage />
           </div>
-          <ReviewForm carId={id} />
+          {email ? (
+            <ReviewForm carId={id} />
+          ) : (
+            <Typography component="p" marginTop={3}>
+              Please login to give review{" "}
+              <Link href="/login" className="text-blue-600">
+                Link
+              </Link>
+            </Typography>
+          )}
           <CarReviews carId={id} />
         </>
       ) : (
