@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  useDeleteBookingMutation,
+  useDeleteMyBookingMutation,
   useMyBookingQuery,
 } from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
@@ -32,7 +32,7 @@ const ManageBookings = () => {
   }
 
   const { data, isLoading, isError } = useMyBookingQuery(undefined);
-  const [deleteBooking] = useDeleteBookingMutation();
+  const [deleteBooking] = useDeleteMyBookingMutation();
 
   const bookings = data?.data;
 
