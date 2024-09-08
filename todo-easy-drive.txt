@@ -2,7 +2,7 @@
 -------------------- 3:58 PM 9/8/2024
 
 
-User ManageBookings
+Update Booking For Admin and User own booking update
 
 -------------------- 3:38 PM 9/7/2024
 
