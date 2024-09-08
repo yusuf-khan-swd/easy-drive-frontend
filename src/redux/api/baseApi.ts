@@ -7,5 +7,5 @@ export const baseApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: getBaseUrl() }),
   // baseQuery: axiosBaseQuery({ baseUrl: getBaseUrl() }),
   endpoints: () => ({}),
-  tagTypes: ["car", "booking", "user"],
+  tagTypes: ["car", "booking", "user", "review"],
 });
