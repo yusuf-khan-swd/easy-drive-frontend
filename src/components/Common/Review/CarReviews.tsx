@@ -25,6 +25,7 @@ const CarReviews = ({ carId }: { carId: string }) => {
       {reviews && reviews?.length > 0 ? (
         <div>
           {reviews?.map((review: any) => (
+            // TODO: Create CarReviewCard component show reviews
             <div key={review?.id}>
               <Card sx={{ marginBottom: 2 }}>
                 <CardContent>

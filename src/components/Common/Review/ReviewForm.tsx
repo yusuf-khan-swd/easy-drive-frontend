@@ -103,6 +103,8 @@ const ReviewForm = ({ carId }: { carId: string }) => {
                   fullWidth={true}
                 />
               </Grid>
+
+              {/* TODO: Try to implement Controlled Rating Instead of select*/}
               <Grid size={{ xs: 12 }}>
                 <EasyDriveSelectField
                   items={ratingOptions}
