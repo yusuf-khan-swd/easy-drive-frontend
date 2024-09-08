@@ -1,17 +1,20 @@
 "use client";
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
+import {
+  useGetSingleBookingQuery,
+  useUpdateBookingMutation,
+} from "@/redux/api/bookingApi";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
-
-// TODO: Need update booking api for admin and user
 
 const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
+  const [updateBooking] = useUpdateBookingMutation();
+
   const booking = data?.data;
   const car = booking?.car;
 
@@ -45,13 +48,17 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const bookingData = { carId: _id, date, startTime: startTime };
+        const updateBookingData = {
+          _id: booking?._id,
+          date,
+          startTime: startTime,
+        };
 
-        console.log(bookingData);
-        // const result = await createBooking(bookingData).unwrap();
-        // toast.success(result?.message || "Car Booked Successfully");
+        const result = await updateBooking(updateBookingData).unwrap();
+        toast.success(result?.message || "Booking Updated Successfully");
 
-        // router.push("/dashboard/admin/manage-bookings");
+        router.push("/dashboard/user/manage-bookings");
+        router.push("/dashboard/admin/manage-bookings");
       }
     } catch (error: any) {
       console.log("Error: ", error);

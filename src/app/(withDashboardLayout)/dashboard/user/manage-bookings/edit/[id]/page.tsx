@@ -1,7 +1,10 @@
 "use client";
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
+import {
+  useGetSingleBookingQuery,
+  useUpdateBookingMutation,
+} from "@/redux/api/bookingApi";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -13,6 +16,8 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
+  const [updateBooking] = useUpdateBookingMutation();
+
   const booking = data?.data;
   const car = booking?.car;
 
@@ -22,7 +27,6 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const router = useRouter();
 
   const {
-    _id,
     name,
     description,
     color,
@@ -46,17 +50,20 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const updateBookingData = { date, startTime: startTime };
+        const updateBookingData = {
+          _id: booking?._id,
+          date,
+          startTime: startTime,
+        };
 
-        console.log(updateBookingData);
-        // const result = await createBooking(bookingData).unwrap();
-        // toast.success(result?.message || "Car Booked Successfully");
+        const result = await updateBooking(updateBookingData).unwrap();
+        toast.success(result?.message || "Booking Updated Successfully");
 
-        // router.push("/dashboard/admin/manage-bookings");
+        router.push("/dashboard/user/manage-bookings");
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car Booked failed");
+      toast.error(error?.data?.message || "Booking Updated failed");
     }
   };
 
