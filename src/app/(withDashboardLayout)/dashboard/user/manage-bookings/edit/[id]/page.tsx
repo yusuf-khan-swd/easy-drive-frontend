@@ -46,9 +46,9 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const bookingData = { carId: _id, date, startTime: startTime };
+        const updateBookingData = { date, startTime: startTime };
 
-        console.log(bookingData);
+        console.log(updateBookingData);
         // const result = await createBooking(bookingData).unwrap();
         // toast.success(result?.message || "Car Booked Successfully");
 
