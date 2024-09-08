@@ -22,7 +22,7 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
       ) : (
         <h3 className="text-2xl font-bold text-center">No data available</h3>
       )}
-      <ReviewForm />
+      <ReviewForm carId={id} />
     </div>
   );
 };
