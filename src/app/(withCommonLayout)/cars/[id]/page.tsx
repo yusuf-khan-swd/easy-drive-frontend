@@ -1,5 +1,6 @@
 "use client";
 
+import ReviewForm from "@/components/Common/Review/ReviewForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
@@ -21,6 +22,7 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
       ) : (
         <h3 className="text-2xl font-bold text-center">No data available</h3>
       )}
+      <ReviewForm />
     </div>
   );
 };
