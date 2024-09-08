@@ -18,14 +18,16 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
     <div className="mb-16 mt-4">
       <h2 className="text-2xl font-bold text-center mb-6">Car Details</h2>
       {car ? (
-        <div className="grid grid-cols-1 gap-8">
-          <CarCard car={car} detailsPage />
-        </div>
+        <>
+          <div className="grid grid-cols-1 gap-8">
+            <CarCard car={car} detailsPage />
+          </div>
+          <ReviewForm carId={id} />
+          <CarReviews carId={id} />
+        </>
       ) : (
         <h3 className="text-2xl font-bold text-center">No data available</h3>
       )}
-      <ReviewForm carId={id} />
-      <CarReviews carId={id} />
     </div>
   );
 };
