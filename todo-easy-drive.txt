@@ -1,4 +1,9 @@
 
+-------------------- 3:58 PM 9/8/2024
+
+
+User ManageBookings
+
 -------------------- 3:38 PM 9/7/2024
 
 Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
