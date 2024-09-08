@@ -89,15 +89,17 @@ const ReviewForm = ({ carId }: { carId: string }) => {
                 <EasyDriveInput
                   name="title"
                   label="Title"
-                  type="title"
+                  type="text"
                   fullWidth={true}
                 />
               </Grid>
+
+              {/* TODO: Add textarea Form input for description */}
               <Grid size={{ xs: 12 }}>
                 <EasyDriveInput
                   name="description"
                   label="Description"
-                  type="description"
+                  type="text"
                   fullWidth={true}
                 />
               </Grid>
