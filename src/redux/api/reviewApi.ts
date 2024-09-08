@@ -39,7 +39,7 @@ const reviewApi = baseApi.injectEndpoints({
       providesTags: ["review"],
     }),
 
-    carReviews: builder.mutation({
+    carReviews: builder.query({
       query: (id) => ({
         url: `${REVIEW_URL}/car/${id}`,
         method: "GET",
@@ -47,7 +47,7 @@ const reviewApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["review"],
+      providesTags: ["review"],
     }),
 
     updateReview: builder.mutation({
@@ -81,5 +81,5 @@ export const {
   useGetSingleReviewQuery,
   useUpdateReviewMutation,
   useDeleteReviewMutation,
-  useCarReviewsMutation,
+  useCarReviewsQuery,
 } = reviewApi;
