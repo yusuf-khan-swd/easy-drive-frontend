@@ -63,7 +63,7 @@ const ManageBookings = () => {
       field: "car.status",
       headerName: "Status",
       flex: 1,
-      renderCell: ({ row }) => row.car.status,
+      renderCell: ({ row }) => row?.car?.status,
     },
     { field: "date", headerName: "Date", flex: 1 },
     { field: "startTime", headerName: "StartTime", flex: 1 },
