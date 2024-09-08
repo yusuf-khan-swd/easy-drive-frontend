@@ -22,7 +22,7 @@ const CarReviews = ({ carId }: { carId: string }) => {
       >
         Car Reviews
       </Typography>
-      {reviews ? (
+      {reviews && reviews?.length > 0 ? (
         <div>
           {reviews?.map((review: any) => (
             <div key={review?.id}>
