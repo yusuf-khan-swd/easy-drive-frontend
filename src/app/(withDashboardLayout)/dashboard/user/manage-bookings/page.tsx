@@ -7,7 +7,7 @@ import {
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
-import { Box, IconButton, Stack, TextField } from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Link from "next/link";
 import { useState } from "react";
@@ -88,6 +88,9 @@ const ManageBookings = () => {
               <IconButton aria-label="edit">
                 <EditIcon />
               </IconButton>
+            </Link>
+            <Link href={`/dashboard/user/manage-bookings/return/${row._id}`}>
+              <Button size="small">Return</Button>
             </Link>
           </Box>
         );
