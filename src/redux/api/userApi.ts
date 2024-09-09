@@ -28,6 +28,17 @@ const userApi = baseApi.injectEndpoints({
       providesTags: ["user"],
     }),
 
+    getSingleUser: builder.query({
+      query: (id) => ({
+        url: `${USER_URL}/${id}`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
+        },
+      }),
+      providesTags: ["user"],
+    }),
+
     updateUser: builder.mutation({
       query: (userData) => ({
         url: `${USER_URL}/${userData._id}`,
@@ -58,4 +69,5 @@ export const {
   useGetAllUsersQuery,
   useDeleteUserMutation,
   useUpdateUserMutation,
+  useGetSingleUserQuery,
 } = userApi;
