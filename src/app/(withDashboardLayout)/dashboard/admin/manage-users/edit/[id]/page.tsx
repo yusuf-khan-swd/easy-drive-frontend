@@ -3,14 +3,17 @@
 import logo from "@/assets/logo.png";
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
-import { useSignupMutation } from "@/redux/api/authApi";
+import LoadingSpinner from "@/components/Shared/LoadingSpinner";
+import {
+  useGetSingleUserQuery,
+  useUpdateUserMutation,
+} from "@/redux/api/userApi";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -24,54 +27,45 @@ const validationSchema = z.object({
 
 const UpdateUser = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  // const { data, isLoading } = useGetSingleUserQuery(id || "");
-  // const user = data?.data;
-
   const router = useRouter();
+  const { data, isLoading } = useGetSingleUserQuery(id || "");
 
-  const [defaultValues, setDefaultValues] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    address: "",
-  });
+  const user = data?.data;
 
-  const [updateUser, { isLoading }] = useSignupMutation();
+  const defaultValues = {
+    name: user?.name || "abc",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    address: user?.address || "",
+  };
+
+  const [updateUser] = useUpdateUserMutation();
 
   const handleUpdateUser = async (values: FieldValues) => {
-    console.log(values);
+    // console.log(values);
     try {
-      // const result = await updateUser(values).unwrap();
-      // if (result?.data?._id) {
-      //   toast.success(result?.message || "Registration Success");
-      //   router.push("/dashboard/admin/manage-users");
-      // }
+      const updatedUserData = { ...values, _id: id };
+      const result = await updateUser(updatedUserData).unwrap();
+      console.log({ result });
+      if (result?.data?._id) {
+        toast.success(result?.message || "Update User Success");
+        router.push("/dashboard/admin/manage-users");
+      }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Registration failed");
+      toast.error(error?.data?.message || "Update User failed");
     }
   };
 
-  // useEffect(() => {
-  //   if (!isLoading && user) {
-  //     setDefaultValues({
-  //       name: user?.name || "",
-  //       email: user?.email || "",
-  //       phone: user?.phone || "",
-  //       address: user?.address || "",
-  //     });
-  //   }
-  // }, [isLoading, user]);
-
-  // if (isLoading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <Container>
       <Stack
         sx={{
-          height: "100vh",
           justifyContent: "center",
           alignItems: "center",
+          my: 4,
         }}
       >
         <Box
@@ -96,11 +90,9 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
               </Link>
             </Box>
             <Box>
-              <Link href="/">
-                <Typography variant="h6" fontWeight={600}>
-                  Update User
-                </Typography>
-              </Link>
+              <Typography variant="h6" fontWeight={600}>
+                Update User
+              </Typography>
             </Box>
           </Stack>
 
