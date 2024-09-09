@@ -10,7 +10,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return router.push("/login");
   }
 
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 export default DashboardLayout;
