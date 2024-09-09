@@ -70,7 +70,7 @@ const ManageBookings = () => {
     {
       field: "action",
       headerName: "Action",
-      flex: 2,
+      flex: 3,
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
@@ -89,6 +89,11 @@ const ManageBookings = () => {
             </Link>
             <Link href={`/dashboard/user/manage-bookings/return/${row._id}`}>
               <Button size="small">Return</Button>
+            </Link>
+            <Link href={`/dashboard/user/manage-bookings/order/${row._id}`}>
+              <Button size="small" color="success">
+                Pay
+              </Button>
             </Link>
           </Box>
         );
@@ -109,7 +114,7 @@ const ManageBookings = () => {
       {isError ? (
         <h2>No Data Available</h2>
       ) : (
-        <Box sx={{ my: 2, minWidth: "840px" }}>
+        <Box sx={{ my: 2, minWidth: "940px" }}>
           <DataGrid
             rows={bookings}
             columns={columns}
