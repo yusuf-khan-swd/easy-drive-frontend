@@ -72,7 +72,7 @@ const ManageBookings = () => {
     {
       field: "action",
       headerName: "Action",
-      flex: 3,
+      flex: 2,
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
