@@ -1,6 +1,8 @@
 
 -------------------- 9:38 AM 9/9/2024
 
+Done - Payment integration successfully
+
 Done - return car for user
 
 Done - UserProfile api slice, UserProfile Page with form, Update UserProfile
