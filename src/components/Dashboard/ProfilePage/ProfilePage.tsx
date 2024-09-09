@@ -7,7 +7,7 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -22,7 +22,6 @@ import { getUserInfo } from "@/services/auth.service";
 export const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
-  password: z.string().min(6, "Must be at least 6 characters"),
   phone: z.string().optional(),
   address: z.string().optional(),
 });
@@ -35,14 +34,13 @@ const ProfilePage = () => {
   const user = data?.data;
 
   const [defaultValues, setDefaultValues] = useState({
-    name: "",
-    email: "",
-    password: "",
-    phone: "",
-    address: "",
+    name: user?.name || "",
+    email: user?.email || "",
+    phone: user?.phone || "",
+    address: user?.address || "",
   });
 
-  console.log(data);
+  console.log(user);
 
   const handleSubmit = async (values: FieldValues) => {
     console.log(values);
@@ -57,6 +55,17 @@ const ProfilePage = () => {
       toast.error(error?.data?.message || "Registration failed");
     }
   };
+
+  useEffect(() => {
+    if (!isLoading && user) {
+      setDefaultValues({
+        name: user?.name || "",
+        email: user?.email || "",
+        phone: user?.phone || "",
+        address: user?.address || "",
+      });
+    }
+  }, [isLoading, user]);
 
   if (isLoading) return <LoadingSpinner />;
 
@@ -116,21 +125,13 @@ const ProfilePage = () => {
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
                 <EasyDriveInput
-                  label="Password"
-                  type="password"
-                  fullWidth={true}
-                  name="password"
-                />
-              </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
-                <EasyDriveInput
                   label="Contact Number"
                   type="tel"
                   fullWidth={true}
                   name="phone"
                 />
               </Grid>
-              <Grid size={{ xs: 12, md: 6 }}>
+              <Grid size={{ xs: 12, md: 12 }}>
                 <EasyDriveInput
                   label="Address"
                   fullWidth={true}
