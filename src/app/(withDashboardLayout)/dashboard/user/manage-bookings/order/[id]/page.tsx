@@ -2,7 +2,7 @@
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
-import { useReturnCarMutation } from "@/redux/api/carApi";
+import { useCreateOrderMutation } from "@/redux/api/orderApi";
 import { getUserInfo } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
@@ -12,12 +12,10 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   const { userId } = getUserInfo();
 
-  const [returnCar] = useReturnCarMutation();
+  const [createOrder] = useCreateOrderMutation();
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
   const booking = data?.data;
   const car = booking?.car;
-
-  console.log(booking);
 
   const [date, setDate] = useState(booking?.date || "");
   const [endTime, setEndTime] = useState(booking?.endTime || "");
@@ -56,10 +54,15 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
           booking: booking?._id,
           totalCost: booking?.totalCost,
         };
-        console.log({ bookingData });
+        // console.log({ bookingData });
 
-        // const result = await returnCar(bookingData).unwrap();
-        // toast.success(result?.message || "Car return Successfully");
+        const result = await createOrder(bookingData).unwrap();
+        if (result?.success) {
+          toast.success(result?.message || "Order Successfully");
+          window.location.href = result?.data?.payment_url;
+        } else {
+          toast.error(result?.message || "Order Failed");
+        }
 
         // router.push("/dashboard/user/manage-bookings");
       }
