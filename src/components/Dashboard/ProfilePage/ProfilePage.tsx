@@ -61,98 +61,97 @@ const ProfilePage = () => {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <div>
-      <Stack
+    <Stack
+      sx={{
+        justifyContent: "center",
+        alignItems: "center",
+        my: 4,
+      }}
+    >
+      <Box
         sx={{
-          justifyContent: "center",
-          alignItems: "center",
+          maxWidth: 600,
+          width: "100%",
+          boxShadow: 1,
+          borderRadius: 1,
+          p: 4,
+          textAlign: "center",
         }}
       >
-        <Box
+        <Stack
           sx={{
-            maxWidth: 600,
-            width: "100%",
-            boxShadow: 1,
-            borderRadius: 1,
-            p: 4,
-            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          <Stack
-            sx={{
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Box>
-              <Link href="/">
-                <Image src={logo} width={50} height={50} alt="logo" />
-              </Link>
-            </Box>
-            <Box>
-              <Typography variant="h6" fontWeight={600}>
-                Profile Page
-              </Typography>
-            </Box>
-          </Stack>
-
           <Box>
-            <EasyDriveForm
-              onSubmit={handleSubmit}
-              resolver={zodResolver(validationSchema)}
-              defaultValues={defaultValues}
-            >
-              <Grid container spacing={2} my={1}>
-                <Grid size={{ xs: 12, md: 12 }}>
-                  <EasyDriveInput label="Name" fullWidth={true} name="name" />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <EasyDriveInput
-                    label="Email"
-                    type="email"
-                    fullWidth={true}
-                    name="email"
-                  />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <EasyDriveInput
-                    label="Password"
-                    type="password"
-                    fullWidth={true}
-                    name="password"
-                  />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <EasyDriveInput
-                    label="Contact Number"
-                    type="tel"
-                    fullWidth={true}
-                    name="phone"
-                  />
-                </Grid>
-                <Grid size={{ xs: 12, md: 6 }}>
-                  <EasyDriveInput
-                    label="Address"
-                    fullWidth={true}
-                    name="address"
-                  />
-                </Grid>
-              </Grid>
-
-              <Button
-                sx={{
-                  margin: "10px 0px",
-                }}
-                fullWidth={true}
-                type="submit"
-              >
-                Update
-              </Button>
-            </EasyDriveForm>
+            <Link href="/">
+              <Image src={logo} width={50} height={50} alt="logo" />
+            </Link>
           </Box>
+          <Box>
+            <Typography variant="h6" fontWeight={600}>
+              Profile Page
+            </Typography>
+          </Box>
+        </Stack>
+
+        <Box>
+          <EasyDriveForm
+            onSubmit={handleSubmit}
+            resolver={zodResolver(validationSchema)}
+            defaultValues={defaultValues}
+          >
+            <Grid container spacing={2} my={1}>
+              <Grid size={{ xs: 12, md: 12 }}>
+                <EasyDriveInput label="Name" fullWidth={true} name="name" />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <EasyDriveInput
+                  label="Email"
+                  type="email"
+                  fullWidth={true}
+                  name="email"
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <EasyDriveInput
+                  label="Password"
+                  type="password"
+                  fullWidth={true}
+                  name="password"
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <EasyDriveInput
+                  label="Contact Number"
+                  type="tel"
+                  fullWidth={true}
+                  name="phone"
+                />
+              </Grid>
+              <Grid size={{ xs: 12, md: 6 }}>
+                <EasyDriveInput
+                  label="Address"
+                  fullWidth={true}
+                  name="address"
+                />
+              </Grid>
+            </Grid>
+
+            <Button
+              sx={{
+                margin: "10px 0px",
+              }}
+              fullWidth={true}
+              type="submit"
+            >
+              Update
+            </Button>
+          </EasyDriveForm>
         </Box>
-      </Stack>
-    </div>
+      </Box>
+    </Stack>
   );
 };
 
