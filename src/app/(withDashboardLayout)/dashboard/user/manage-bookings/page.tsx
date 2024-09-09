@@ -1,5 +1,6 @@
 "use client";
 
+import { PAYMENT_STATUS } from "@/constants/global";
 import {
   useDeleteMyBookingMutation,
   useMyBookingQuery,
@@ -77,6 +78,8 @@ const ManageBookings = () => {
       renderCell: ({ row }) => {
         const id = row._id;
         const totalCost = row.totalCost;
+        const paymentStatus = row?.paymentStatus;
+        const isPaid = paymentStatus === PAYMENT_STATUS.Paid;
 
         return (
           <Box>
@@ -90,7 +93,7 @@ const ManageBookings = () => {
             </Link>
             {totalCost ? (
               <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
-                <Button size="small" color="success">
+                <Button size="small" color="success" disabled={isPaid}>
                   Payment
                 </Button>
               </Link>
