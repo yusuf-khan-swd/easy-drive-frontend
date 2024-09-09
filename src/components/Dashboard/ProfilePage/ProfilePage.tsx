@@ -7,7 +7,6 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -33,14 +32,12 @@ const ProfilePage = () => {
 
   const user = data?.data;
 
-  const [defaultValues, setDefaultValues] = useState({
+  const defaultValues = {
     name: user?.name || "",
     email: user?.email || "",
     phone: user?.phone || "",
     address: user?.address || "",
-  });
-
-  console.log(user);
+  };
 
   const handleSubmit = async (values: FieldValues) => {
     console.log(values);
@@ -55,17 +52,6 @@ const ProfilePage = () => {
       toast.error(error?.data?.message || "Registration failed");
     }
   };
-
-  useEffect(() => {
-    if (!isLoading && user) {
-      setDefaultValues({
-        name: user?.name || "",
-        email: user?.email || "",
-        phone: user?.phone || "",
-        address: user?.address || "",
-      });
-    }
-  }, [isLoading, user]);
 
   if (isLoading) return <LoadingSpinner />;
 
