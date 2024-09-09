@@ -3,7 +3,7 @@ import UserProfile from "./profile/page";
 const User = () => {
   return (
     <div>
-      <UserProfile />l{" "}
+      <UserProfile />
     </div>
   );
 };
