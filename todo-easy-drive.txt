@@ -1,4 +1,8 @@
 
+-------------------- 9:38 AM 9/9/2024
+
+Done - UserProfile api slice, UserProfile Page with form, Update UserProfile
+
 -------------------- 3:58 PM 9/8/2024
 
 Done - Reviews. ReviewApi slice, ReviewForm for submitting review and show Car Reviews in Card and Hide review form from guest user 
