@@ -92,11 +92,11 @@ const ManageBookings = () => {
               </IconButton>
             </Link>
             {totalCost ? (
-              <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
-                <Button size="small" color="success" disabled={isPaid}>
+              <Button size="small" color="success" disabled={isPaid}>
+                <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
                   Payment
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             ) : (
               <Link href={`/dashboard/user/manage-bookings/return/${id}`}>
                 <Button size="small">Return</Button>
