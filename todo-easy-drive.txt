@@ -25,9 +25,9 @@ Done - Change Password page design
 
 Done - Forgot Password page design
 
-Create getSingleUser api 
+Done - Create getSingleUser api for admin
 
-Add UpdateUserPage functionality after api is done 
+Done - both page and api. Add UpdateUserPage functionality after api is done 
 
 -------------------- 11:27 AM 9/5/2024, th
 
@@ -59,11 +59,11 @@ Done - Update Car from previous project
 
 Done - Create Car from previous project
 
-Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
+Done - Create Profile Module in Backend and use this module to show Profile Data take inspiration from renovator project
 
-Create Booking update api in server for admin and user
+Done - Create Booking update api in server for admin and user
 
-Create Get single booking api for user
+Done - Create Get single booking api for both user and admin
 
 ------------------- 
 Done - Secure Dashboard Layouts using user role
