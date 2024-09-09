@@ -17,6 +17,7 @@ import {
   useUpdateUserProfileMutation,
 } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
+import { useRouter } from "next/navigation";
 
 export const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
@@ -27,12 +28,15 @@ export const validationSchema = z.object({
 
 const ProfilePage = () => {
   const { userId } = getUserInfo();
+  const router = useRouter();
+
   const { data, isLoading } = useGetUserProfileQuery(userId);
-  const [updateProfile] = useUpdateUserProfileMutation();
+  const [updateProfile, { isLoading: updateProfileLoading }] =
+    useUpdateUserProfileMutation();
 
   const user = data?.data;
 
-  const defaultValues = {
+  let defaultValues = {
     name: user?.name || "",
     email: user?.email || "",
     phone: user?.phone || "",
@@ -40,20 +44,22 @@ const ProfilePage = () => {
   };
 
   const handleSubmit = async (values: FieldValues) => {
-    console.log(values);
+    // console.log(values);
     try {
-      // const result = await updateProfile(values).unwrap();
+      const updatedProfileData = { ...values, _id: userId };
+      const result = await updateProfile(updatedProfileData).unwrap();
       // console.log({ result });
-      // if (result?.data?._id) {
-      //   toast.success(result?.message);
-      // }
+      if (result?.data?._id) {
+        toast.success(result?.message || "Profile Update Success");
+      }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Registration failed");
+      toast.error(error?.data?.message || "Profile Update failed");
     }
   };
 
   if (isLoading) return <LoadingSpinner />;
+  if (updateProfileLoading) return router.refresh();
 
   return (
     <Stack
