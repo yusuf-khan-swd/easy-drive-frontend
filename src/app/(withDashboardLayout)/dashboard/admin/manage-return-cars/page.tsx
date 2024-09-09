@@ -72,6 +72,7 @@ const ManageReturnCar = () => {
     { field: "startTime", headerName: "StartTime", flex: 1 },
     { field: "endTime", headerName: "EndTime", flex: 1 },
     { field: "totalCost", headerName: "TotalCost", flex: 1 },
+    { field: "paymentStatus", headerName: "Payment", flex: 1 },
     {
       field: "action",
       headerName: "Action",
