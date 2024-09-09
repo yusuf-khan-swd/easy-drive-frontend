@@ -76,6 +76,7 @@ const ManageBookings = () => {
       align: "center",
       renderCell: ({ row }) => {
         const id = row._id;
+        const totalCost = row.totalCost;
 
         return (
           <Box>
@@ -87,14 +88,17 @@ const ManageBookings = () => {
                 <EditIcon />
               </IconButton>
             </Link>
-            <Link href={`/dashboard/user/manage-bookings/return/${id}`}>
-              <Button size="small">Return</Button>
-            </Link>
-            <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
-              <Button size="small" color="success">
-                Pay
-              </Button>
-            </Link>
+            {totalCost ? (
+              <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
+                <Button size="small" color="success">
+                  Payment
+                </Button>
+              </Link>
+            ) : (
+              <Link href={`/dashboard/user/manage-bookings/return/${id}`}>
+                <Button size="small">Return</Button>
+              </Link>
+            )}
           </Box>
         );
       },
