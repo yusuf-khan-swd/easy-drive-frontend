@@ -13,9 +13,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
-// *  TODO: Delete booking operation can't be done because I think it is only admin route.
-// *  So in backend check role if it admin then delete operation can done directly.
-// *  if role is the user then check booking user is same if true then delete operation can be permitted
+//   TODO: I think Delete booking operation should be remove for both user and admin
 
 const ManageBookings = () => {
   const query: Record<string, any> = {};

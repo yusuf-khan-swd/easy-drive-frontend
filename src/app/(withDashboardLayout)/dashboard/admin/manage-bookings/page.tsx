@@ -13,6 +13,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
+//   TODO: I think Delete booking operation should be remove for both user and admin
+
 const ManageBookings = () => {
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
