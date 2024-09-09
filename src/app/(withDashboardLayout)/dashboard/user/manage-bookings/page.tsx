@@ -67,6 +67,7 @@ const ManageBookings = () => {
     { field: "startTime", headerName: "StartTime", flex: 1 },
     { field: "endTime", headerName: "EndTime", flex: 1 },
     { field: "totalCost", headerName: "TotalCost", flex: 1 },
+    { field: "paymentStatus", headerName: "Payment", flex: 1 },
     {
       field: "action",
       headerName: "Action",
@@ -74,23 +75,22 @@ const ManageBookings = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
+        const id = row._id;
+
         return (
           <Box>
-            <IconButton
-              onClick={() => handleDelete(row._id)}
-              aria-label="delete"
-            >
+            <IconButton onClick={() => handleDelete(id)} aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Link href={`/dashboard/user/manage-bookings/edit/${row._id}`}>
+            <Link href={`/dashboard/user/manage-bookings/edit/${id}`}>
               <IconButton aria-label="edit">
                 <EditIcon />
               </IconButton>
             </Link>
-            <Link href={`/dashboard/user/manage-bookings/return/${row._id}`}>
+            <Link href={`/dashboard/user/manage-bookings/return/${id}`}>
               <Button size="small">Return</Button>
             </Link>
-            <Link href={`/dashboard/user/manage-bookings/order/${row._id}`}>
+            <Link href={`/dashboard/user/manage-bookings/order/${id}`}>
               <Button size="small" color="success">
                 Pay
               </Button>
