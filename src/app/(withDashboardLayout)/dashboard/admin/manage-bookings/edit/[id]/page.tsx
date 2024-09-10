@@ -57,7 +57,6 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
         const result = await updateBooking(updateBookingData).unwrap();
         toast.success(result?.message || "Booking Updated Successfully");
 
-        router.push("/dashboard/user/manage-bookings");
         router.push("/dashboard/admin/manage-bookings");
       }
     } catch (error: any) {
