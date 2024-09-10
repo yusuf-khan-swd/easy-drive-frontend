@@ -3,9 +3,9 @@
 import MultiSelectChip from "@/components/Forms/MultiSelectChip";
 import { featureOptions } from "@/constants/global";
 import { useCreateCarMutation } from "@/redux/api/carApi";
+import Grid from "@mui/material/Grid2";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
-
 interface CreateCarFormData {
   name: string;
   description: string;
@@ -114,120 +114,124 @@ const CreateCar = () => {
         onSubmit={handleSubmit}
       >
         <h2 className="text-2xl font-bold mb-6 text-center">Add New Car</h2>
+        <Grid container spacing={2} my={1}>
+          {/* Name */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <label htmlFor="name" className="block text-gray-700">
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
+                errors.name ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.name && (
+              <p className="text-red-500 text-xs">{errors.name}</p>
+            )}
+          </Grid>
 
-        {/* Name */}
-        <div className="mb-4">
-          <label htmlFor="name" className="block text-gray-700">
-            Name
-          </label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.name ? "border-red-500" : "border-gray-300"
-            }`}
-          />
-          {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
-        </div>
+          {/* Price Per Hour */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <label htmlFor="pricePerHour" className="block text-gray-700">
+              PricePerHour
+            </label>
+            <input
+              type="number"
+              id="pricePerHour"
+              name="pricePerHour"
+              value={formData.pricePerHour}
+              onChange={handleChange}
+              className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
+                errors.pricePerHour ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.pricePerHour && (
+              <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
+            )}
+          </Grid>
 
-        {/* Price Per Hour */}
-        <div className="mb-4">
-          <label htmlFor="pricePerHour" className="block text-gray-700">
-            Price Per Hour
-          </label>
-          <input
-            type="number"
-            id="pricePerHour"
-            name="pricePerHour"
-            value={formData.pricePerHour}
-            onChange={handleChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.pricePerHour ? "border-red-500" : "border-gray-300"
-            }`}
-          />
-          {errors.pricePerHour && (
-            <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
-          )}
-        </div>
+          {/* Color */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <label htmlFor="color" className="block text-gray-700">
+              Color
+            </label>
+            <input
+              type="text"
+              id="color"
+              name="color"
+              value={formData.color}
+              onChange={handleChange}
+              className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
+                errors.color ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.color && (
+              <p className="text-red-500 text-xs">{errors.color}</p>
+            )}
+          </Grid>
 
-        {/* Color */}
-        <div className="mb-4">
-          <label htmlFor="color" className="block text-gray-700">
-            Color
-          </label>
-          <input
-            type="text"
-            id="color"
-            name="color"
-            value={formData.color}
-            onChange={handleChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.color ? "border-red-500" : "border-gray-300"
-            }`}
-          />
-          {errors.color && (
-            <p className="text-red-500 text-xs">{errors.color}</p>
-          )}
-        </div>
+          {/* Is Electric */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <input
+              type="checkbox"
+              id="isElectric"
+              name="isElectric"
+              checked={formData.isElectric}
+              onChange={handleChange}
+              className="mt-1"
+            />
+            <label htmlFor="isElectric" className="block text-gray-700">
+              Electric Car
+            </label>
+          </Grid>
 
-        {/* Is Electric */}
-        <div className="mb-4 flex space-x-1">
-          <input
-            type="checkbox"
-            id="isElectric"
-            name="isElectric"
-            checked={formData.isElectric}
-            onChange={handleChange}
-            className="mt-1"
-          />
-          <label htmlFor="isElectric" className="block text-gray-700">
-            Electric Car
-          </label>
-        </div>
+          {/* Features */}
 
-        {/* Description */}
-        <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700">
-            Description
-          </label>
-          <input
-            type="text"
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.description ? "border-red-500" : "border-gray-300"
-            }`}
-          />
-          {errors.description && (
-            <p className="text-red-500 text-xs">{errors.description}</p>
-          )}
-        </div>
+          <Grid size={{ xs: 12, md: 12 }}>
+            <MultiSelectChip
+              selectOptions={featureOptions}
+              state={carFeatures}
+              setState={setCarFeatures}
+            />
 
-        {/* Features */}
+            {errors.features && (
+              <p className="text-red-500 text-xs">{errors.features}</p>
+            )}
+          </Grid>
 
-        <div className="mb-4">
-          <MultiSelectChip
-            selectOptions={featureOptions}
-            state={carFeatures}
-            setState={setCarFeatures}
-          />
+          {/* Description */}
+          <Grid size={{ xs: 12, md: 12 }}>
+            <label htmlFor="description" className="block text-gray-700">
+              Description
+            </label>
+            <input
+              type="text"
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
+                errors.description ? "border-red-500" : "border-gray-300"
+              }`}
+            />
+            {errors.description && (
+              <p className="text-red-500 text-xs">{errors.description}</p>
+            )}
+          </Grid>
 
-          {errors.features && (
-            <p className="text-red-500 text-xs">{errors.features}</p>
-          )}
-        </div>
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-        >
-          Add
-        </button>
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+          >
+            Add
+          </button>
+        </Grid>
       </form>
     </div>
   );
