@@ -1,4 +1,8 @@
 
+-------------------- 10:20 AM 9/10/2024
+
+Done - toggle between profile update button display or hide
+
 -------------------- 9:38 AM 9/9/2024
 
 Done - Payment integration successfully
