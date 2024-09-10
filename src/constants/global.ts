@@ -5,3 +5,14 @@ export const PAYMENT_STATUS = {
   Paid: "Paid",
   Failed: "Failed",
 };
+
+export const featureOptions = [
+  "Air Conditioning",
+  "GPS",
+  "Bluetooth",
+  "Heated Seats",
+  "Sunroof",
+  "Rear Camera",
+  "Cruise Control",
+  "Leather Seats",
+];
