@@ -55,14 +55,12 @@ const PaymentStatusPage = ({ searchParams }: PropTypes) => {
           </Typography>
           {status === "success" && (
             <Button size="small" variant="outlined">
-              <Link href="/dashboard/patient/appointments">
-                Go To Dashboard
-              </Link>
+              <Link href="/dashboard">Go To Dashboard</Link>
             </Button>
           )}
           {status !== "success" && (
             <Button size="small" variant="outlined">
-              <Link href="/doctors">Book Again</Link>
+              <Link href="/cars">Book Again</Link>
             </Button>
           )}
         </Stack>
