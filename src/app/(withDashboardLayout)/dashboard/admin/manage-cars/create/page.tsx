@@ -1,5 +1,6 @@
 "use client";
 
+import { featureOptions } from "@/constants/global";
 import { useCreateCarMutation } from "@/redux/api/carApi";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
@@ -202,14 +203,11 @@ const CreateCar = () => {
               errors.features ? "border-red-500" : "border-gray-300"
             }`}
           >
-            <option value="Air Conditioning">Air Conditioning</option>
-            <option value="GPS">GPS</option>
-            <option value="Bluetooth">Bluetooth</option>
-            <option value="Heated Seats">Heated Seats</option>
-            <option value="Sunroof">Sunroof</option>
-            <option value="Rear Camera">Rear Camera</option>
-            <option value="Cruise Control">Cruise Control</option>
-            <option value="Leather Seats">Leather Seats</option>
+            {featureOptions.map((feature, index) => (
+              <option key={index} value={feature}>
+                {feature}
+              </option>
+            ))}
           </select>
 
           {errors.features && (
