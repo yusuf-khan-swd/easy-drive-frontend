@@ -105,26 +105,6 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
       );
       break;
 
-    case USER_ROLE.DOCTOR:
-      roleMenus.push(
-        {
-          title: "Dashboard",
-          path: `${role}`,
-          icon: DashboardIcon,
-        },
-        {
-          title: "Schedules",
-          path: `${role}/schedules`,
-          icon: CalendarMonthIcon,
-        },
-        {
-          title: "Appointments",
-          path: `${role}/appointment`,
-          icon: BookOnlineIcon,
-        }
-      );
-      break;
-
     default:
       break;
   }
