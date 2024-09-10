@@ -108,7 +108,7 @@ const CreateCar = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center h-screen">
       <form
         className="bg-white border p-8 rounded shadow-md w-full max-w-2xl"
         onSubmit={handleSubmit}
