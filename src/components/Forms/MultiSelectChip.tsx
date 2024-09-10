@@ -46,7 +46,7 @@ const MultiSelectChip = ({ selectOptions, state, setState }: ISelectProps) => {
   };
 
   return (
-    <FormControl sx={{ m: 1, width: 300 }}>
+    <FormControl sx={{ marginBottom: 1, width: "100%" }}>
       <InputLabel id="demo-multiple-chip-label">Features</InputLabel>
       <Select
         labelId="demo-multiple-chip-label"
