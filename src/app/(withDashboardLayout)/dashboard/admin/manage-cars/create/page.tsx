@@ -180,19 +180,26 @@ const CreateCar = () => {
           </Grid>
 
           {/* Is Electric */}
-          <Grid size={{ xs: 12, md: 6 }}>
-            <FormGroup>
-              <FormControlLabel
-                control={
-                  <Checkbox
-                    name="isElectric"
-                    checked={formData.isElectric}
-                    onChange={handleChange}
-                  />
-                }
-                label="Label"
-              />
-            </FormGroup>
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            sx={{
+              alignContent: "end",
+            }}
+          >
+            <div className="border border-gray-300 rounded-md shadow-sm">
+              <FormGroup sx={{ marginLeft: 1 }}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      name="isElectric"
+                      checked={formData.isElectric}
+                      onChange={handleChange}
+                    />
+                  }
+                  label="Electric Car"
+                />
+              </FormGroup>
+            </div>
           </Grid>
 
           {/* Features */}
