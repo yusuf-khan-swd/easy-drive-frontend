@@ -10,7 +10,6 @@ import GroupIcon from "@mui/icons-material/Group";
 import KeyIcon from "@mui/icons-material/Key";
 import PersonIcon from "@mui/icons-material/Person";
 import ReviewsIcon from "@mui/icons-material/Reviews";
-import TryIcon from "@mui/icons-material/Try";
 
 export const drawerItems = (role: TUserRole): DrawerItem[] => {
   const roleMenus: DrawerItem[] = [];
@@ -36,11 +35,11 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           path: `${role}`,
           icon: DashboardIcon,
         },
-        {
-          title: "Car Type",
-          path: `${role}/manage-car-type`,
-          icon: TryIcon,
-        },
+        // {
+        //   title: "Car Type",
+        //   path: `${role}/manage-car-type`,
+        //   icon: TryIcon,
+        // },
         {
           title: "Cars",
           path: `${role}/manage-cars`,
