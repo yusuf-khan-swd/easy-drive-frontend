@@ -6,6 +6,13 @@ import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
+import MultiSelectChip from "@/components/Forms/MultiSelectChip";
+import { featureOptions } from "@/constants/global";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
+import Grid from "@mui/material/Grid2";
+
 interface UpdateCarFormData {
   name: string;
   description: string;
@@ -21,6 +28,7 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
 
   const { data, isLoading } = useGetSingleCarQuery(id || "");
   const [updateCar] = useUpdateCarMutation();
+  const [carFeatures, setCarFeatures] = useState<string[]>([]);
 
   const car = data?.data;
 
@@ -55,17 +63,6 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
     }
   };
 
-  const handleFeaturesChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedFeatures = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setFormData((prevData) => ({
-      ...prevData,
-      features: selectedFeatures,
-    }));
-  };
-
   const validate = (): boolean => {
     const newErrors: { [key: string]: string } = {};
 
@@ -85,11 +82,13 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        console.log("Form submitted:", formData);
+        // console.log("Form submitted:", formData);
+
         const { pricePerHour } = formData;
         const carData = {
           ...formData,
           pricePerHour: Number(pricePerHour),
+          features: carFeatures,
           _id: car?._id,
         };
 
@@ -113,22 +112,22 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
         features: car?.features || [],
         pricePerHour: car?.pricePerHour || 0,
       });
+      setCarFeatures(car?.features || []);
     }
   }, [isLoading, car]);
 
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <div>
-      <div className="flex items-center justify-center">
-        <form
-          className="bg-white border p-8 rounded shadow-md w-full max-w-md"
-          onSubmit={handleSubmit}
-        >
-          <h2 className="text-2xl font-bold mb-6 text-center">Update Car</h2>
-
+    <div className="flex items-center justify-center h-screen">
+      <form
+        className="bg-white border p-8 rounded shadow-md w-full max-w-2xl"
+        onSubmit={handleSubmit}
+      >
+        <h2 className="text-2xl font-bold mb-6 text-center">Update Car</h2>
+        <Grid container spacing={2} my={1}>
           {/* Name */}
-          <div className="mb-4">
+          <Grid size={{ xs: 12, md: 6 }}>
             <label htmlFor="name" className="block text-gray-700">
               Name
             </label>
@@ -145,30 +144,30 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
             {errors.name && (
               <p className="text-red-500 text-xs">{errors.name}</p>
             )}
-          </div>
+          </Grid>
 
-          {/* Description */}
-          <div className="mb-4">
-            <label htmlFor="description" className="block text-gray-700">
-              Description
+          {/* Price Per Hour */}
+          <Grid size={{ xs: 12, md: 6 }}>
+            <label htmlFor="pricePerHour" className="block text-gray-700">
+              PricePerHour
             </label>
             <input
-              type="text"
-              id="description"
-              name="description"
-              value={formData.description}
+              type="number"
+              id="pricePerHour"
+              name="pricePerHour"
+              value={formData.pricePerHour}
               onChange={handleChange}
               className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-                errors.description ? "border-red-500" : "border-gray-300"
+                errors.pricePerHour ? "border-red-500" : "border-gray-300"
               }`}
             />
-            {errors.description && (
-              <p className="text-red-500 text-xs">{errors.description}</p>
+            {errors.pricePerHour && (
+              <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
             )}
-          </div>
+          </Grid>
 
           {/* Color */}
-          <div className="mb-4">
+          <Grid size={{ xs: 12, md: 6 }}>
             <label htmlFor="color" className="block text-gray-700">
               Color
             </label>
@@ -185,72 +184,64 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
             {errors.color && (
               <p className="text-red-500 text-xs">{errors.color}</p>
             )}
-          </div>
+          </Grid>
 
           {/* Is Electric */}
-          <div className="mb-4 flex space-x-1">
-            <input
-              type="checkbox"
-              id="isElectric"
-              name="isElectric"
-              checked={formData.isElectric}
-              onChange={handleChange}
-              className="mt-1"
-            />
-            <label htmlFor="isElectric" className="block text-gray-700">
-              Electric Car
-            </label>
-          </div>
+          <Grid
+            size={{ xs: 12, md: 6 }}
+            sx={{
+              alignContent: "end",
+            }}
+          >
+            <div className="border border-gray-300 rounded-md shadow-sm">
+              <FormGroup sx={{ marginLeft: 1 }}>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      name="isElectric"
+                      checked={formData.isElectric}
+                      onChange={handleChange}
+                    />
+                  }
+                  label="Electric Car"
+                />
+              </FormGroup>
+            </div>
+          </Grid>
 
           {/* Features */}
-          <div className="mb-4">
-            <label htmlFor="features" className="block text-gray-700">
-              Features
-            </label>
-            <select
-              id="features"
-              name="features"
-              multiple
-              value={formData.features}
-              onChange={handleFeaturesChange}
-              className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-                errors.features ? "border-red-500" : "border-gray-300"
-              }`}
-            >
-              <option value="Air Conditioning">Air Conditioning</option>
-              <option value="GPS">GPS</option>
-              <option value="Bluetooth">Bluetooth</option>
-              <option value="Heated Seats">Heated Seats</option>
-              <option value="Sunroof">Sunroof</option>
-              <option value="Rear Camera">Rear Camera</option>
-              <option value="Cruise Control">Cruise Control</option>
-              <option value="Leather Seats">Leather Seats</option>
-            </select>
+
+          <Grid size={{ xs: 12, md: 12 }}>
+            <MultiSelectChip
+              selectOptions={featureOptions}
+              state={carFeatures}
+              setState={setCarFeatures}
+            />
 
             {errors.features && (
               <p className="text-red-500 text-xs">{errors.features}</p>
             )}
-          </div>
+          </Grid>
 
-          {/* Price Per Hour */}
-          <div className="mb-4">
-            <label htmlFor="pricePerHour" className="block text-gray-700">
-              Price Per Hour
+          {/* Description */}
+          <Grid size={{ xs: 12, md: 12 }}>
+            <label htmlFor="description" className="block text-gray-700">
+              Description
             </label>
             <input
-              type="number"
-              id="pricePerHour"
-              name="pricePerHour"
-              value={formData.pricePerHour}
+              type="text"
+              id="description"
+              name="description"
+              value={formData.description}
               onChange={handleChange}
               className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-                errors.pricePerHour ? "border-red-500" : "border-gray-300"
+                errors.description ? "border-red-500" : "border-gray-300"
               }`}
             />
-            {errors.pricePerHour && (
-              <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
+            {errors.description && (
+              <p className="text-red-500 text-xs">{errors.description}</p>
             )}
-          </div>
+          </Grid>
 
           <button
             type="submit"
@@ -259,8 +250,8 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
           >
             Update
           </button>
-        </form>
-      </div>
+        </Grid>
+      </form>
     </div>
   );
 };
