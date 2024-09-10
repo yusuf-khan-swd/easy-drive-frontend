@@ -3,9 +3,13 @@
 import MultiSelectChip from "@/components/Forms/MultiSelectChip";
 import { featureOptions } from "@/constants/global";
 import { useCreateCarMutation } from "@/redux/api/carApi";
+import Checkbox from "@mui/material/Checkbox";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
 import Grid from "@mui/material/Grid2";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { toast } from "sonner";
+
 interface CreateCarFormData {
   name: string;
   description: string;
@@ -177,17 +181,18 @@ const CreateCar = () => {
 
           {/* Is Electric */}
           <Grid size={{ xs: 12, md: 6 }}>
-            <input
-              type="checkbox"
-              id="isElectric"
-              name="isElectric"
-              checked={formData.isElectric}
-              onChange={handleChange}
-              className="mt-1"
-            />
-            <label htmlFor="isElectric" className="block text-gray-700">
-              Electric Car
-            </label>
+            <FormGroup>
+              <FormControlLabel
+                control={
+                  <Checkbox
+                    name="isElectric"
+                    checked={formData.isElectric}
+                    onChange={handleChange}
+                  />
+                }
+                label="Label"
+              />
+            </FormGroup>
           </Grid>
 
           {/* Features */}
