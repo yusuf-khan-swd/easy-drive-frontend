@@ -18,6 +18,7 @@ import {
 } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
@@ -29,6 +30,7 @@ export const validationSchema = z.object({
 const ProfilePage = () => {
   const { userId } = getUserInfo();
   const router = useRouter();
+  const [showUpdateButton, setShowUpdateButton] = useState(true);
 
   const { data, isLoading } = useGetUserProfileQuery(userId);
   const [updateProfile, { isLoading: updateProfileLoading }] =
@@ -132,15 +134,18 @@ const ProfilePage = () => {
               </Grid>
             </Grid>
 
-            <Button
-              sx={{
-                margin: "10px 0px",
-              }}
-              fullWidth={true}
-              type="submit"
-            >
-              Update
-            </Button>
+            <Stack direction="row" my={2}>
+              <Button
+                color="warning"
+                onClick={() => setShowUpdateButton(!showUpdateButton)}
+                sx={{
+                  marginRight: "8px",
+                }}
+              >
+                Edit
+              </Button>
+              {!showUpdateButton && <Button type="submit">Update</Button>}
+            </Stack>
           </EasyDriveForm>
         </Box>
       </Box>
