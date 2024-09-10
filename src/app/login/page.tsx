@@ -22,6 +22,7 @@ export const validationSchema = z.object({
 });
 
 //  TODO: For Login and register try to use server action because it is more secure
+// TODO: Use persist-redux to store user login info
 
 const LoginPage = () => {
   const [error, setError] = useState("");
