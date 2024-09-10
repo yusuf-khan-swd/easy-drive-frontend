@@ -1,6 +1,10 @@
 
 -------------------- 10:20 AM 9/10/2024
 
+
+
+Done - Update Profile content update by changing route
+
 Done - toggle between profile update button display or hide
 
 -------------------- 9:38 AM 9/9/2024
