@@ -19,8 +19,6 @@ const CreateCar = () => {
   const [createCar, { isLoading }] = useCreateCarMutation();
   const [carFeatures, setCarFeatures] = useState<string[]>([]);
 
-  console.log(carFeatures);
-
   const [formData, setFormData] = useState<CreateCarFormData>({
     name: "",
     description: "",
@@ -72,19 +70,19 @@ const CreateCar = () => {
       e.preventDefault();
 
       if (validate()) {
-        console.log("Form submitted:", formData);
-        const { pricePerHour } = formData;
+        // console.log("Form submitted:", formData);
 
+        const { pricePerHour } = formData;
         const carData = {
           ...formData,
           pricePerHour: Number(pricePerHour),
           features: carFeatures,
         };
 
-        console.log({ carData });
+        // console.log({ carData });
 
-        // const result = await createCar(carData).unwrap();
-        // toast.success(result?.message || "Car Created Successfully");
+        const result = await createCar(carData).unwrap();
+        toast.success(result?.message || "Car Created Successfully");
         setFormData({
           name: "",
           description: "",
