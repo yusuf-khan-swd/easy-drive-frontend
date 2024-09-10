@@ -10,6 +10,8 @@ interface PropTypes {
   searchParams: { status: string };
 }
 
+// TODO: Get transactionId from searchParams using this send payment-verification request in server to update booking and order and also get response
+
 const PaymentStatusPage = ({ searchParams }: PropTypes) => {
   const status = searchParams.status; // could be success, cancel, failed
 
