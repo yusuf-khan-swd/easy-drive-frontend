@@ -82,8 +82,10 @@ const CreateCar = () => {
         const { pricePerHour } = formData;
         const carData = { ...formData, pricePerHour: Number(pricePerHour) };
 
-        const result = await createCar(carData).unwrap();
-        toast.success(result?.message || "Car Created Successfully");
+        console.log({ carData });
+
+        // const result = await createCar(carData).unwrap();
+        // toast.success(result?.message || "Car Created Successfully");
         setFormData({
           name: "",
           description: "",
@@ -133,23 +135,23 @@ const CreateCar = () => {
           {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
         </div>
 
-        {/* Description */}
+        {/* Price Per Hour */}
         <div className="mb-4">
-          <label htmlFor="description" className="block text-gray-700">
-            Description
+          <label htmlFor="pricePerHour" className="block text-gray-700">
+            Price Per Hour
           </label>
           <input
-            type="text"
-            id="description"
-            name="description"
-            value={formData.description}
+            type="number"
+            id="pricePerHour"
+            name="pricePerHour"
+            value={formData.pricePerHour}
             onChange={handleChange}
             className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.description ? "border-red-500" : "border-gray-300"
+              errors.pricePerHour ? "border-red-500" : "border-gray-300"
             }`}
           />
-          {errors.description && (
-            <p className="text-red-500 text-xs">{errors.description}</p>
+          {errors.pricePerHour && (
+            <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
           )}
         </div>
 
@@ -188,7 +190,28 @@ const CreateCar = () => {
           </label>
         </div>
 
+        {/* Description */}
+        <div className="mb-4">
+          <label htmlFor="description" className="block text-gray-700">
+            Description
+          </label>
+          <input
+            type="text"
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
+              errors.description ? "border-red-500" : "border-gray-300"
+            }`}
+          />
+          {errors.description && (
+            <p className="text-red-500 text-xs">{errors.description}</p>
+          )}
+        </div>
+
         {/* Features */}
+
         <div className="mb-4">
           <label htmlFor="features" className="block text-gray-700">
             Features
@@ -212,26 +235,6 @@ const CreateCar = () => {
 
           {errors.features && (
             <p className="text-red-500 text-xs">{errors.features}</p>
-          )}
-        </div>
-
-        {/* Price Per Hour */}
-        <div className="mb-4">
-          <label htmlFor="pricePerHour" className="block text-gray-700">
-            Price Per Hour
-          </label>
-          <input
-            type="number"
-            id="pricePerHour"
-            name="pricePerHour"
-            value={formData.pricePerHour}
-            onChange={handleChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.pricePerHour ? "border-red-500" : "border-gray-300"
-            }`}
-          />
-          {errors.pricePerHour && (
-            <p className="text-red-500 text-xs">{errors.pricePerHour}</p>
           )}
         </div>
 
