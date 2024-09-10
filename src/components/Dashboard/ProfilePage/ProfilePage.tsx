@@ -107,7 +107,12 @@ const ProfilePage = () => {
           >
             <Grid container spacing={2} my={1}>
               <Grid size={{ xs: 12, md: 12 }}>
-                <EasyDriveInput label="Name" fullWidth={true} name="name" />
+                <EasyDriveInput
+                  label="Name"
+                  fullWidth={true}
+                  name="name"
+                  disabled={showUpdateButton}
+                />
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
                 <EasyDriveInput
@@ -115,6 +120,7 @@ const ProfilePage = () => {
                   type="email"
                   fullWidth={true}
                   name="email"
+                  disabled={showUpdateButton}
                 />
               </Grid>
               <Grid size={{ xs: 12, md: 6 }}>
@@ -123,6 +129,7 @@ const ProfilePage = () => {
                   type="tel"
                   fullWidth={true}
                   name="phone"
+                  disabled={showUpdateButton}
                 />
               </Grid>
               <Grid size={{ xs: 12, md: 12 }}>
@@ -130,6 +137,7 @@ const ProfilePage = () => {
                   label="Address"
                   fullWidth={true}
                   name="address"
+                  disabled={showUpdateButton}
                 />
               </Grid>
             </Grid>
