@@ -2,6 +2,7 @@
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetSingleCarQuery, useUpdateCarMutation } from "@/redux/api/carApi";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -16,10 +17,12 @@ interface UpdateCarFormData {
 
 const UpdateCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  const { data, isLoading } = useGetSingleCarQuery(id || "");
-  const car = data?.data;
+  const router = useRouter();
 
+  const { data, isLoading } = useGetSingleCarQuery(id || "");
   const [updateCar] = useUpdateCarMutation();
+
+  const car = data?.data;
 
   const [formData, setFormData] = useState<UpdateCarFormData>({
     name: car?.name || "",
@@ -92,6 +95,7 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
 
         const result = await updateCar(carData).unwrap();
         toast.success(result?.message || "Car Update Successfully");
+        router.push("/dashboard/admin/manage-cars");
       }
     } catch (error: any) {
       console.log("Error: ", error);
