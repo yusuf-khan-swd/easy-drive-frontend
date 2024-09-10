@@ -52,17 +52,6 @@ const CreateCar = () => {
     }
   };
 
-  const handleFeaturesChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const selectedFeatures = Array.from(
-      e.target.selectedOptions,
-      (option) => option.value
-    );
-    setFormData((prevData) => ({
-      ...prevData,
-      features: selectedFeatures,
-    }));
-  };
-
   const validate = (): boolean => {
     const newErrors: { [key: string]: string } = {};
 
@@ -72,7 +61,7 @@ const CreateCar = () => {
     if (!formData.color) newErrors.color = "Color is required.";
     if (!formData.pricePerHour)
       newErrors.pricePerHour = "Price per hour is required.";
-    if (!formData.features.length) newErrors.features = "Features is required.";
+    if (!carFeatures.length) newErrors.features = "Car Features is required.";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -81,10 +70,16 @@ const CreateCar = () => {
   const handleSubmit = async (e: FormEvent) => {
     try {
       e.preventDefault();
+
       if (validate()) {
         console.log("Form submitted:", formData);
         const { pricePerHour } = formData;
-        const carData = { ...formData, pricePerHour: Number(pricePerHour) };
+
+        const carData = {
+          ...formData,
+          pricePerHour: Number(pricePerHour),
+          features: carFeatures,
+        };
 
         console.log({ carData });
 
@@ -98,6 +93,7 @@ const CreateCar = () => {
           features: [],
           pricePerHour: 0,
         });
+        setCarFeatures([]);
       }
     } catch (error: any) {
       console.log("Error: ", error);
@@ -119,11 +115,6 @@ const CreateCar = () => {
         className="bg-white border p-8 rounded shadow-md w-full max-w-md"
         onSubmit={handleSubmit}
       >
-        <MultiSelectChip
-          selectOptions={featureOptions}
-          state={carFeatures}
-          setState={setCarFeatures}
-        />
         <h2 className="text-2xl font-bold mb-6 text-center">Add a Car</h2>
 
         {/* Name */}
@@ -222,31 +213,16 @@ const CreateCar = () => {
         {/* Features */}
 
         <div className="mb-4">
-          <label htmlFor="features" className="block text-gray-700">
-            Features
-          </label>
-          <select
-            id="features"
-            name="features"
-            multiple
-            value={formData.features}
-            onChange={handleFeaturesChange}
-            className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-              errors.features ? "border-red-500" : "border-gray-300"
-            }`}
-          >
-            {featureOptions.map((feature, index) => (
-              <option key={index} value={feature}>
-                {feature}
-              </option>
-            ))}
-          </select>
+          <MultiSelectChip
+            selectOptions={featureOptions}
+            state={carFeatures}
+            setState={setCarFeatures}
+          />
 
           {errors.features && (
             <p className="text-red-500 text-xs">{errors.features}</p>
           )}
         </div>
-
         <button
           type="submit"
           disabled={isLoading}
