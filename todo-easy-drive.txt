@@ -3,6 +3,12 @@
 
 
 
+Show Reviews in User ManageReviews
+
+Show Reviews in Admin ManageReviews
+
+Show Orders in User ManagePayments
+
 Done - Update Profile content update by changing route
 
 Done - toggle between profile update button display or hide
