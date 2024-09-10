@@ -1,5 +1,6 @@
 "use client";
 
+import MultiSelectChip from "@/components/Forms/MultiSelectChip";
 import { featureOptions } from "@/constants/global";
 import { useCreateCarMutation } from "@/redux/api/carApi";
 import { ChangeEvent, FormEvent, useState } from "react";
@@ -16,6 +17,9 @@ interface CreateCarFormData {
 
 const CreateCar = () => {
   const [createCar, { isLoading }] = useCreateCarMutation();
+  const [carFeatures, setCarFeatures] = useState<string[]>([]);
+
+  console.log(carFeatures);
 
   const [formData, setFormData] = useState<CreateCarFormData>({
     name: "",
@@ -115,6 +119,11 @@ const CreateCar = () => {
         className="bg-white border p-8 rounded shadow-md w-full max-w-md"
         onSubmit={handleSubmit}
       >
+        <MultiSelectChip
+          selectOptions={featureOptions}
+          state={carFeatures}
+          setState={setCarFeatures}
+        />
         <h2 className="text-2xl font-bold mb-6 text-center">Add a Car</h2>
 
         {/* Name */}
