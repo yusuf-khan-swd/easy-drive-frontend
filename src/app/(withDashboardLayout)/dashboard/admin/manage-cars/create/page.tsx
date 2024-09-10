@@ -110,10 +110,10 @@ const CreateCar = () => {
   return (
     <div className="flex items-center justify-center">
       <form
-        className="bg-white border p-8 rounded shadow-md w-full max-w-md"
+        className="bg-white border p-8 rounded shadow-md w-full max-w-2xl"
         onSubmit={handleSubmit}
       >
-        <h2 className="text-2xl font-bold mb-6 text-center">Add a Car</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center">Add New Car</h2>
 
         {/* Name */}
         <div className="mb-4">
