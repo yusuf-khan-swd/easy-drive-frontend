@@ -61,7 +61,6 @@ const ProfilePage = () => {
   };
 
   if (isLoading) return <LoadingSpinner />;
-  if (updateProfileLoading) return router.refresh();
 
   return (
     <Stack
