@@ -116,7 +116,6 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold">Update Car Page id: {id}</h1>
       <div className="flex items-center justify-center">
         <form
           className="bg-white border p-8 rounded shadow-md w-full max-w-md"
