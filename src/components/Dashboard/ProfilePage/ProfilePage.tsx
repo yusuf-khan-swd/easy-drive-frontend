@@ -17,7 +17,7 @@ import {
   useUpdateUserProfileMutation,
 } from "@/redux/api/profileApi";
 import { getUserInfo } from "@/services/auth.service";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const validationSchema = z.object({
@@ -28,8 +28,10 @@ export const validationSchema = z.object({
 });
 
 const ProfilePage = () => {
-  const { userId } = getUserInfo();
+  const { userId, role } = getUserInfo();
   const router = useRouter();
+  const pathname = usePathname();
+  console.log({ pathname });
   const [showUpdateButton, setShowUpdateButton] = useState(true);
 
   const { data, isLoading } = useGetUserProfileQuery(userId);
@@ -53,6 +55,14 @@ const ProfilePage = () => {
       // console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message || "Profile Update Success");
+
+        if (pathname.includes("/profile")) {
+          router.push(`/dashboard/${role}`);
+        } else if (pathname.includes("/user")) {
+          router.push(`/dashboard/${role}/profile`);
+        } else {
+          router.push(`/dashboard/${role}/profile`);
+        }
       }
     } catch (error: any) {
       console.log("Error: ", error);
@@ -143,6 +153,7 @@ const ProfilePage = () => {
 
             <Stack direction="row" my={2}>
               <Button
+                disabled={updateProfileLoading}
                 color="warning"
                 onClick={() => setShowUpdateButton(!showUpdateButton)}
                 sx={{
@@ -151,7 +162,11 @@ const ProfilePage = () => {
               >
                 Edit
               </Button>
-              {!showUpdateButton && <Button type="submit">Update</Button>}
+              {!showUpdateButton && (
+                <Button type="submit" disabled={updateProfileLoading}>
+                  Update
+                </Button>
+              )}
             </Stack>
           </EasyDriveForm>
         </Box>
