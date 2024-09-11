@@ -15,7 +15,18 @@ const orderApi = baseApi.injectEndpoints({
         },
       }),
     }),
+
+    myOrders: builder.query({
+      query: () => ({
+        url: `${ORDER_URL}/my-orders`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
+        },
+      }),
+      providesTags: ["order"],
+    }),
   }),
 });
 
-export const { useCreateOrderMutation } = orderApi;
+export const { useCreateOrderMutation, useMyOrdersQuery } = orderApi;
