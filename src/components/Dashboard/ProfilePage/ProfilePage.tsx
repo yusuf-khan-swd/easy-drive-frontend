@@ -20,7 +20,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 
-export const validationSchema = z.object({
+const validationSchema = z.object({
   name: z.string().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
   phone: z.string().optional(),

@@ -12,7 +12,7 @@ import { FieldValues } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
-export const validationSchema = z.object({
+const validationSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   rating: z.string().min(1, "Rating is required"),
