@@ -23,8 +23,6 @@ const ManagePayments = () => {
   const { data, isLoading, isError } = useMyOrdersQuery("");
   const myOrders = data?.data;
 
-  console.log(myOrders);
-
   const columns: GridColDef[] = [
     {
       field: "car",
