@@ -13,7 +13,7 @@ const profileApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      providesTags: ["user"],
+      providesTags: ["profile"],
     }),
 
     updateUserProfile: builder.mutation({
@@ -25,7 +25,7 @@ const profileApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["user"],
+      invalidatesTags: ["profile"],
     }),
   }),
 });
