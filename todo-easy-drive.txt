@@ -1,6 +1,10 @@
 
 -------------------- 11:26 AM 9/11/2024, we
 
+Done - Reviews in Admin ManageReviews
+
+Done - Show Orders in User ManagePayments
+
 Done - Successfully deploy to vercel - 2:16 PM 9/11/2024
 
 [Fixed] - For both defaultValues and validationSchema the error is for export
@@ -20,9 +24,9 @@ Done - CreateCar and UpdateCar. Form update with Multiple Select field for featu
 
 Show Reviews in User ManageReviews
 
-Show Reviews in Admin ManageReviews
+Done - Show Reviews in Admin ManageReviews
 
-Show Orders in User ManagePayments
+Done - Show Orders in User ManagePayments
 
 Done - Update Profile content update by changing route
 
