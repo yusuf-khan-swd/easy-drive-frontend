@@ -61,7 +61,7 @@ const ProfilePage = () => {
 
   console.log({ user, defaultValues });
 
-  if (isLoading || updateProfileLoading) return <LoadingSpinner />;
+  if (isLoading) return <LoadingSpinner />;
 
   return (
     <Stack
