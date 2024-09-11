@@ -11,7 +11,7 @@ Done - Successfully deploy to vercel - 2:16 PM 9/11/2024
 
 Done - Start Deploying to vercel on previous project Vite + Shadcn - 1:34 PM 9/11/2024
 
-Admin can make a user to a admin
+Done - Admin can make a user to a admin
 
 
 -------------------- 10:20 AM 9/10/2024, tu
