@@ -31,7 +31,6 @@ const ProfilePage = () => {
   const { userId, role } = getUserInfo();
   const router = useRouter();
   const pathname = usePathname();
-  console.log({ pathname });
   const [showUpdateButton, setShowUpdateButton] = useState(true);
 
   const { data, isLoading } = useGetUserProfileQuery(userId);
