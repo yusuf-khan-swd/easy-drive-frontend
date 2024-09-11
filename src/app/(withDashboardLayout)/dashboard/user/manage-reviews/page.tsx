@@ -6,8 +6,10 @@ import {
 } from "@/redux/api/reviewApi";
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
 import { Box, IconButton, Stack, TextField } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import Link from "next/link";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -58,12 +60,15 @@ const ManageReviews = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
+        const id = row._id;
         return (
           <Box>
-            <IconButton
-              onClick={() => handleDelete(row._id)}
-              aria-label="delete"
-            >
+            <Link href={`/dashboard/user/manage-reviews/edit/${id}`}>
+              <IconButton aria-label="edit">
+                <EditIcon />
+              </IconButton>
+            </Link>
+            <IconButton onClick={() => handleDelete(id)} aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
           </Box>
