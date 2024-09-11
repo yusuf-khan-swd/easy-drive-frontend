@@ -10,8 +10,8 @@ kayak price - $877
 for future - confirm password 
 for future - admin can update car status
 
-update profile problem displaying previous data for admin need to see user having same problem
-
+Done - update profile problem displaying previous data for admin need to see user having same problem
+[Solved] - In EasyDriveForm use, useEffect and reset for defaultValues 
 
 Done - Deploy to vercel - 6:30 PM 9/11/2024
 
