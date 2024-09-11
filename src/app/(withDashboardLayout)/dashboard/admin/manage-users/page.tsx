@@ -4,6 +4,7 @@ import { USER_ROLE } from "@/constants/role";
 import {
   useDeleteUserMutation,
   useGetAllUsersQuery,
+  useMakeAdminMutation,
 } from "@/redux/api/userApi";
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
@@ -31,15 +32,16 @@ const ManageUsers = () => {
   const { data: usersData, isLoading } = useGetAllUsersQuery(undefined);
   const users = usersData?.data;
   const [deleteUser] = useDeleteUserMutation();
+  const [makeAdmin] = useMakeAdminMutation();
 
   const handleMakeAdmin = async (id: string) => {
     try {
-      console.log(id);
-      // const result = await deleteUser(id).unwrap();
-      // toast.success(result?.message || "Make Admin Successfully");
+      // console.log(id);
+      const result = await makeAdmin(id).unwrap();
+      toast.success(result?.message || "Making user to an admin successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Make Admin failed");
+      toast.error(error?.data?.message || "Making user to admin failed");
     }
   };
 
