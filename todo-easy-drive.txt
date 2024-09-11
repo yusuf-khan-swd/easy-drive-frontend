@@ -1,6 +1,8 @@
 
 -------------------- 11:26 AM 9/11/2024, we
 
+Done - Show Reviews in User ManageReviews
+
 Done - Reviews in Admin ManageReviews
 
 Done - Show Orders in User ManagePayments
@@ -22,11 +24,11 @@ Done - Admin can make a user to a admin
 
 Done - CreateCar and UpdateCar. Form update with Multiple Select field for features, Grid from MUI for responsive input field and checkbox
 
-Show Reviews in User ManageReviews
+Done - Show Reviews in User ManageReviews - 5:06 PM 9/11/2024
 
-Done - Show Reviews in Admin ManageReviews
+Done - Show Reviews in Admin ManageReviews - 4:40 PM 9/11/2024
 
-Done - Show Orders in User ManagePayments
+Done - Show Orders in User ManagePayments - 4:06 PM 9/11/2024
 
 Done - Update Profile content update by changing route
 
