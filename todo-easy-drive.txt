@@ -1,6 +1,8 @@
 
 -------------------- 11:26 AM 9/11/2024, we
 
+Done - Deploy to vercel - 6:30 PM 9/11/2024
+
 Done - UpdateReview for user
 
 Done - Show Reviews in User ManageReviews
