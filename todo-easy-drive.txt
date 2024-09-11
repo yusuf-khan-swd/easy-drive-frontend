@@ -1,5 +1,9 @@
 
--------------------- 10:20 AM 9/10/2024
+-------------------- 11:26 AM 9/11/2024, we
+
+
+
+-------------------- 10:20 AM 9/10/2024, tu
 
 Done - CreateCar and UpdateCar. Form update with Multiple Select field for features, Grid from MUI for responsive input field and checkbox
 
@@ -13,7 +17,8 @@ Done - Update Profile content update by changing route
 
 Done - toggle between profile update button display or hide
 
--------------------- 9:38 AM 9/9/2024
+
+-------------------- 9:38 AM 9/9/2024, mo
 
 Done - Payment integration successfully
 
@@ -21,17 +26,20 @@ Done - return car for user
 
 Done - UserProfile api slice, UserProfile Page with form, Update UserProfile
 
--------------------- 3:58 PM 9/8/2024
+
+-------------------- 3:58 PM 9/8/2024, su
 
 Done - Reviews. ReviewApi slice, ReviewForm for submitting review and show Car Reviews in Card and Hide review form from guest user 
 
 Done - Update Booking For Admin and User. But did not check user is same user who booked the car
 
--------------------- 3:38 PM 9/7/2024
+
+-------------------- 3:38 PM 9/7/2024, sa
 
 Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
 
--------------------- 10:33 AM 9/6/2024
+
+-------------------- 10:33 AM 9/6/2024, fr
 
 Done - Add Axios Base Query and Instance function
 
@@ -42,6 +50,7 @@ Done - Forgot Password page design
 Done - Create getSingleUser api for admin
 
 Done - both page and api. Add UpdateUserPage functionality after api is done 
+
 
 -------------------- 11:27 AM 9/5/2024, th
 
