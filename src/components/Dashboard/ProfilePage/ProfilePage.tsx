@@ -59,8 +59,6 @@ const ProfilePage = () => {
     address: user?.address || "",
   };
 
-  console.log({ user, defaultValues });
-
   if (isLoading) return <LoadingSpinner />;
 
   return (
