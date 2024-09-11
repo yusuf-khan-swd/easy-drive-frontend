@@ -54,14 +54,6 @@ const ProfilePage = () => {
       // console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message || "Profile Update Success");
-
-        if (pathname.includes("/profile")) {
-          router.push(`/dashboard/${role}`);
-        } else if (pathname.includes("/user")) {
-          router.push(`/dashboard/${role}/profile`);
-        } else {
-          router.push(`/dashboard/${role}/profile`);
-        }
       }
     } catch (error: any) {
       console.log("Error: ", error);
