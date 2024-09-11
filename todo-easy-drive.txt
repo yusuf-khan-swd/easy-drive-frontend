@@ -1,6 +1,10 @@
 
 -------------------- 11:26 AM 9/11/2024, we
 
+[Fixed] - Deploy Problem for const defaultValue are outside of component 
+
+Deploy to vercel on previous project Vite + Shadcn - 1:34 PM 9/11/2024
+
 Admin can make a user to a admin
 
 
