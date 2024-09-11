@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid2";
 import { FieldValues } from "react-hook-form";
 import { z } from "zod";
 // import { useChangePasswordMutation } from '@/redux/api/authApi';
+import DashboardDrawer from "@/components/Dashboard/DashboardDrawer";
 import EasyDriveForm from "@/components/Forms/EasyDriveForm";
 import EasyDriveInput from "@/components/Forms/EasyDriveInput";
 import { useRouter } from "next/navigation";
@@ -44,67 +45,69 @@ const ChangePassword = () => {
   };
 
   return (
-    <Box
-      sx={{
-        px: 4,
-        py: 2,
-        maxWidth: 600,
-        width: "100%",
-        boxShadow: 1,
-        borderRadius: 1,
-        mx: "auto",
-        mt: {
-          xs: 2,
-          md: 5,
-        },
-      }}
-    >
-      <Stack alignItems="center" justifyContent="center">
-        <Box
-          sx={{
-            "& svg": {
-              width: 100,
-              height: 100,
-            },
-          }}
-        >
-          <KeyIcon sx={{ color: "primary.main" }} />
-        </Box>
-        <Typography variant="h5" fontWeight={600} sx={{ mb: 2, mt: -1.5 }}>
-          Change password
-        </Typography>
-      </Stack>
-      <EasyDriveForm
-        onSubmit={onSubmit}
-        defaultValues={{ oldPassword: "", newPassword: "" }}
-        resolver={zodResolver(validationSchema)}
+    <DashboardDrawer>
+      <Box
+        sx={{
+          px: 4,
+          py: 2,
+          maxWidth: 600,
+          width: "100%",
+          boxShadow: 1,
+          borderRadius: 1,
+          mx: "auto",
+          mt: {
+            xs: 2,
+            md: 5,
+          },
+        }}
       >
-        <Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <EasyDriveInput
-              name="oldPassword"
-              type="password"
-              label="Old Password"
-              fullWidth
-              sx={{ mb: 2 }}
-            />
+        <Stack alignItems="center" justifyContent="center">
+          <Box
+            sx={{
+              "& svg": {
+                width: 100,
+                height: 100,
+              },
+            }}
+          >
+            <KeyIcon sx={{ color: "primary.main" }} />
+          </Box>
+          <Typography variant="h5" fontWeight={600} sx={{ mb: 2, mt: -1.5 }}>
+            Change password
+          </Typography>
+        </Stack>
+        <EasyDriveForm
+          onSubmit={onSubmit}
+          defaultValues={{ oldPassword: "", newPassword: "" }}
+          resolver={zodResolver(validationSchema)}
+        >
+          <Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <EasyDriveInput
+                name="oldPassword"
+                type="password"
+                label="Old Password"
+                fullWidth
+                sx={{ mb: 2 }}
+              />
+            </Grid>
+            <Grid size={{ xs: 12, md: 6 }}>
+              <EasyDriveInput
+                name="newPassword"
+                type="password"
+                label="New Password"
+                fullWidth
+                sx={{ mb: 2 }}
+              />
+            </Grid>
           </Grid>
-          <Grid size={{ xs: 12, md: 6 }}>
-            <EasyDriveInput
-              name="newPassword"
-              type="password"
-              label="New Password"
-              fullWidth
-              sx={{ mb: 2 }}
-            />
-          </Grid>
-        </Grid>
 
-        <Button type="submit" sx={{ width: "100%", my: 2 }}>
-          Change Password
-        </Button>
-      </EasyDriveForm>
-    </Box>
+          <Button type="submit" sx={{ width: "100%", my: 2 }}>
+            Change Password
+          </Button>
+        </EasyDriveForm>
+      </Box>
+    </DashboardDrawer>
   );
 };
 
