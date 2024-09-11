@@ -38,7 +38,6 @@ const LoginPage = () => {
     // console.log(values);
     try {
       const result = await login(values).unwrap();
-      console.log({ result });
       if (result?.data?.token) {
         storeUserInfo({ accessToken: result?.data?.token });
         toast.success(result?.data?.message || "Login Success!!");
