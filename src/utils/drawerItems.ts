@@ -86,6 +86,11 @@ export const drawerItems = (role: TUserRole): DrawerItem[] => {
           title: "Payment History",
           path: `${role}/manage-payments`,
           icon: AttachMoneyIcon,
+        },
+        {
+          title: "Reviews",
+          path: `${role}/manage-reviews`,
+          icon: ReviewsIcon,
         }
       );
       break;
