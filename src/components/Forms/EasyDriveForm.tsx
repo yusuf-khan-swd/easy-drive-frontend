@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import {
   FieldValues,
   FormProvider,
@@ -33,6 +34,12 @@ const EasyDriveForm = ({
 
   const methods = useForm(formConfig);
   const { handleSubmit, reset } = methods;
+
+  useEffect(() => {
+    if (defaultValues) {
+      reset(defaultValues); // Reset form values when defaultValues change
+    }
+  }, [defaultValues, reset]);
 
   const submit: SubmitHandler<FieldValues> = (data) => {
     // console.log(data);
