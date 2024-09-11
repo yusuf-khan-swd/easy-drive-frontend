@@ -36,7 +36,7 @@ const UpdateReviews = ({ params }: { params: { id: string } }) => {
   let defaultValues = {
     title: review?.title || "",
     description: review?.description || "",
-    rating: review?.rating || "",
+    rating: review?.rating.toString() || "",
   };
 
   const handleReviewSubmit = async (values: FieldValues) => {
