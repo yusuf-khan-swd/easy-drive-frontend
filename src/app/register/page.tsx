@@ -23,14 +23,6 @@ export const validationSchema = z.object({
   address: z.string().optional(),
 });
 
-export const defaultValues = {
-  name: "",
-  email: "",
-  password: "",
-  phone: "",
-  address: "",
-};
-
 //  TODO: For Login and register try to use server action because it is more secure
 
 const RegisterPage = () => {
@@ -99,7 +91,6 @@ const RegisterPage = () => {
             <EasyDriveForm
               onSubmit={handleRegister}
               resolver={zodResolver(validationSchema)}
-              defaultValues={defaultValues}
             >
               <Grid container spacing={2} my={1}>
                 <Grid size={{ xs: 12, md: 12 }}>
