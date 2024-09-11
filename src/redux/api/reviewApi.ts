@@ -28,6 +28,17 @@ const reviewApi = baseApi.injectEndpoints({
       providesTags: ["review"],
     }),
 
+    getMyReviews: builder.query({
+      query: () => ({
+        url: `${REVIEW_URL}`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
+        },
+      }),
+      providesTags: ["review"],
+    }),
+
     getSingleReview: builder.query({
       query: (id: string) => ({
         url: `${REVIEW_URL}/${id}`,
@@ -82,4 +93,5 @@ export const {
   useUpdateReviewMutation,
   useDeleteReviewMutation,
   useCarReviewsQuery,
+  useGetMyReviewsQuery,
 } = reviewApi;
