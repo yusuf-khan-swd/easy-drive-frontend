@@ -82,8 +82,10 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
   if (isLoading) return <LoadingSpinner />;
 
   return (
-    <div>
-      {/* <h2 className="text-2xl font-bold text-center mb-6">Order Page</h2> */}
+    <div className="my-4">
+      <h2 className="text-2xl font-bold text-center mb-6">
+        Confirm Payment Details
+      </h2>
       {booking ? (
         <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
           {/* Form for selecting date and time */}
