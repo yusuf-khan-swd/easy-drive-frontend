@@ -73,11 +73,9 @@ const CreateUser = () => {
               </Link>
             </Box>
             <Box>
-              <Link href="/">
-                <Typography variant="h6" fontWeight={600}>
-                  Register User
-                </Typography>
-              </Link>
+              <Typography variant="h6" fontWeight={600}>
+                Register User
+              </Typography>
             </Box>
           </Stack>
 
@@ -130,7 +128,7 @@ const CreateUser = () => {
                 type="submit"
                 disabled={isLoading}
               >
-                Register
+                Add User
               </Button>
               <Typography component="p" fontWeight={300}>
                 Need an admin account?{" "}

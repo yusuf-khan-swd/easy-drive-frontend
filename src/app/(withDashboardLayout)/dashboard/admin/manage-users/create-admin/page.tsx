@@ -73,11 +73,9 @@ const CreateAdmin = () => {
               </Link>
             </Box>
             <Box>
-              <Link href="/">
-                <Typography variant="h6" fontWeight={600}>
-                  Register User
-                </Typography>
-              </Link>
+              <Typography variant="h6" fontWeight={600}>
+                Register Admin
+              </Typography>
             </Box>
           </Stack>
 
@@ -133,9 +131,9 @@ const CreateAdmin = () => {
                 Add Admin
               </Button>
               <Typography component="p" fontWeight={300}>
-                Need an admin account?{" "}
-                <Link href="/dashboard/admin/manage-users/create-admin">
-                  Create Admin
+                Need an user account?{" "}
+                <Link href="/dashboard/admin/manage-users/create-user">
+                  Create User
                 </Link>
               </Typography>
             </EasyDriveForm>
