@@ -11,7 +11,8 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   const { userId } = getUserInfo();
 
-  const [createOrder] = useCreateOrderMutation();
+  const [createOrder, { isLoading: createOrderIsLoading }] =
+    useCreateOrderMutation();
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
   const booking = data?.data;
   const car = booking?.car;
@@ -159,7 +160,11 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
               )}
             </div>
             {/* Submit button */}
-            <button className="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300">
+            <button
+              type="submit"
+              disabled={createOrderIsLoading}
+              className="bg-green-600 text-white font-semibold py-2 px-6 rounded-lg hover:bg-green-700 transition duration-300"
+            >
               Proceed to Payment
             </button>
           </form>

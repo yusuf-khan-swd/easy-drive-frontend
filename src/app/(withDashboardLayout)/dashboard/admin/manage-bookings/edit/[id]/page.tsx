@@ -13,7 +13,8 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
-  const [updateBooking] = useUpdateBookingMutation();
+  const [updateBooking, { isLoading: updateBookingIsLoading }] =
+    useUpdateBookingMutation();
 
   const booking = data?.data;
   const car = booking?.car;
@@ -121,7 +122,11 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
               )}
             </div>
             {/* Submit button */}
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
+            <button
+              type="submit"
+              disabled={updateBookingIsLoading}
+              className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700"
+            >
               Confirm
             </button>
           </form>
