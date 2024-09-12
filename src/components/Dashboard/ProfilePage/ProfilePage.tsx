@@ -69,7 +69,6 @@ const ProfilePage = () => {
         my: 4,
       }}
     >
-      <p>{defaultValues?.address}</p>
       <Box
         sx={{
           maxWidth: 600,
