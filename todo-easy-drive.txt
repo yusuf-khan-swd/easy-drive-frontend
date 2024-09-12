@@ -7,7 +7,8 @@ for future - Add redux persist for storing user info after success login and rem
 
 Edit booking in user - update title
 
-After booking success car status is not updated to unavailable
+Done - After booking success car status is not updated to unavailable
+[Solved] - add car tagTypes to booking mutation for create, update and delete
 
 In user hide edit icon if car return
 
