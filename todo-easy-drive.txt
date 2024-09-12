@@ -1,6 +1,8 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+Done - Update car price to hour and use tk in amount
+
 for future - add main navbar item to dashboard headers
 
 for future - Add redux persist for storing user info after success login and remove on logout 
