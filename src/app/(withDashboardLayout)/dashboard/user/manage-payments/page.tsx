@@ -37,6 +37,24 @@ const ManagePayments = () => {
       renderCell: ({ row }) => row?.car?.pricePerHour,
     },
     { field: "totalCost", headerName: "TotalCost", flex: 1 },
+    {
+      field: "booking.date",
+      headerName: "Date",
+      flex: 1,
+      renderCell: ({ row }) => row?.booking?.date,
+    },
+    {
+      field: "booking.startTime",
+      headerName: "StartTime",
+      flex: 1,
+      renderCell: ({ row }) => row?.booking?.startTime,
+    },
+    {
+      field: "booking.endTime",
+      headerName: "EndTime",
+      flex: 1,
+      renderCell: ({ row }) => row?.booking?.endTime,
+    },
     { field: "paymentStatus", headerName: "Payment", flex: 1 },
     { field: "transactionId", headerName: "TransactionId", flex: 1 },
   ];
