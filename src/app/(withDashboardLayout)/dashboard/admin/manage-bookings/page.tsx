@@ -75,6 +75,9 @@ const ManageBookings = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
+        const id = row._id;
+        const totalCost = row.totalCost;
+
         return (
           <Box>
             <IconButton
@@ -83,11 +86,13 @@ const ManageBookings = () => {
             >
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Link href={`/dashboard/admin/manage-bookings/edit/${row._id}`}>
-              <IconButton aria-label="edit">
-                <EditIcon />
-              </IconButton>
-            </Link>
+            {!totalCost && (
+              <Link href={`/dashboard/admin/manage-bookings/edit/${row._id}`}>
+                <IconButton aria-label="edit">
+                  <EditIcon />
+                </IconButton>
+              </Link>
+            )}
           </Box>
         );
       },
