@@ -80,14 +80,11 @@ const ManageBookings = () => {
 
         return (
           <Box>
-            <IconButton
-              onClick={() => handleDelete(row._id)}
-              aria-label="delete"
-            >
+            <IconButton onClick={() => handleDelete(id)} aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
             {!totalCost && (
-              <Link href={`/dashboard/admin/manage-bookings/edit/${row._id}`}>
+              <Link href={`/dashboard/admin/manage-bookings/edit/${id}`}>
                 <IconButton aria-label="edit">
                   <EditIcon />
                 </IconButton>
