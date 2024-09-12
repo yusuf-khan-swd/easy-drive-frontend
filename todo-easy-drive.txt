@@ -1,6 +1,9 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Success] - Deploy to vercel after fixing with issue with accepting term issue - 11:00 PM 9/12/2024
+If Manually accept the term&condition then use form filler the checkbox is not update because of it did not use checked property as termAndCondition state
+
 [Success] - Deploy to vercel after adding disabled submit button if loading - 10:05 PM 9/12/2024
 in Confirm Booking in user booking, login, Register, ReviewForm, and to other form submit button  
 
