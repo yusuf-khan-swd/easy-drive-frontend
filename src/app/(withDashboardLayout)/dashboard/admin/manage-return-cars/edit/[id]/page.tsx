@@ -62,6 +62,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     if (!isLoading && booking) {
       setDate(booking?.date);
       setStartTime(booking?.startTime);
+      setEndTime(booking?.endTime);
     }
   }, [isLoading, booking]);
 
