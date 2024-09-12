@@ -1,6 +1,9 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Fixed] - Issue with MyReviews it is displaying all reviews instead of user own reviews
+[Solved] - forgot add /my-reviews in api slice
+
 [Success] - Deploy to vercel after password validation length change - 6:40 PM 9/12/2024
 
 [Success] - Deploy to vercel - 6:14 PM 9/12/2024
