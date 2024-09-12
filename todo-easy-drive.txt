@@ -1,6 +1,8 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Success] - Deploy to vercel - 6:14 PM 9/12/2024
+
 Done - Update car price to hour and use tk in amount
 
 for future - add main navbar item to dashboard headers
