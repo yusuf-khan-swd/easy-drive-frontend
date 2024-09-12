@@ -10,8 +10,6 @@ const CarReviews = ({ carId }: { carId: string }) => {
 
   if (isLoading) return <LoadingSpinner />;
 
-  console.log(data);
-
   return (
     <Box sx={{ marginTop: 4 }}>
       <Typography
@@ -26,7 +24,7 @@ const CarReviews = ({ carId }: { carId: string }) => {
         <div>
           {reviews?.map((review: any) => (
             // TODO: Create CarReviewCard component show reviews
-            <div key={review?.id}>
+            <div key={review?._id}>
               <Card sx={{ marginBottom: 2 }}>
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div">
