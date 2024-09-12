@@ -47,12 +47,6 @@ const ManageBookings = () => {
 
   const columns: GridColDef[] = [
     {
-      field: "user",
-      headerName: "User",
-      flex: 1,
-      valueGetter: (value: any) => value?.email,
-    },
-    {
       field: "car",
       headerName: "Car",
       flex: 1,
