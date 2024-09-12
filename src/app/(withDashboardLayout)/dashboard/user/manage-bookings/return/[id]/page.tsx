@@ -146,7 +146,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
                   Electric: {isElectric ? "Yes" : "No"}
                 </p>
                 <p className="text-gray-900 font-bold mb-2">
-                  Price: ${pricePerHour}/day
+                  Price: {pricePerHour}tk/hour
                 </p>
                 <p className="mb-2">
                   Status:{" "}
