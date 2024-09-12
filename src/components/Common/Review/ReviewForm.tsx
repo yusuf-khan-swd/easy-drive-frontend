@@ -19,7 +19,7 @@ const validationSchema = z.object({
 });
 
 const ReviewForm = ({ carId }: { carId: string }) => {
-  const [review] = useCreateReviewMutation();
+  const [review, { isLoading }] = useCreateReviewMutation();
 
   const handleReviewSubmit = async (values: FieldValues) => {
     // console.log(values);
@@ -121,6 +121,7 @@ const ReviewForm = ({ carId }: { carId: string }) => {
               }}
               fullWidth={true}
               type="submit"
+              disabled={isLoading}
             >
               Submit
             </Button>

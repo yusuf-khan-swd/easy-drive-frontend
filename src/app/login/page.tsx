@@ -31,7 +31,7 @@ const LoginPage = () => {
     password: "Pa$$w0rd!",
   });
 
-  const [login] = useLoginMutation();
+  const [login, { isLoading }] = useLoginMutation();
   const router = useRouter();
 
   const handleLogin = async (values: FieldValues) => {
@@ -166,6 +166,7 @@ const LoginPage = () => {
                 }}
                 fullWidth={true}
                 type="submit"
+                disabled={isLoading}
               >
                 Login
               </Button>

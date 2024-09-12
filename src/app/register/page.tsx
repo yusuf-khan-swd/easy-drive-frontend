@@ -30,7 +30,7 @@ const RegisterPage = () => {
 
   const router = useRouter();
 
-  const [register] = useSignupMutation();
+  const [register, { isLoading }] = useSignupMutation();
 
   const handleRegister = async (values: FieldValues) => {
     // console.log(values);
@@ -143,7 +143,7 @@ const RegisterPage = () => {
                 </span>
               </label>
               <Button
-                disabled={!termsAccepted}
+                disabled={!termsAccepted || isLoading}
                 sx={{
                   margin: "10px 0px",
                 }}
