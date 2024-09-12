@@ -1,10 +1,21 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+Edit booking in user - update title
+
+After booking success car status is not updated to unavailable
+
+In user hide edit icon if car return
+
+In user update title booking page after payment btn redirect url
+
+for future - handle cancel booking for orders
+
 [Success] - Deploy to vercel - 12:09 PM 9/12/2024
 
 for future - dropdown menus for navbar account menu item is not link but text is.
 
+for future - Remove unused svg's
 
 -------------------- 11:26 AM 9/11/2024, we
 
