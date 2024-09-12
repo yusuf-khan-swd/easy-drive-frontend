@@ -10,12 +10,13 @@ import { toast } from "sonner";
 const Booking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  const [createBooking] = useCreateBookingMutation();
   const [date, setDate] = useState("");
   const [startTime, setStartTime] = useState("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
 
+  const [createBooking, { isLoading: createBookingIsLoading }] =
+    useCreateBookingMutation();
   const { data, isLoading } = useGetSingleCarQuery(id || "");
   const car = data?.data;
 
@@ -106,13 +107,19 @@ const Booking = ({ params }: { params: { id: string } }) => {
               )}
             </div>
             {/* Submit button */}
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
+            <button
+              disabled={createBookingIsLoading}
+              className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700"
+            >
               Confirm
             </button>
           </form>
           <div className="grid grid-cols-1 gap-8 flex-grow">
             <div className="bg-white rounded-lg shadow-md overflow-hidden border">
               <div className="p-6">
+                <h2 className="text-2xl font-bold mb-6 text-center">
+                  Car Information
+                </h2>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">
                   {name}
                 </h3>
