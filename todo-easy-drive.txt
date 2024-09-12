@@ -10,7 +10,7 @@ Edit booking in user - update title
 Done - After booking success car status is not updated to unavailable
 [Solved] - add car tagTypes to booking mutation for create, update and delete
 
-In user hide edit icon if car return
+Done - In user hide edit icon if car return
 
 In user update title booking page after payment btn redirect url
 
