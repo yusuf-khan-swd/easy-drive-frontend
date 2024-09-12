@@ -12,7 +12,7 @@ Done - After booking success car status is not updated to unavailable
 
 Done - In user hide edit icon if car return
 
-In user update title booking page after payment btn redirect url
+Done - In user, update title of booking page after payment btn redirect to order page 
 
 for future - handle cancel booking for orders
 
