@@ -1,6 +1,9 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Success] - Deploy to vercel after adding disabled submit button if loading - 10:05 PM 9/12/2024
+in Confirm Booking in user booking, login, Register, ReviewForm, and to other form submit button  
+
 [Success] - Deploy to vercel after fixing adding title in booking car, TransactionId column more wider issue - 8:35 PM 9/12/2024
 
 [Success] - Deploy to vercel after fixing MyReviews issue - 7:48 PM 9/12/2024
