@@ -5,7 +5,7 @@ for future - add main navbar item to dashboard headers
 
 for future - Add redux persist for storing user info after success login and remove on logout 
 
-Edit booking in user - update title
+Done - Edit booking in user and admin - update title
 
 Done - After booking success car status is not updated to unavailable
 [Solved] - add car tagTypes to booking mutation for create, update and delete
