@@ -1,7 +1,7 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
-
+for future - dropdown menus for navbar account menu item is not link but text is.
 
 
 -------------------- 11:26 AM 9/11/2024, we
