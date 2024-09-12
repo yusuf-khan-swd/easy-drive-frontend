@@ -56,7 +56,7 @@ const ManagePayments = () => {
       renderCell: ({ row }) => row?.booking?.endTime,
     },
     { field: "paymentStatus", headerName: "Payment", flex: 1 },
-    { field: "transactionId", headerName: "TransactionId", flex: 1 },
+    { field: "transactionId", headerName: "TransactionId", flex: 2 },
   ];
 
   return (
