@@ -72,7 +72,7 @@ const ManageBookings = () => {
     {
       field: "action",
       headerName: "Action",
-      flex: 2,
+      flex: 3,
       headerAlign: "center",
       align: "right",
       renderCell: ({ row }) => {
@@ -128,7 +128,7 @@ const ManageBookings = () => {
       {isError ? (
         <h2>No Data Available</h2>
       ) : (
-        <Box sx={{ my: 2, minWidth: "940px" }}>
+        <Box sx={{ my: 2, minWidth: "975px" }}>
           <DataGrid
             rows={bookings}
             columns={columns}
