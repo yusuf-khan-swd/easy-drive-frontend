@@ -1,6 +1,8 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Success] - Deploy to vercel after fixing MyReviews issue - 7:48 PM 9/12/2024
+
 [Fixed] - Issue with MyReviews it is displaying all reviews instead of user own reviews
 [Solved] - forgot add /my-reviews in api slice
 
