@@ -14,7 +14,7 @@ const bookingApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["booking"],
+      invalidatesTags: ["booking", "car"],
     }),
 
     getAllBookings: builder.query({
@@ -59,7 +59,7 @@ const bookingApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["booking"],
+      invalidatesTags: ["booking", "car"],
     }),
 
     deleteMyBooking: builder.mutation({
@@ -70,7 +70,7 @@ const bookingApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["booking"],
+      invalidatesTags: ["booking", "car"],
     }),
 
     deleteBooking: builder.mutation({
@@ -81,7 +81,7 @@ const bookingApi = baseApi.injectEndpoints({
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
       }),
-      invalidatesTags: ["booking"],
+      invalidatesTags: ["booking", "car"],
     }),
   }),
 });
