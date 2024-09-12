@@ -1,6 +1,10 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+for future - add main navbar item to dashboard headers
+
+for future - Add redux persist for storing user info after success login and remove on logout 
+
 Edit booking in user - update title
 
 After booking success car status is not updated to unavailable
@@ -16,8 +20,6 @@ for future - handle cancel booking for orders
 for future - dropdown menus for navbar account menu item is not link but text is.
 
 for future - Remove unused svg's
-
-for future - Add redux persist for storing user info after success login and remove on logout 
 
 -------------------- 11:26 AM 9/11/2024, we
 
