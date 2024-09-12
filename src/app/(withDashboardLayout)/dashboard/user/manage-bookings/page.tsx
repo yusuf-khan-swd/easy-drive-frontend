@@ -85,11 +85,13 @@ const ManageBookings = () => {
                 >
                   <DeleteIcon sx={{ color: "red" }} />
                 </IconButton>
-                <Link href={`/dashboard/user/manage-bookings/edit/${id}`}>
-                  <IconButton aria-label="edit">
-                    <EditIcon />
-                  </IconButton>
-                </Link>
+                {!totalCost && (
+                  <Link href={`/dashboard/user/manage-bookings/edit/${id}`}>
+                    <IconButton aria-label="edit">
+                      <EditIcon />
+                    </IconButton>
+                  </Link>
+                )}
               </>
             )}
             {totalCost ? (
