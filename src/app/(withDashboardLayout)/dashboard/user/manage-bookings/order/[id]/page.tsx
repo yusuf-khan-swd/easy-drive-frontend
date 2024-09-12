@@ -4,7 +4,6 @@ import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 import { useCreateOrderMutation } from "@/redux/api/orderApi";
 import { getUserInfo } from "@/services/auth.service";
-import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
@@ -22,7 +21,6 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
   const [startTime, setStartTime] = useState(booking?.startTime || "");
   const [totalCost, setTotalCost] = useState(booking?.totalCost || "");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
-  const router = useRouter();
 
   const {
     name,
@@ -68,7 +66,7 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car return failed");
+      toast.error(error?.data?.message || "Order creation failed");
     }
   };
 
@@ -85,7 +83,7 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-center mb-6">Order Page</h2>
+      {/* <h2 className="text-2xl font-bold text-center mb-6">Order Page</h2> */}
       {booking ? (
         <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
           {/* Form for selecting date and time */}
