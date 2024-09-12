@@ -73,7 +73,7 @@ const ManageBookings = () => {
       headerName: "Action",
       flex: 2,
       headerAlign: "center",
-      align: "center",
+      align: "right",
       renderCell: ({ row }) => {
         const id = row._id;
         const totalCost = row.totalCost;
