@@ -1,7 +1,9 @@
 "use client";
 
 import banner_car from "@/assets/banner_car.png";
+import Link from "next/link";
 import { FormEvent, useState } from "react";
+import { toast } from "sonner";
 
 const HeroSection = () => {
   const [location, setLocation] = useState("");
@@ -12,6 +14,10 @@ const HeroSection = () => {
     e.preventDefault();
 
     console.log({ location, startDate, endDate });
+    toast.success(
+      "Thank you for using search feature. We will be adding Search feature real soon",
+      { duration: 3000 }
+    );
   };
 
   return (
@@ -67,9 +73,12 @@ const HeroSection = () => {
         </form>
 
         {/* Book Now Button */}
-        <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
-          Book Now
-        </button>
+        <Link href="/cars">
+          <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
+            See More
+            {/* Book Now */}
+          </button>
+        </Link>
       </div>
 
       {/* Right side: Car image */}
