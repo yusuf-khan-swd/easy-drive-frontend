@@ -1,5 +1,6 @@
 "use client";
 
+import { PAYMENT_STATUS } from "@/constants/global";
 import {
   useDeleteBookingMutation,
   useGetAllBookingsQuery,
@@ -80,26 +81,27 @@ const ManageReturnCar = () => {
       headerAlign: "center",
       align: "center",
       renderCell: ({ row }) => {
+        const id = row._id;
+        const paymentStatus = row?.paymentStatus;
+        const isPaid = paymentStatus === PAYMENT_STATUS.Paid;
+
         return (
           <Box>
-            <IconButton
-              onClick={() => handleDelete(row._id)}
-              aria-label="delete"
-            >
+            <IconButton onClick={() => handleDelete(id)} aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
             <Tooltip title="Return Car">
-              <Link
-                href={`/dashboard/admin/manage-return-cars/edit/${row._id}`}
-              >
+              <Link href={`/dashboard/admin/manage-return-cars/edit/${id}`}>
                 <IconButton aria-label="edit">
                   <EditIcon />
                 </IconButton>
               </Link>
             </Tooltip>
-            <Link href={`/dashboard/admin/manage-return-cars/edit/${row._id}`}>
-              <Button size="small">Return</Button>
-            </Link>
+            <Button size="small" disabled={isPaid}>
+              <Link href={`/dashboard/admin/manage-return-cars/edit/${id}`}>
+                Return
+              </Link>
+            </Button>
           </Box>
         );
       },
