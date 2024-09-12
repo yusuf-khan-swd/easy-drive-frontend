@@ -85,7 +85,7 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
             className="bg-white border p-8 rounded shadow-md w-full max-w-md "
           >
             <h2 className="text-2xl font-bold mb-6 text-center">
-              Pick a DateTime
+              Update Pick-up Date & Time
             </h2>
 
             <div className="mb-4">
