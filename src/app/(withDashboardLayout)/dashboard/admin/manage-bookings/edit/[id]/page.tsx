@@ -128,6 +128,9 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
           <div className="grid grid-cols-1 gap-8 flex-grow">
             <div className="bg-white rounded-lg shadow-md overflow-hidden border">
               <div className="p-6">
+                <h2 className="text-2xl font-bold mb-6 text-center">
+                  Car Information
+                </h2>
                 <h3 className="text-xl font-semibold text-blue-700 mb-2">
                   {name}
                 </h3>
