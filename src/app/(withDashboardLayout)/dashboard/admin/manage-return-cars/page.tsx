@@ -7,15 +7,7 @@ import {
 } from "@/redux/api/bookingApi";
 import { useDebounced } from "@/redux/hooks";
 import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import {
-  Box,
-  Button,
-  IconButton,
-  Stack,
-  TextField,
-  Tooltip,
-} from "@mui/material";
+import { Box, Button, IconButton, Stack, TextField } from "@mui/material";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import Link from "next/link";
 import { useState } from "react";
@@ -90,13 +82,6 @@ const ManageReturnCar = () => {
             <IconButton onClick={() => handleDelete(id)} aria-label="delete">
               <DeleteIcon sx={{ color: "red" }} />
             </IconButton>
-            <Tooltip title="Return Car">
-              <Link href={`/dashboard/admin/manage-return-cars/edit/${id}`}>
-                <IconButton aria-label="edit">
-                  <EditIcon />
-                </IconButton>
-              </Link>
-            </Tooltip>
             <Button size="small" disabled={isPaid}>
               <Link href={`/dashboard/admin/manage-return-cars/edit/${id}`}>
                 Return
