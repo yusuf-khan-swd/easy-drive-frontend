@@ -17,6 +17,8 @@ for future - dropdown menus for navbar account menu item is not link but text is
 
 for future - Remove unused svg's
 
+for future - Add redux persist for storing user info after success login and remove on logout 
+
 -------------------- 11:26 AM 9/11/2024, we
 
 
