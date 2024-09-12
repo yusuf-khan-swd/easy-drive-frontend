@@ -132,6 +132,7 @@ const RegisterPage = () => {
                 <input
                   type="checkbox"
                   name="termsAccepted"
+                  checked={termsAccepted}
                   onClick={() => setTermsAccepted(!termsAccepted)}
                   className=""
                 />
