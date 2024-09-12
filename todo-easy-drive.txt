@@ -1,6 +1,8 @@
 
 -------------------- 10:12 AM 9/12/2024, th
 
+[Success] - Deploy to vercel - 12:09 PM 9/12/2024
+
 for future - dropdown menus for navbar account menu item is not link but text is.
 
 
