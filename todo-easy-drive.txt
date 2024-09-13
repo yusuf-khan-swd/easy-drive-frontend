@@ -1,6 +1,8 @@
 
 -------------------- 11:45 AM 9/13/2024, fr
 
+[Success] - Deploy to vercel - 4:02 PM 9/13/2024
+
 Done - Add button to change state of login defaultValues
 
 Done - Update register link style in login and in register update style of login link
