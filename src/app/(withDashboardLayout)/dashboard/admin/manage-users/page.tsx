@@ -29,10 +29,11 @@ const ManageUsers = () => {
     query["searchTerm"] = searchTerm;
   }
 
-  const { data: usersData, isLoading } = useGetAllUsersQuery(undefined);
-  const users = usersData?.data;
+  const { data, isLoading, isError } = useGetAllUsersQuery(undefined);
   const [deleteUser] = useDeleteUserMutation();
   const [makeAdmin] = useMakeAdminMutation();
+
+  const users = data?.data;
 
   const handleMakeAdmin = async (id: string) => {
     try {
@@ -97,10 +98,14 @@ const ManageUsers = () => {
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Stack direction="row" spacing={2}>
           <Link href="/dashboard/admin/manage-users/create-user">
-            <Button>User</Button>
+            <Button size="small" sx={{ m: 1, px: 1 }}>
+              User
+            </Button>
           </Link>
           <Link href="/dashboard/admin/manage-users/create-admin">
-            <Button>Admin</Button>
+            <Button size="small" sx={{ m: 1, px: 1 }}>
+              Admin
+            </Button>
           </Link>
         </Stack>
         <TextField
@@ -109,20 +114,24 @@ const ManageUsers = () => {
           placeholder="search users"
         />
       </Stack>
-      <Box my={2}>
-        <DataGrid
-          rows={users}
-          columns={columns}
-          getRowId={(row) => row._id}
-          loading={isLoading}
-          slotProps={{
-            loadingOverlay: {
-              variant: "linear-progress",
-              noRowsVariant: "skeleton",
-            },
-          }}
-        />
-      </Box>
+      {isError ? (
+        <h2>No Data Available</h2>
+      ) : (
+        <Box sx={{ my: 2, minWidth: "840px" }}>
+          <DataGrid
+            rows={users}
+            columns={columns}
+            getRowId={(row) => row._id}
+            loading={isLoading}
+            slotProps={{
+              loadingOverlay: {
+                variant: "linear-progress",
+                noRowsVariant: "skeleton",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Box>
   );
 };
