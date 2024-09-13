@@ -189,21 +189,44 @@ const LoginPage = () => {
           </Box>
         </Box>
         <div className="text-center mt-8 space-y-3">
-          <div>
-            <p>
-              User Email: <span className="text-blue-600">user@easy.com</span>
-            </p>
-            <p>
-              User Password: <span className="text-blue-600">Pa$$w0rd!</span>
-            </p>
+          <div className="flex">
+            <div>
+              <Button
+                variant="outlined"
+                size="small"
+                sx={{ m: 1, px: 1, py: 1 }}
+              >
+                Click
+              </Button>
+            </div>
+            <div>
+              <p>
+                User Email: <span className="text-blue-600">user@easy.com</span>
+              </p>
+              <p>
+                User Password: <span className="text-blue-600">Pa$$w0rd!</span>
+              </p>
+            </div>
           </div>
-          <div>
-            <p>
-              Admin Email: <span className="text-blue-600">admin@easy.com</span>
-            </p>
-            <p>
-              Admin Password: <span className="text-blue-600">Pa$$w0rd!</span>
-            </p>
+          <div className="flex">
+            <div>
+              <Button
+                variant="outlined"
+                size="small"
+                sx={{ m: 1, px: 1, py: 1 }}
+              >
+                Click
+              </Button>
+            </div>
+            <div>
+              <p>
+                Admin Email:{" "}
+                <span className="text-blue-600">admin@easy.com</span>
+              </p>
+              <p>
+                Admin Password: <span className="text-blue-600">Pa$$w0rd!</span>
+              </p>
+            </div>
           </div>
         </div>
       </Stack>
