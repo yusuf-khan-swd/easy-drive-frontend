@@ -1,6 +1,8 @@
 
 -------------------- 11:45 AM 9/13/2024, fr
 
+for future - confirm, reject booking for admin
+
 for future - Before any delete show Confirmation Modal mainly car and user
 
 -------------------- 10:12 AM 9/12/2024, th
@@ -37,7 +39,7 @@ Done - In user hide edit icon if car return
 
 Done - In user, update title of booking page after payment btn redirect to order page 
 
-for future - handle cancel booking for orders
+for future - handle cancel booking for users
 
 [Success] - Deploy to vercel - 12:09 PM 9/12/2024
 
