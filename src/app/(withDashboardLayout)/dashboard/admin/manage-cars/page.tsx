@@ -24,7 +24,7 @@ const ManageCars = () => {
     query["searchTerm"] = searchTerm;
   }
 
-  const { data, isLoading } = useGetAllCarsQuery("");
+  const { data, isLoading, isError } = useGetAllCarsQuery("");
   const [deleteCar] = useDeleteCarMutation();
 
   const cars = data?.data;
@@ -82,20 +82,24 @@ const ManageCars = () => {
           placeholder="search cars"
         />
       </Stack>
-      <Box my={2}>
-        <DataGrid
-          rows={cars}
-          columns={columns}
-          getRowId={(row) => row._id}
-          loading={isLoading}
-          slotProps={{
-            loadingOverlay: {
-              variant: "linear-progress",
-              noRowsVariant: "skeleton",
-            },
-          }}
-        />
-      </Box>
+      {isError ? (
+        <h2>No Data Available</h2>
+      ) : (
+        <Box sx={{ my: 2, minWidth: "840px" }}>
+          <DataGrid
+            rows={cars}
+            columns={columns}
+            getRowId={(row) => row._id}
+            loading={isLoading}
+            slotProps={{
+              loadingOverlay: {
+                variant: "linear-progress",
+                noRowsVariant: "skeleton",
+              },
+            }}
+          />
+        </Box>
+      )}
     </Box>
   );
 };
