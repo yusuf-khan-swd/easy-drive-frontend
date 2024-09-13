@@ -149,7 +149,7 @@ const Navbar = () => {
                   <Button
                     onClick={handleCloseNavMenu}
                     variant="text"
-                    sx={{ m: 1, color: "white", display: "block" }}
+                    sx={{ m: 1, px: 1, color: "white", display: "block" }}
                   >
                     {page}
                   </Button>
@@ -213,9 +213,29 @@ const Navbar = () => {
                   </Menu>
                 </>
               ) : (
-                <Button component={Link} href="/login">
-                  Login
-                </Button>
+                <div className="flex">
+                  <Button
+                    component={Link}
+                    href="/login"
+                    size="small"
+                    sx={{ m: 1, px: 2, border: 1 }}
+                  >
+                    Login
+                  </Button>
+                  <Button
+                    component={Link}
+                    href="/register"
+                    size="small"
+                    sx={{
+                      m: 1,
+                      px: 2,
+                      border: 1,
+                      display: { xs: "none", md: "flex" },
+                    }}
+                  >
+                    Signup
+                  </Button>
+                </div>
               )}
             </Box>
           </Toolbar>
