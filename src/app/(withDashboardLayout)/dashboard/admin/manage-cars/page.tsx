@@ -74,7 +74,7 @@ const ManageCars = () => {
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         {/* TODO: See can modal can be add for create car */}
         <Link href="/dashboard/admin/manage-cars/create">
-          <Button>Create New Cars</Button>
+          <Button size="small">Create</Button>
         </Link>
         <TextField
           onChange={(e) => setSearchTerm(e.target.value)}
