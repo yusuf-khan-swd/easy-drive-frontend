@@ -1,6 +1,8 @@
 
 -------------------- 11:45 AM 9/13/2024, fr
 
+Done - Add button to change state of login defaultValues
+
 Done - Add Signup button with login and different these two button by border from rest of nav item
 
 for future - admin can block a user or unblock user
