@@ -202,7 +202,7 @@ const LoginPage = () => {
                 size="small"
                 sx={{ m: 1, px: 1, py: "4px" }}
               >
-                Click
+                Use
               </Button>
             </div>
             <div>
@@ -227,7 +227,7 @@ const LoginPage = () => {
                 size="small"
                 sx={{ m: 1, px: 1, py: "4px" }}
               >
-                Click
+                Use
               </Button>
             </div>
             <div>
