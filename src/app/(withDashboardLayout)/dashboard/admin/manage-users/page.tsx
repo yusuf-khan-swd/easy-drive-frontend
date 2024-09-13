@@ -98,12 +98,12 @@ const ManageUsers = () => {
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Stack direction="row" spacing={2}>
           <Link href="/dashboard/admin/manage-users/create-user">
-            <Button size="small" sx={{ m: 1, px: 1 }}>
+            <Button size="small" sx={{ px: 1 }}>
               User
             </Button>
           </Link>
           <Link href="/dashboard/admin/manage-users/create-admin">
-            <Button size="small" sx={{ m: 1, px: 1 }}>
+            <Button size="small" sx={{ px: 1 }}>
               Admin
             </Button>
           </Link>
