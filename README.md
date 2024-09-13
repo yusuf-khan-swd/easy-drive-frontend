@@ -66,3 +66,49 @@ Welcome to **Easy Drive**, a comprehensive car rental service application backen
    ```sh
    npm run dev
    ```
+
+```markdown
+# Routes
+
+## Public Routes
+
+- Home
+- Cars
+- Car Details
+- About
+- Contact
+- Login
+- Register
+
+## User Routes
+
+- Book Now
+- Review Form
+- Edit Profile
+- My Bookings
+  - Edit Booking Start Time
+  - Return Car (End Time)
+  - After return the car user can pay
+- Payment
+- Payment History
+
+## Admin Routes
+
+- Manage Cars
+  - Create Car
+  - Edit Car
+  - Delete Car
+- Manage Bookings
+  - Edit Booking
+  - Delete Booking
+- Manage Return Car
+  - Return a Car
+  - Edit Return
+  - Delete Return
+- Manage Users
+  - Edit User
+  - Make User to an Admin
+  - Create User
+  - Create Admin
+  - Delete User
+```
