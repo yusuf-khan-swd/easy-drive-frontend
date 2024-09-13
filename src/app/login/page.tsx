@@ -192,6 +192,12 @@ const LoginPage = () => {
           <div className="flex">
             <div>
               <Button
+                onClick={() =>
+                  setDefaultValues({
+                    email: "user@easy.com",
+                    password: "Pa$$w0rd!",
+                  })
+                }
                 variant="outlined"
                 size="small"
                 sx={{ m: 1, px: 1, py: 1 }}
@@ -211,6 +217,12 @@ const LoginPage = () => {
           <div className="flex">
             <div>
               <Button
+                onClick={() =>
+                  setDefaultValues({
+                    email: "admin@easy.com",
+                    password: "Pa$$w0rd!",
+                  })
+                }
                 variant="outlined"
                 size="small"
                 sx={{ m: 1, px: 1, py: 1 }}
