@@ -1,4 +1,8 @@
 
+-------------------- 11:45 AM 9/13/2024, fr
+
+for future - Before any delete show Confirmation Modal mainly car and user
+
 -------------------- 10:12 AM 9/12/2024, th
 
 [Success] - Deploy to vercel after fixing with issue with accepting term issue - 11:00 PM 9/12/2024
