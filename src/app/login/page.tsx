@@ -200,7 +200,7 @@ const LoginPage = () => {
                 }
                 variant="outlined"
                 size="small"
-                sx={{ m: 1, px: 1, py: 1 }}
+                sx={{ m: 1, px: 1, py: "4px" }}
               >
                 Click
               </Button>
@@ -225,7 +225,7 @@ const LoginPage = () => {
                 }
                 variant="outlined"
                 size="small"
-                sx={{ m: 1, px: 1, py: 1 }}
+                sx={{ m: 1, px: 1, py: "4px" }}
               >
                 Click
               </Button>
