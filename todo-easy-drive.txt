@@ -3,7 +3,9 @@
 
 Done - Add button to change state of login defaultValues
 
-Done - Add Signup button with login and different these two button by border from rest of nav item
+Done - Update register link style in login and in register update style of login link
+
+Done - Add Signup button along with login and different these two button by border, from rest of nav item
 
 for future - admin can block a user or unblock user
 
