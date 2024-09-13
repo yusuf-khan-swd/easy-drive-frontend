@@ -242,6 +242,7 @@ const LoginPage = () => {
           </div>
           <div>
             <Button
+              fullWidth
               onClick={() =>
                 setDefaultValues({
                   email: "",
