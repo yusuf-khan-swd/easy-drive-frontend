@@ -240,6 +240,21 @@ const LoginPage = () => {
               </p>
             </div>
           </div>
+          <div>
+            <Button
+              onClick={() =>
+                setDefaultValues({
+                  email: "",
+                  password: "",
+                })
+              }
+              variant="outlined"
+              size="small"
+              sx={{ m: 1, px: 1, py: "4px" }}
+            >
+              Clear
+            </Button>
+          </div>
         </div>
       </Stack>
     </Container>
