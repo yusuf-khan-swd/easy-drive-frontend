@@ -7,6 +7,17 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
+const addOneHourToEndTime = (startTime: string) => {
+  const numberOfHour = 1;
+
+  const startTimeHour = startTime.split(":")[0];
+  const startTimeMinute = startTime.split(":")[1];
+  const addOneHour =
+    (Number(startTimeHour) + numberOfHour).toString() + ":" + startTimeMinute;
+
+  return addOneHour;
+};
+
 const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
@@ -80,7 +91,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
       return setEndTime(value);
     }
 
-    return setEndTime(startTime);
+    return setEndTime(addOneHourToEndTime(startTime));
   };
 
   useEffect(() => {
@@ -90,12 +101,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
       setDate(booking?.date);
       setStartTime(startTime);
 
-      const startTimeHour = startTime.split(":")[0];
-      const startTimeMinute = startTime.split(":")[1];
-      const oneHourAddedToEndTime =
-        (Number(startTimeHour) + 1).toString() + ":" + startTimeMinute;
-
-      setEndTime(oneHourAddedToEndTime);
+      setEndTime(addOneHourToEndTime(startTime));
     }
   }, [isLoading, booking]);
 
