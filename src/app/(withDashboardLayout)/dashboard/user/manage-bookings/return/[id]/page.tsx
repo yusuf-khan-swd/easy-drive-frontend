@@ -58,6 +58,13 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     }
   };
 
+  const handleSetEndTime = (value: string) => {
+    console.log({ startTime });
+    console.log(value);
+
+    setEndTime(value);
+  };
+
   useEffect(() => {
     if (!isLoading && booking) {
       setDate(booking?.date);
@@ -117,7 +124,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
               <input
                 type="time"
                 value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
+                onChange={(e) => handleSetEndTime(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.time ? "border-red-500" : "border-gray-300"
                 }`}
