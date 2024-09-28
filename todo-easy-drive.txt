@@ -1,8 +1,6 @@
 
 -------------------- 7:34 PM 9/28/2024, sa
 
-For time only allow Hour not minute
-
 Fix the issue in return car with previous time select. User can only select future time for return car
 
 Done - Fix the issue with previous date select. User can only select future or present date
