@@ -3,7 +3,7 @@
 
 
 
-Fix the issue with previous time select. User can only select future or present time
+Fix the issue in return car with previous time select. User can only select future time for return car
 
 Done - Fix the issue with previous date select. User can only select future or present date
 
