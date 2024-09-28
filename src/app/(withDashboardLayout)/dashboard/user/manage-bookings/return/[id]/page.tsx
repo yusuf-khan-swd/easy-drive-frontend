@@ -58,11 +58,29 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     }
   };
 
-  const handleSetEndTime = (value: string) => {
-    console.log({ startTime });
-    console.log(value);
+  const handleSetEndTime = async (value: string) => {
+    const endTimeHour = value.split(":")[0];
+    const startTimeHour = startTime.split(":")[0];
 
-    setEndTime(value);
+    const endTimeMinute = value.split(":")[1];
+    const startTimeMinute = startTime.split(":")[1];
+
+    const returnTimeHourGreater = Number(endTimeHour) > Number(startTimeHour);
+
+    if (returnTimeHourGreater) {
+      return setEndTime(value);
+    }
+
+    const returnTimeHourEqual = Number(endTimeHour) === Number(startTimeHour);
+
+    const returnTimeMinuteGreater =
+      returnTimeHourEqual && Number(endTimeMinute) > Number(startTimeMinute);
+
+    if (returnTimeMinuteGreater) {
+      return setEndTime(value);
+    }
+
+    return setEndTime(startTime);
   };
 
   useEffect(() => {
