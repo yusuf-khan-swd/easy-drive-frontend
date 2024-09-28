@@ -1,4 +1,7 @@
 
+-------------------- 7:34 PM 9/28/2024, sa
+
+Done - Fix the issue with previous date select. User can only select future or present date
 
 Test git after changing local remote url by set-url - 7:34 PM 9/28/2024
 
