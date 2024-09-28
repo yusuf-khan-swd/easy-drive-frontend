@@ -67,8 +67,17 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
 
   useEffect(() => {
     if (!isLoading && booking) {
+      const startTime = booking?.startTime;
+
       setDate(booking?.date);
-      setStartTime(booking?.startTime);
+      setStartTime(startTime);
+
+      const startTimeHour = startTime.split(":")[0];
+      const startTimeMinute = startTime.split(":")[1];
+      const oneHourAddedToEndTime =
+        (Number(startTimeHour) + 1).toString() + ":" + startTimeMinute;
+
+      setEndTime(oneHourAddedToEndTime);
     }
   }, [isLoading, booking]);
 
