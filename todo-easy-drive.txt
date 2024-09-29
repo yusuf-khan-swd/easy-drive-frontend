@@ -3,7 +3,7 @@
 
 Done -  For startTime select field, check startTime is greater then current Time doing that it will solved the problem with past time selection, by making selected time invalid
  
-For endTime select field, check endTime is greater then startTime doing that will make, problem with minus total cost calculation solved
+Done - For endTime select field, check endTime is greater then startTime doing that will make, problem with minus total cost calculation solved
 
 For startDate select field add min date as current date to all the select date field it will make all the previous date disabled
 
