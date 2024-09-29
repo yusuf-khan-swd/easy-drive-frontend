@@ -61,7 +61,34 @@ const Booking = ({ params }: { params: { id: string } }) => {
   };
 
   const handleStartTime = (value: string) => {
-    setStartTime(value);
+    const currentDateTime = new Date();
+    const currentTimeHour = currentDateTime.getHours();
+    const currentTimeMinute = currentDateTime.getMinutes();
+    const currentTime = currentTimeHour + ":" + currentTimeMinute;
+
+    const startTimeHour = value.split(":")[0];
+
+    const startTimeMinute = value.split(":")[1];
+
+    const startTimeHourGreater =
+      Number(startTimeHour) > Number(currentTimeHour);
+
+    if (startTimeHourGreater) {
+      return setStartTime(value);
+    }
+
+    const startTimeHourEqual =
+      Number(startTimeHour) === Number(currentTimeHour);
+
+    const startTimeMinuteGreaterOrEqual =
+      startTimeHourEqual &&
+      Number(startTimeMinute) >= Number(currentTimeMinute);
+
+    if (startTimeMinuteGreaterOrEqual) {
+      return setStartTime(value);
+    }
+
+    setStartTime(currentTime);
   };
 
   return (
