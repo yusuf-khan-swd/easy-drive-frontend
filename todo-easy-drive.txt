@@ -5,7 +5,7 @@ Done -  For startTime select field, check startTime is greater then current Time
  
 Done - For endTime select field, check endTime is greater then startTime doing that will make, problem with minus total cost calculation solved
 
-For startDate select field add min date as current date to all the select date field it will make all the previous date disabled
+Done - For startDate select field add min date as current date to date field it will make all the previous date disabled
 
 Done - Fix the issue in return car with previous time select. User can only select future time for return car
 [Solution] - first check endTime hour is greater then startTimeHour if so add selected endTime to state or endTimeHour is equal to startTimeHour then check endTime minute is greater then startTimeMinute if both condition failed then fall back startTime plus oneHour to endTime
