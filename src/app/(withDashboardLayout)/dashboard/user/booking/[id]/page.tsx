@@ -60,6 +60,10 @@ const Booking = ({ params }: { params: { id: string } }) => {
     }
   };
 
+  const handleStartTime = (value: string) => {
+    setStartTime(value);
+  };
+
   return (
     <div>
       <h2 className="text-2xl font-bold text-center mb-6">Booking Details</h2>
@@ -98,7 +102,7 @@ const Booking = ({ params }: { params: { id: string } }) => {
               <input
                 type="time"
                 value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
+                onChange={(e) => handleStartTime(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.time ? "border-red-500" : "border-gray-300"
                 }`}
