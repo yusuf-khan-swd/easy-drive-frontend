@@ -1,4 +1,8 @@
 
+-------------------- 10:32 AM 9/29/2024, su 
+
+Add validation to all of startTime, endTime and startDate select field
+
 -------------------- 7:34 PM 9/28/2024, sa
 
 Done -  For startTime select field, check startTime is greater then current Time doing that it will solved the problem with past time selection, by making selected time invalid
