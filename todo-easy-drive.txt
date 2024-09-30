@@ -1,7 +1,8 @@
 
 -------------------- 10:32 AM 9/29/2024, su 
 
-Add validation to all of startTime, endTime and startDate select field
+Done - Add validation to all of startTime, endTime and startDate select field
+Add only validation User not for admin. in admin update booking did not apply date and start time validation. but apply validation for admin return car
 
 -------------------- 7:34 PM 9/28/2024, sa
 
