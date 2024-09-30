@@ -7,6 +7,17 @@ import { useRouter } from "next/navigation";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
+const addOneHourToEndTime = (startTime: string) => {
+  const numberOfHour = 1;
+
+  const startTimeHour = startTime.split(":")[0];
+  const startTimeMinute = startTime.split(":")[1];
+  const addOneHour =
+    (Number(startTimeHour) + numberOfHour).toString() + ":" + startTimeMinute;
+
+  return addOneHour;
+};
+
 const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
@@ -58,11 +69,39 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
     }
   };
 
+  const handleEndTime = async (value: string) => {
+    const endTimeHour = value.split(":")[0];
+    const startTimeHour = startTime.split(":")[0];
+
+    const endTimeMinute = value.split(":")[1];
+    const startTimeMinute = startTime.split(":")[1];
+
+    const returnTimeHourGreater = Number(endTimeHour) > Number(startTimeHour);
+
+    if (returnTimeHourGreater) {
+      return setEndTime(value);
+    }
+
+    const returnTimeHourEqual = Number(endTimeHour) === Number(startTimeHour);
+
+    const returnTimeMinuteGreater =
+      returnTimeHourEqual && Number(endTimeMinute) > Number(startTimeMinute);
+
+    if (returnTimeMinuteGreater) {
+      return setEndTime(value);
+    }
+
+    return setEndTime(addOneHourToEndTime(startTime));
+  };
+
   useEffect(() => {
     if (!isLoading && booking) {
+      const startTime = booking?.startTime;
+
       setDate(booking?.date);
-      setStartTime(booking?.startTime);
-      setEndTime(booking?.endTime);
+      setStartTime(startTime);
+
+      setEndTime(addOneHourToEndTime(startTime));
     }
   }, [isLoading, booking]);
 
@@ -118,7 +157,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
               <input
                 type="time"
                 value={endTime}
-                onChange={(e) => setEndTime(e.target.value)}
+                onChange={(e) => handleEndTime(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.time ? "border-red-500" : "border-gray-300"
                 }`}
