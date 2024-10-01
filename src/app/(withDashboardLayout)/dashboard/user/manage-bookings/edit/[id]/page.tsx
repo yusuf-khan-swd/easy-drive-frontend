@@ -68,6 +68,37 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
     }
   };
 
+  const handleStartTime = (value: string) => {
+    const currentDateTime = new Date();
+    const currentTimeHour = currentDateTime.getHours();
+    const currentTimeMinute = currentDateTime.getMinutes();
+    const currentTime = currentTimeHour + ":" + currentTimeMinute;
+
+    const startTimeHour = value.split(":")[0];
+
+    const startTimeMinute = value.split(":")[1];
+
+    const startTimeHourGreater =
+      Number(startTimeHour) > Number(currentTimeHour);
+
+    if (startTimeHourGreater) {
+      return setStartTime(value);
+    }
+
+    const startTimeHourEqual =
+      Number(startTimeHour) === Number(currentTimeHour);
+
+    const startTimeMinuteGreaterOrEqual =
+      startTimeHourEqual &&
+      Number(startTimeMinute) >= Number(currentTimeMinute);
+
+    if (startTimeMinuteGreaterOrEqual) {
+      return setStartTime(value);
+    }
+
+    setStartTime(currentTime);
+  };
+
   useEffect(() => {
     if (!isLoading && booking) {
       setDate(booking?.date);
@@ -98,6 +129,7 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
               <input
                 type="date"
                 value={date}
+                min={new Date().toISOString().split("T")[0]}
                 onChange={(e) => setDate(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.date ? "border-red-500" : "border-gray-300"
@@ -114,7 +146,7 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
               <input
                 type="time"
                 value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
+                onChange={(e) => handleStartTime(e.target.value)}
                 className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
                   errors.time ? "border-red-500" : "border-gray-300"
                 }`}
