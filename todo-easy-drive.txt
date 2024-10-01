@@ -1,4 +1,8 @@
 
+-------------------- 9:52 AM 10/1/2024, tu
+
+Use common car card to show car info in bookings and return car page
+
 -------------------- 10:32 AM 9/29/2024, su 
 
 Done - Add validation to all of startTime, endTime and startDate select field
