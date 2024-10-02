@@ -3,6 +3,8 @@
 
 Use common car card to show car info in bookings and return car page
 
+DB URL is not working. First cluster db url working like ThriftStore db but not second cluster
+
 -------------------- 10:32 AM 9/29/2024, su 
 
 Done - Add validation to all of startTime, endTime and startDate select field
