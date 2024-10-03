@@ -4,9 +4,11 @@ import Link from "next/link";
 const CarCard = ({
   car,
   detailsPage = false,
+  bookingPage = false,
 }: {
   car: TCar;
   detailsPage?: boolean;
+  bookingPage?: boolean;
 }) => {
   const {
     _id,
@@ -47,34 +49,39 @@ const CarCard = ({
           </span>
         </p>
         <div className="mb-4">
-          {detailsPage && features && (
-            <div className="flex space-x-2 items-center">
-              <p>Features:</p>{" "}
-              <div className="flex flex-wrap space-x-2">
-                {features.map((feature: string, index: number) => (
-                  <p
-                    key={index}
-                    className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
-                  >
-                    {feature}
-                  </p>
-                ))}
+          {detailsPage ||
+            (bookingPage && features && (
+              <div className="flex space-x-2 items-center">
+                <p>Features:</p>{" "}
+                <div className="flex flex-wrap space-x-2">
+                  {features.map((feature: string, index: number) => (
+                    <p
+                      key={index}
+                      className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
+                    >
+                      {feature}
+                    </p>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
+            ))}
         </div>
-        {detailsPage ? (
-          <Link href={`/dashboard/user/booking/${_id}`}>
-            <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
-              Book Now
-            </button>
-          </Link>
-        ) : (
-          <Link href={`/cars/${_id}`}>
-            <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors duration-300">
-              View Details
-            </button>
-          </Link>
+        {!bookingPage && (
+          <>
+            {detailsPage ? (
+              <Link href={`/dashboard/user/booking/${_id}`}>
+                <button className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700">
+                  Book Now
+                </button>
+              </Link>
+            ) : (
+              <Link href={`/cars/${_id}`}>
+                <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors duration-300">
+                  View Details
+                </button>
+              </Link>
+            )}
+          </>
         )}
       </div>
     </div>
