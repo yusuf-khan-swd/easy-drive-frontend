@@ -100,7 +100,7 @@ const Booking = ({ params }: { params: { id: string } }) => {
           {/* Form for selecting date and time */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white border p-8 rounded shadow-md w-full max-w-md "
+            className="bg-white border p-8 rounded shadow-md w-full max-w-md mx-auto"
           >
             <h2 className="text-2xl font-bold mb-6 text-center">
               Pick a DateTime
