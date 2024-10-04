@@ -1,6 +1,7 @@
 "use client";
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
+import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 import { useReturnCarMutation } from "@/redux/api/carApi";
 import { useRouter } from "next/navigation";
@@ -176,51 +177,7 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
             </button>
           </form>
           <div className="grid grid-cols-1 gap-8 flex-grow">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden border">
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-6 text-center">
-                  Car Information
-                </h2>
-                <h3 className="text-xl font-semibold text-blue-700 mb-2">
-                  {name}
-                </h3>
-                <p className="text-gray-700 mb-4">{description}</p>
-                <p className="text-gray-700 mb-2">Color: {color}</p>
-                <p className="text-gray-700 mb-2">
-                  Electric: {isElectric ? "Yes" : "No"}
-                </p>
-                <p className="text-gray-900 font-bold mb-2">
-                  Price: {pricePerHour}tk/hour
-                </p>
-                <p className="mb-2">
-                  Status:{" "}
-                  <span
-                    className={`${
-                      status === "available" ? "text-green-600" : "text-red-600"
-                    }`}
-                  >
-                    {status}
-                  </span>
-                </p>
-                <div className="mb-4">
-                  {features && (
-                    <div className="flex space-x-2 items-center">
-                      <p>Features:</p>{" "}
-                      <div className="flex flex-wrap space-x-2">
-                        {features.map((feature: string, index: number) => (
-                          <p
-                            key={index}
-                            className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
-                          >
-                            {feature}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              </div>
-            </div>
+            <CarCard car={car} bookingPage />
           </div>
         </div>
       ) : (
