@@ -97,7 +97,7 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
       return setStartTime(value);
     }
 
-    setStartTime(currentTime);
+    setStartTime(booking?.startTime);
   };
 
   useEffect(() => {
