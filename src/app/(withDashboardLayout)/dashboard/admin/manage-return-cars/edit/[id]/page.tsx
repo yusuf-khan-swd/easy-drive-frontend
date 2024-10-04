@@ -19,7 +19,7 @@ const addOneHourToEndTime = (startTime: string) => {
   return addOneHour;
 };
 
-const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
+const ReturnCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   const [returnCar, { isLoading: returnCarIsLoading }] = useReturnCarMutation();
@@ -187,4 +187,4 @@ const UpdateReturnCar = ({ params }: { params: { id: string } }) => {
   );
 };
 
-export default UpdateReturnCar;
+export default ReturnCar;
