@@ -23,17 +23,6 @@ const Booking = ({ params }: { params: { id: string } }) => {
 
   if (isLoading) return <LoadingSpinner />;
 
-  const {
-    _id,
-    name,
-    description,
-    color,
-    status,
-    isElectric,
-    features,
-    pricePerHour,
-  } = car || {};
-
   const validate = (): boolean => {
     const newErrors: { [key: string]: string } = {};
 
@@ -48,7 +37,7 @@ const Booking = ({ params }: { params: { id: string } }) => {
     try {
       e.preventDefault();
       if (validate()) {
-        const bookingData = { carId: _id, date, startTime: startTime };
+        const bookingData = { carId: car._id, date, startTime: startTime };
 
         const result = await createBooking(bookingData).unwrap();
         toast.success(result?.message || "Car Booked Successfully");
