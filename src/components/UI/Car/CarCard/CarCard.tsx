@@ -49,22 +49,21 @@ const CarCard = ({
           </span>
         </p>
         <div className="mb-4">
-          {detailsPage ||
-            (bookingPage && features && (
-              <div className="flex space-x-2 items-center">
-                <p>Features:</p>{" "}
-                <div className="flex flex-wrap space-x-2">
-                  {features.map((feature: string, index: number) => (
-                    <p
-                      key={index}
-                      className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
-                    >
-                      {feature}
-                    </p>
-                  ))}
-                </div>
+          {(detailsPage || bookingPage) && features && (
+            <div className="flex space-x-2 items-center">
+              <p>Features:</p>{" "}
+              <div className="flex flex-wrap space-x-2">
+                {features.map((feature: string, index: number) => (
+                  <p
+                    key={index}
+                    className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
+                  >
+                    {feature}
+                  </p>
+                ))}
               </div>
-            ))}
+            </div>
+          )}
         </div>
         {!bookingPage && (
           <>
