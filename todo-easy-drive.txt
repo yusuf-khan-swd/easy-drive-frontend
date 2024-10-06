@@ -1,7 +1,7 @@
 
 -------------------- 9:52 AM 10/1/2024, tu
 
-Use common car card to show car info in bookings and return car page
+Done - Use common car card to show car info in bookings and return car page
 
 DB URL is not working. First cluster db url working like ThriftStore db but not second cluster
 
