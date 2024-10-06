@@ -33,16 +33,6 @@ const ReturnCar = ({ params }: { params: { id: string } }) => {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
 
-  const {
-    name,
-    description,
-    color,
-    status,
-    isElectric,
-    features,
-    pricePerHour,
-  } = car || {};
-
   const validate = (): boolean => {
     const newErrors: { [key: string]: string } = {};
 
