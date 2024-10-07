@@ -85,11 +85,11 @@ const Booking = ({ params }: { params: { id: string } }) => {
     <div>
       <h2 className="text-2xl font-bold text-center mb-6">Booking Details</h2>
       {car ? (
-        <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Form for selecting date and time */}
           <form
             onSubmit={handleSubmit}
-            className="bg-white border p-8 rounded shadow-md w-full max-w-md mx-auto"
+            className="bg-white border p-8 rounded shadow-md w-full max-w-lg"
           >
             <h2 className="text-2xl font-bold mb-6 text-center">
               Pick a DateTime
@@ -137,7 +137,7 @@ const Booking = ({ params }: { params: { id: string } }) => {
               Confirm
             </button>
           </form>
-          <div className="grid grid-cols-1 gap-8 flex-grow">
+          <div className="grid grid-cols-1 flex-grow">
             <CarCard car={car} bookingPage />
           </div>
         </div>
