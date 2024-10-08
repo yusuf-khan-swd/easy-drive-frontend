@@ -1,7 +1,7 @@
 
 -------------------- 10:44 AM 10/7/2024, su
 
-Create a common BookingForm and ReturnCarForm component and use in pages
+Create a common or reusable BookingForm, UpdateBookingForm, and ReturnCarForm component and use in pages
 
 -------------------- 9:52 AM 10/1/2024, tu
 
