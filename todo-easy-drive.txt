@@ -7,7 +7,8 @@ Create a common BookingForm and ReturnCarForm component and use in pages
 
 Done - Use common car card to show car info in bookings and return car page
 
-DB URL is not working. First cluster db url working like ThriftStore db but not second cluster
+[fixed] - DB URL is not working. First cluster db url working like ThriftStore db but not second cluster
+10:22 AM 10/8/2024 - I think problem with my network
 
 -------------------- 10:32 AM 9/29/2024, su 
 
