@@ -86,7 +86,7 @@ const UpdateBookingForm = ({ booking }: { booking: any }) => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="bg-white border p-8 rounded shadow-md w-full"
+        className="bg-white border p-8 rounded shadow-md"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">
           Update Pick-up Date & Time
