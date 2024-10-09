@@ -25,7 +25,7 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Form for selecting date and time */}
           <UpdateBookingForm booking={booking} />
-          <div className="grid grid-cols-1 gap-8 flex-grow">
+          <div className="grid">
             <CarCard car={car} bookingPage />
           </div>
         </div>
