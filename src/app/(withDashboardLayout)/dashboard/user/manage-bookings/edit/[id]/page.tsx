@@ -5,9 +5,6 @@ import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 
-// TODO: Need user single booking api
-// TODO: Need update booking api for admin and user
-
 const UpdateBooking = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
