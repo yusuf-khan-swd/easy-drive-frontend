@@ -48,7 +48,6 @@ const UpdateBookingForm = ({ booking }: { booking: any }) => {
     const currentDateTime = new Date();
     const currentTimeHour = currentDateTime.getHours();
     const currentTimeMinute = currentDateTime.getMinutes();
-    const currentTime = currentTimeHour + ":" + currentTimeMinute;
 
     const startTimeHour = value.split(":")[0];
 
