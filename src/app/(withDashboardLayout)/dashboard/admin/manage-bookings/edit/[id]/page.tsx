@@ -1,5 +1,6 @@
 "use client";
 
+import UpdateBookingForm from "@/components/Dashboard/ManageBooking/UpdateBookingForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import {
@@ -69,58 +70,10 @@ const UpdateBooking = ({ params }: { params: { id: string } }) => {
     <div>
       <h2 className="text-2xl font-bold text-center mb-6">Booking Details</h2>
       {booking ? (
-        <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Form for selecting date and time */}
-          <form
-            onSubmit={handleSubmit}
-            className="bg-white border p-8 rounded shadow-md w-full max-w-md "
-          >
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Update Pick-up Date & Time
-            </h2>
-
-            <div className="mb-4">
-              <label htmlFor="date" className="block text-gray-700">
-                Date
-              </label>
-              <input
-                type="date"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-                  errors.date ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {errors.date && (
-                <p className="text-red-500 text-xs">{errors.date}</p>
-              )}
-            </div>
-            <div className="mb-4">
-              <label htmlFor="name" className="block text-gray-700">
-                Start Time
-              </label>
-              <input
-                type="time"
-                value={startTime}
-                onChange={(e) => setStartTime(e.target.value)}
-                className={`mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-700 focus:border-blue-700 sm:text-sm ${
-                  errors.time ? "border-red-500" : "border-gray-300"
-                }`}
-              />
-              {errors.time && (
-                <p className="text-red-500 text-xs">{errors.time}</p>
-              )}
-            </div>
-            {/* Submit button */}
-            <button
-              type="submit"
-              disabled={updateBookingIsLoading}
-              className="bg-blue-700 text-white px-6 py-3 rounded-md hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-blue-700"
-            >
-              Confirm
-            </button>
-          </form>
-          <div className="grid grid-cols-1 gap-8 flex-grow">
+          <UpdateBookingForm booking={booking} />
+          <div className="grid">
             <CarCard car={car} bookingPage />
           </div>
         </div>
