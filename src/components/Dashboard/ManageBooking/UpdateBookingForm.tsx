@@ -1,6 +1,6 @@
 import { useUpdateBookingMutation } from "@/redux/api/bookingApi";
 import { useRouter } from "next/navigation";
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 const UpdateBookingForm = ({ booking }: { booking: any }) => {
@@ -74,13 +74,6 @@ const UpdateBookingForm = ({ booking }: { booking: any }) => {
 
     setStartTime(booking?.startTime);
   };
-
-  useEffect(() => {
-    if (booking) {
-      setDate(booking?.date);
-      setStartTime(booking?.startTime);
-    }
-  }, [booking]);
 
   return (
     <div>
