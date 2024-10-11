@@ -16,8 +16,10 @@ const addOneHourToEndTime = (startTime: string) => {
 
 const ReturnCarForm = ({ booking }: { booking: any }) => {
   const [date, setDate] = useState(booking?.date || "");
-  const [endTime, setEndTime] = useState(booking?.endTime || "");
   const [startTime, setStartTime] = useState(booking?.startTime || "");
+  const [endTime, setEndTime] = useState(
+    booking?.endTime || addOneHourToEndTime(booking?.startTime) || ""
+  );
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const router = useRouter();
 
