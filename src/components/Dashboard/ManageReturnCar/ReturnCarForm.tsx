@@ -79,7 +79,7 @@ const ReturnCarForm = ({ booking }: { booking: any }) => {
     <div>
       <form
         onSubmit={handleSubmit}
-        className="bg-white border p-8 rounded shadow-md w-full max-w-md "
+        className="bg-white border p-8 rounded shadow-md"
       >
         <h2 className="text-2xl font-bold mb-6 text-center">
           Pick Return Time
