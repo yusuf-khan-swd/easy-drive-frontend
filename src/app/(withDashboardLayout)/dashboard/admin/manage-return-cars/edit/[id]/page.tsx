@@ -103,10 +103,10 @@ const ReturnCar = ({ params }: { params: { id: string } }) => {
     <div>
       <h2 className="text-2xl font-bold text-center mb-6">Booking Details</h2>
       {booking ? (
-        <div className="flex flex-col space-y-6 lg:flex-row lg:space-x-6 lg:space-y-0">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Form for selecting date and time */}
           <ReturnCarForm booking={booking} />
-          <div className="grid grid-cols-1 gap-8 flex-grow">
+          <div className="grid">
             <CarCard car={car} bookingPage />
           </div>
         </div>
