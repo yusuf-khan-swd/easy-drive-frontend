@@ -1,6 +1,10 @@
 
 -------------------- 10:44 AM 10/7/2024, su
 
+for future - Remove unused svg and pictures from assets
+
+-------------------- 10:44 AM 10/7/2024, su
+
 Done - Create a common or reusable BookingForm, UpdateBookingForm, and ReturnCarForm component
 
 -------------------- 9:52 AM 10/1/2024, tu
@@ -87,8 +91,6 @@ for future - handle cancel booking for users
 [Success] - Deploy to vercel - 12:09 PM 9/12/2024
 
 for future - dropdown menus for navbar account menu item is not link but text is.
-
-for future - Remove unused svg's
 
 -------------------- 11:26 AM 9/11/2024, we
 
