@@ -21,7 +21,6 @@ const assets = {
     kidney: require("./svgs/kidney.svg"),
     brain: require("./svgs/brain.svg"),
     dna: require("./svgs/dna.svg"),
-    doctorSearch: require("./svgs/doctorSearch.svg"),
     profile: require("./svgs/profile.svg"),
     schedule: require("./svgs/schedule.svg"),
     solution: require("./svgs/solution.svg"),
