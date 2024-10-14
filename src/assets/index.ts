@@ -31,7 +31,6 @@ const assets = {
     neurology: require("./svgs/Neurology.svg"),
     urology: require("./svgs/Urology.svg"),
     orthopedic: require("./svgs/Orthopedic.svg"),
-    dentist: require("./svgs/Dentist.svg"),
     ophthalmology: require("./svgs/Ophthalmology.svg"),
     award: require("./svgs/award-icon.svg"),
     care: require("./svgs/care-icon.svg"),
