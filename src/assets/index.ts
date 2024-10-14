@@ -28,7 +28,6 @@ const assets = {
     grid: require("./svgs/grid.svg"),
     arrow: require("./svgs/arrow.svg"),
     cardiology: require("./svgs/Cardiology.svg"),
-    neurology: require("./svgs/Neurology.svg"),
     award: require("./svgs/award-icon.svg"),
     care: require("./svgs/care-icon.svg"),
     equipment: require("./svgs/medical-equipment-icon.svg"),
