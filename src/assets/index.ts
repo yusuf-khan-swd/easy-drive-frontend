@@ -18,7 +18,6 @@ const assets = {
     search: require("./svgs/search.svg"),
     calender: require("./svgs/calender.svg"),
     location: require("./svgs/location.svg"),
-    kidney: require("./svgs/kidney.svg"),
     brain: require("./svgs/brain.svg"),
     dna: require("./svgs/dna.svg"),
     profile: require("./svgs/profile.svg"),
