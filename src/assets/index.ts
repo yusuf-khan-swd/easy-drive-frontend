@@ -22,7 +22,6 @@ const assets = {
     brain: require("./svgs/brain.svg"),
     dna: require("./svgs/dna.svg"),
     profile: require("./svgs/profile.svg"),
-    schedule: require("./svgs/schedule.svg"),
     solution: require("./svgs/solution.svg"),
     grid: require("./svgs/grid.svg"),
     arrow: require("./svgs/arrow.svg"),
