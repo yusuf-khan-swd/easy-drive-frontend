@@ -19,7 +19,6 @@ const assets = {
     calender: require("./svgs/calender.svg"),
     location: require("./svgs/location.svg"),
     profile: require("./svgs/profile.svg"),
-    solution: require("./svgs/solution.svg"),
     grid: require("./svgs/grid.svg"),
     arrow: require("./svgs/arrow.svg"),
     call: require("./svgs/call-icon.svg"),
