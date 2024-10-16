@@ -21,7 +21,6 @@ const assets = {
     profile: require("./svgs/profile.svg"),
     grid: require("./svgs/grid.svg"),
     arrow: require("./svgs/arrow.svg"),
-    call: require("./svgs/call-icon.svg"),
   },
 };
 
