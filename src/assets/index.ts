@@ -13,7 +13,6 @@ const assets = {
     search: require("./svgs/search.svg"),
     calender: require("./svgs/calender.svg"),
     location: require("./svgs/location.svg"),
-    profile: require("./svgs/profile.svg"),
   },
 };
 
