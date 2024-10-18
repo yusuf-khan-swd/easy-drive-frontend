@@ -2,7 +2,6 @@ const assets = {
   images: {
     // images will go here
 
-    doctors: require("./landing_page/doctors.png"),
     atm: require("./landing_page/atm-card.png"),
     videoCall: require("./landing_page/video_call.png"),
     report: require("./landing_page/diagnostic.png"),
