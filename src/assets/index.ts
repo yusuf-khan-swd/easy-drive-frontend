@@ -6,7 +6,6 @@ const assets = {
     videoCall: require("./landing_page/video_call.png"),
     report: require("./landing_page/diagnostic.png"),
     budge: require("./landing_page/badge.png"),
-    folder: require("./landing_page/folder.png"),
   },
   svgs: {
     search: require("./svgs/search.svg"),
