@@ -1,4 +1,8 @@
 
+-------------------- 10:05 AM 10/19/2024, sa
+
+Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
+
 -------------------- 10:44 AM 10/7/2024, su
 
 Done - for future - Remove unused svg and pictures from assets
