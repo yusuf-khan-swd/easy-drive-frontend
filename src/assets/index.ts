@@ -2,8 +2,8 @@ const assets = {
   images: {
     // images will go here
 
-    atm: require("./landing_page/atm-card.png"),
-    budge: require("./landing_page/badge.png"),
+    atm: require("./images/atm-card.png"),
+    budge: require("./images/badge.png"),
   },
   svgs: {
     search: require("./svgs/search.svg"),
