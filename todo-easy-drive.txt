@@ -1,7 +1,7 @@
 
 -------------------- 10:44 AM 10/7/2024, su
 
-for future - Remove unused svg and pictures from assets
+Done - for future - Remove unused svg and pictures from assets
 
 -------------------- 10:44 AM 10/7/2024, su
 
