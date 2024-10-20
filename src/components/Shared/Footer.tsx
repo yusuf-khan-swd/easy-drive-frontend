@@ -1,7 +1,7 @@
-import facebookIcon from "@/assets/landing_page/facebook.png";
-import instagramIcon from "@/assets/landing_page/instagram.png";
-import linkedIcon from "@/assets/landing_page/linkedin.png";
-import twitterIcon from "@/assets/landing_page/twitter.png";
+import facebookIcon from "@/assets/images/facebook.png";
+import instagramIcon from "@/assets/images/instagram.png";
+import linkedIcon from "@/assets/images/linkedin.png";
+import twitterIcon from "@/assets/images/twitter.png";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
