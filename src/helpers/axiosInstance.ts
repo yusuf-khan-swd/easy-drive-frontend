@@ -33,6 +33,7 @@ instance.interceptors.response.use(
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     console.log("interceptor response ", response);
+    // TODO: directly getting response data but not message. and why is that needed to check
     const responseObject: ResponseSuccessType = {
       message: response?.data?.message,
       data: response?.data?.data,

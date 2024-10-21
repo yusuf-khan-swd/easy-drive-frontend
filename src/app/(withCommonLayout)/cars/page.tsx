@@ -7,6 +7,7 @@ import { TCar } from "@/types/car";
 import { Box } from "@mui/material";
 
 const Car = () => {
+  // TODO: directly getting cars data but not message.
   const { data: cars, isLoading } = useGetAllCarsQuery(undefined);
   console.log(cars);
 
