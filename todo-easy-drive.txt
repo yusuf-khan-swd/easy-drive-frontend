@@ -2,7 +2,8 @@
 -------------------- 10:05 AM 10/19/2024, sa
 
 Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
-Done - Step1 - Make sure when sending token from client using axios server get the token 
+Done - Step1: Make sure when sending token from client using axios server get the token 
+Step2: Get correct response from axios and show response result  
 
 -------------------- 10:44 AM 10/7/2024, su
 
