@@ -3,7 +3,9 @@
 
 Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
 Done - Step1: Make sure when sending token from client using axios server get the token 
-Step2: Get correct response from axios and show response result  
+Step2: Get correct response from axios and show response result 
+Step3: For POST or PUT/PATCH request sending update and create data properly. 
+       Like there is two different way to send data using 'body' property redux way or 'data' property axios way see what to use. Currently I in favor for 'body' way
 
 -------------------- 10:44 AM 10/7/2024, su
 
