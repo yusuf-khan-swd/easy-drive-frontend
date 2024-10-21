@@ -7,9 +7,12 @@ import { TCar } from "@/types/car";
 import { Box } from "@mui/material";
 
 const Car = () => {
-  // const { data: cars, isLoading } = useGetAllCarsQuery(undefined); // ? Use this line for axiosBaseQuery
-  const { data, isLoading } = useGetAllCarsQuery(undefined);
-  const cars = data?.data;
+  const { data: cars, isLoading } = useGetAllCarsQuery(undefined);
+  console.log(cars);
+
+  // ? Use bellow line for redux response
+  // const { data, isLoading } = useGetAllCarsQuery(undefined);
+  // const cars = data?.data;
 
   if (isLoading) return <LoadingSpinner />;
 
