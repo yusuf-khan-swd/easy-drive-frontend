@@ -8,8 +8,8 @@ const authApi = baseApi.injectEndpoints({
       query: (loginData) => ({
         url: `${AUTH_URL}/login`,
         method: "POST",
-        // data: loginData, // ! Need data instead data property for sending body in server because of axios
-        body: loginData,
+        data: loginData, // ! Need use data property instead of body property for sending post data in server because of axios
+        // body: loginData, // ? use body property to send post data using redux
       }),
     }),
 
