@@ -70,7 +70,7 @@ const LoginPage = () => {
     <Container>
       <Stack
         sx={{
-          height: "100vh",
+          minHeight: "100vh",
           justifyContent: "center",
           alignItems: "center",
         }}
