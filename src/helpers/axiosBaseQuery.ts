@@ -10,7 +10,7 @@ export const axiosBaseQuery =
     {
       url: string;
       method?: AxiosRequestConfig["method"];
-      data?: AxiosRequestConfig["data"]; // ! I think this data property is making redux to send body data in data property instead of sending body data in body property
+      body?: AxiosRequestConfig["data"]; // ! I think this data property is making redux to send body data in data property instead of sending body data in body property
       params?: AxiosRequestConfig["params"];
       headers?: AxiosRequestConfig["headers"];
       meta?: IMeta;
@@ -19,12 +19,12 @@ export const axiosBaseQuery =
     unknown,
     unknown
   > =>
-  async ({ url, method, data, params, contentType }) => {
+  async ({ url, method, body, params, contentType }) => {
     try {
       const result = await axiosInstance({
         url: baseUrl + url,
         method,
-        data,
+        data: body,
         params,
         headers: {
           "Content-Type": contentType || "application/json",
