@@ -13,11 +13,9 @@ instance.interceptors.request.use(
   function (config) {
     // Do something before request is sent
     const accessToken = getFromLocalStorage(authKey);
-    console.log("access token in interceptor ", accessToken);
     if (accessToken) {
       config.headers.Authorization = `Bearer ${accessToken}`;
     }
-    console.log("config headers ", config.headers.Authorization);
     return config;
   },
   function (error) {
