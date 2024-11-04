@@ -70,7 +70,7 @@ instance.interceptors.response.use(
     return {
       error: {
         statusCode: error?.response?.status || 500,
-        data: error?.response?.data || error.message,
+        message: error?.response?.data?.message,
         errorMessages: error?.response?.data?.errorMessages || [],
       },
     };
