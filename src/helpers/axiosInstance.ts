@@ -38,46 +38,46 @@ instance.interceptors.response.use(
       meta: response?.data?.meta,
     };
     return responseObject;
+  },
+  async function (error) {
+    // Any status codes that falls outside the range of 2xx cause this function to trigger
+    // Do something with response error
+    // console.log(error);
+
+    // ?  Use this bellow line code if we do not want modify error in axios interceptor.
+    // return Promise.reject(error); // ! This line already been comment out previously
+
+    console.log("interceptor error ", error);
+    console.log("interceptor error response ", error?.response);
+    // ! comment out if else block and use gpt solution
+    // if (error?.response?.status === 403) {
+    //   console.log("403 error ", error?.response);
+    //   // ? I have added this code otherwise there is problem with error response or can remove the if else block
+    //   const responseObject: IGenericErrorResponse = {
+    //     statusCode: error?.response?.data?.statusCode || 500,
+    //     message: error?.response?.data?.message || "Something went wrong",
+    //     errorMessages: error?.response?.data?.errorMessages,
+    //   };
+    //   return responseObject;
+    // } else {
+    //   const responseObject: IGenericErrorResponse = {
+    //     statusCode: error?.response?.data?.statusCode || 500,
+    //     message: error?.response?.data?.message || "Something went wrong",
+    //     errorMessages: error?.response?.data?.errorMessages,
+    //   };
+    //   return responseObject;
+    // }
+
+    return Promise.reject(error);
+
+    return {
+      error: {
+        statusCode: error?.response?.status || 500,
+        message: error?.response?.data?.message,
+        errorMessages: error?.response?.data?.errorMessages || [],
+      },
+    };
   }
-  // async function (error) {
-  //   // Any status codes that falls outside the range of 2xx cause this function to trigger
-  //   // Do something with response error
-  //   // console.log(error);
-
-  //   // ?  Use this bellow line code if we do not want modify error in axios interceptor.
-  //   // return Promise.reject(error); // ! This line already been comment out previously
-
-  //   console.log("interceptor error ", error);
-  //   console.log("interceptor error response ", error?.response);
-  //   // ! comment out if else block and use gpt solution
-  //   // if (error?.response?.status === 403) {
-  //   //   console.log("403 error ", error?.response);
-  //   //   // ? I have added this code otherwise there is problem with error response or can remove the if else block
-  //   //   const responseObject: IGenericErrorResponse = {
-  //   //     statusCode: error?.response?.data?.statusCode || 500,
-  //   //     message: error?.response?.data?.message || "Something went wrong",
-  //   //     errorMessages: error?.response?.data?.errorMessages,
-  //   //   };
-  //   //   return responseObject;
-  //   // } else {
-  //   //   const responseObject: IGenericErrorResponse = {
-  //   //     statusCode: error?.response?.data?.statusCode || 500,
-  //   //     message: error?.response?.data?.message || "Something went wrong",
-  //   //     errorMessages: error?.response?.data?.errorMessages,
-  //   //   };
-  //   //   return responseObject;
-  //   // }
-
-  //   return error;
-
-  //   return {
-  //     error: {
-  //       statusCode: error?.response?.status || 500,
-  //       message: error?.response?.data?.message,
-  //       errorMessages: error?.response?.data?.errorMessages || [],
-  //     },
-  //   };
-  // }
 );
 
 export { instance };
