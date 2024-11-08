@@ -39,8 +39,9 @@ const RegisterPage = () => {
       console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message);
-
         router.push("/login");
+      } else {
+        toast.error(result?.message || "login failed");
       }
     } catch (error: any) {
       console.log("Error: ", error);
