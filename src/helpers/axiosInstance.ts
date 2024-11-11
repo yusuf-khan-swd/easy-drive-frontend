@@ -68,6 +68,13 @@ instance.interceptors.response.use(
     //   return responseObject;
     // }
 
+    console.log({
+      statusCode: error?.response?.data?.statusCode || 500,
+      message:
+        error?.response?.data?.message || error?.data || "Something went wrong",
+      errorMessages: error?.response?.data?.errorMessages,
+    });
+
     return Promise.reject({
       statusCode: error?.response?.data?.statusCode || 500,
       message:
