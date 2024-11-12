@@ -65,8 +65,8 @@ const LoginPage = () => {
         toast.error(result?.message || "login failed");
       }
     } catch (error: any) {
-      setError(error?.message);
-      toast.error(error?.message || error?.data || "login failed");
+      setError(error?.data?.message);
+      toast.error(error?.data?.message || error?.data?.data || "login failed");
       console.log("Error: ", error);
     }
   };
