@@ -62,7 +62,7 @@ const LoginPage = () => {
         storeUserInfo({ accessToken: result?.token });
         router.push("/dashboard");
       } else {
-        toast.error(result?.message || "login failed");
+        toast.error(result?.message || "login failed! Try Again");
       }
     } catch (error: any) {
       setError(error?.data?.message);
