@@ -76,14 +76,6 @@ instance.interceptors.response.use(
     });
 
     return Promise.reject(error);
-
-    return {
-      error: {
-        statusCode: error?.response?.status || 500,
-        message: error?.response?.data?.message,
-        errorMessages: error?.response?.data?.errorMessages || [],
-      },
-    };
   }
 );
 
