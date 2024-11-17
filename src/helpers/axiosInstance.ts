@@ -69,6 +69,7 @@ instance.interceptors.response.use(
     // }
 
     console.log({
+      success: error?.response?.data?.success || false,
       statusCode: error?.response?.data?.statusCode || 500,
       message:
         error?.response?.data?.message || error?.data || "Something went wrong",
