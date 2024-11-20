@@ -35,7 +35,9 @@ const ManageCars = () => {
       toast.success(result?.message || "Car deleted Successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car delete failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Car delete failed"
+      );
     }
   };
 
