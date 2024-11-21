@@ -99,7 +99,9 @@ const CreateCar = () => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car create failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Car create failed"
+      );
       setFormData({
         name: "",
         description: "",
