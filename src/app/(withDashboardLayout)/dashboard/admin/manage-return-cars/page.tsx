@@ -38,7 +38,9 @@ const ManageReturnCar = () => {
       toast.success(result?.message || "Booking deleted Successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Booking delete failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Booking delete failed"
+      );
     }
   };
 
