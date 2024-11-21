@@ -98,7 +98,9 @@ const UpdateCar = ({ params }: { params: { id: string } }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car Update failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Car Update failed"
+      );
     }
   };
 
