@@ -53,7 +53,9 @@ const UpdateUser = ({ params }: { params: { id: string } }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Update User failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Update User failed"
+      );
     }
   };
 
