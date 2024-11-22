@@ -38,7 +38,9 @@ const CreateAdmin = () => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Admin Registration failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Admin Registration failed"
+      );
     }
   };
 
