@@ -42,7 +42,11 @@ const ManageUsers = () => {
       toast.success(result?.message || "Making user to an admin successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Making user to admin failed");
+      toast.error(
+        error?.data?.message ||
+          error?.data?.data ||
+          "Making user to admin failed"
+      );
     }
   };
 
@@ -52,7 +56,9 @@ const ManageUsers = () => {
       toast.success(result?.message || "User deleted Successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "User delete failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "User delete failed"
+      );
     }
   };
 
