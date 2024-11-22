@@ -38,7 +38,9 @@ const CreateUser = () => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Registration failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Registration failed"
+      );
     }
   };
 
