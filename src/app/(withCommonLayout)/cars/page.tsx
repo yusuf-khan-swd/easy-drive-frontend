@@ -6,7 +6,7 @@ import { useGetAllCarsQuery } from "@/redux/api/carApi";
 import { TCar } from "@/types/car";
 import { Box } from "@mui/material";
 
-const Car = () => {
+const CarsPage = () => {
   const { data, isLoading } = useGetAllCarsQuery(undefined);
   const cars = data?.data;
 
@@ -31,4 +31,4 @@ const Car = () => {
   );
 };
 
-export default Car;
+export default CarsPage;
