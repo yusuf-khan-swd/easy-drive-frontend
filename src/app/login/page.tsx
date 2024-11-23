@@ -60,7 +60,7 @@ const LoginPage = () => {
       if (result?.token) {
         toast.success(result?.message || "Login Success!!");
         storeUserInfo({ accessToken: result?.token });
-        router.push("/dashboard");
+        router.push("/dashboard"); //TODO: After successfully login but from dashboard it's redirect to again login page
       } else {
         toast.error(result?.message || "login failed! Try Again");
       }
