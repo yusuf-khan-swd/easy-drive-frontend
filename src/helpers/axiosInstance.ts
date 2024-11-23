@@ -37,7 +37,8 @@ instance.interceptors.response.use(
       data: response?.data?.data,
       meta: response?.data?.meta,
     };
-    return responseObject;
+    // return responseObject;
+    return response;
   },
   async function (error) {
     // Any status codes that falls outside the range of 2xx cause this function to trigger
