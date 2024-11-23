@@ -11,11 +11,10 @@ import Link from "next/link";
 
 const CarDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  const { data: car, isLoading } = useGetSingleCarQuery(id || "");
   const { email } = getUserInfo();
+  const { data, isLoading } = useGetSingleCarQuery(id || "");
 
-  // ! Below line for redux fetchBaseQuery
-  // const car = data?.data;
+  const car = data?.data;
 
   if (isLoading) return <LoadingSpinner />;
 
