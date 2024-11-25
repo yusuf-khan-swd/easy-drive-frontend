@@ -12,8 +12,8 @@ import Link from "next/link";
 const CarDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   const { email } = getUserInfo();
-  const { data, isLoading } = useGetSingleCarQuery(id || "");
 
+  const { data, isLoading } = useGetSingleCarQuery(id || "");
   const car = data?.data;
 
   if (isLoading) return <LoadingSpinner />;
