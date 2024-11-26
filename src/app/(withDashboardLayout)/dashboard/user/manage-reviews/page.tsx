@@ -38,7 +38,9 @@ const ManageReviews = () => {
       toast.success(result?.message || "Review deleted Successfully");
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Review delete failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Review delete failed"
+      );
     }
   };
 
