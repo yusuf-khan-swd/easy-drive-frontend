@@ -67,7 +67,9 @@ const OrderPage = ({ params }: { params: { id: string } }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Order creation failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Order creation failed"
+      );
     }
   };
 
