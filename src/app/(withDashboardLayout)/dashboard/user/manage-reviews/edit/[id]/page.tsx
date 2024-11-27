@@ -58,7 +58,9 @@ const UpdateReviews = ({ params }: { params: { id: string } }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Review Update failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Review Update failed"
+      );
     }
   };
 
