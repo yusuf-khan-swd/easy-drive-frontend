@@ -39,7 +39,7 @@ const UpdateReviews = ({ params }: { params: { id: string } }) => {
     rating: review?.rating.toString() || "",
   };
 
-  const handleReviewSubmit = async (values: FieldValues) => {
+  const handleSubmit = async (values: FieldValues) => {
     // console.log(values);
     try {
       const reviewData = {
@@ -99,7 +99,7 @@ const UpdateReviews = ({ params }: { params: { id: string } }) => {
 
         <Box>
           <EasyDriveForm
-            onSubmit={handleReviewSubmit}
+            onSubmit={handleSubmit}
             resolver={zodResolver(validationSchema)}
             defaultValues={defaultValues}
           >
