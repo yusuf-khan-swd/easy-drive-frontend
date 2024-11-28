@@ -35,7 +35,9 @@ const BookingForm = ({ carId }: { carId: string }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car Booked failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Car Booked failed"
+      );
     }
   };
 
