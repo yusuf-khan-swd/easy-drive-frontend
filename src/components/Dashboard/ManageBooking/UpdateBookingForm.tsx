@@ -40,7 +40,9 @@ const UpdateBookingForm = ({ booking }: { booking: any }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Booking Updated failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Booking Updated failed"
+      );
     }
   };
 
