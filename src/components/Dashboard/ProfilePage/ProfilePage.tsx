@@ -48,7 +48,9 @@ const ProfilePage = () => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Profile Update failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Profile Update failed"
+      );
     }
   };
 
