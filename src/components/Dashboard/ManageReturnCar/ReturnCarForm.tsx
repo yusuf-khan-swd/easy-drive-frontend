@@ -50,7 +50,9 @@ const ReturnCarForm = ({ booking }: { booking: any }) => {
       }
     } catch (error: any) {
       console.log("Error: ", error);
-      toast.error(error?.data?.message || "Car return failed");
+      toast.error(
+        error?.data?.message || error?.data?.data || "Car return failed"
+      );
     }
   };
 
