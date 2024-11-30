@@ -7,7 +7,7 @@ const carApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createCar: builder.mutation({
       query: (carData) => ({
-        url: `${CAR_URL}`,
+        url: CAR_URL,
         method: "POST",
         body: carData,
         headers: {
