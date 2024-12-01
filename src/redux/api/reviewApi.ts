@@ -20,7 +20,7 @@ const reviewApi = baseApi.injectEndpoints({
 
     getAllReviews: builder.query({
       query: () => ({
-        url: `${REVIEW_URL}`,
+        url: REVIEW_URL,
         method: "GET",
         headers: {
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
