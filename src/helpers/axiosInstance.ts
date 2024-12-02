@@ -70,13 +70,13 @@ instance.interceptors.response.use(
     // }
 
     // ! I was trying to send this below object to promise.reject function but it did not work
-    console.log({
-      success: error?.response?.data?.success || false,
-      statusCode: error?.response?.data?.statusCode || 500,
-      message:
-        error?.response?.data?.message || error?.data || "Something went wrong",
-      errorMessages: error?.response?.data?.errorMessages,
-    });
+    // console.log({
+    //   success: error?.response?.data?.success || false,
+    //   statusCode: error?.response?.data?.statusCode || 500,
+    //   message:
+    //     error?.response?.data?.message || error?.data || "Something went wrong",
+    //   errorMessages: error?.response?.data?.errorMessages,
+    // });
 
     return Promise.reject(error);
   }
