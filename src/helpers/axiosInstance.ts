@@ -31,7 +31,7 @@ instance.interceptors.response.use(
     // Any status code that lie within the range of 2xx cause this function to trigger
     // Do something with response data
     console.log("interceptor response ", response);
-    // TODO: directly getting response data but not message. And why is that? needed to check
+    // Below code directly sending response data but not message.
     const responseObject: ResponseSuccessType = {
       message: response?.data?.message,
       data: response?.data?.data,
