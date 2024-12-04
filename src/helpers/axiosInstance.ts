@@ -48,7 +48,6 @@ instance.interceptors.response.use(
     // ?  Use this bellow line code if we do not want modify error in axios interceptor.
     // return Promise.reject(error); // ! This line already been comment out previously
 
-    console.log("interceptor error ", error);
     console.log("interceptor error response ", error?.response);
     // ! comment out if else block and use gpt solution
     // if (error?.response?.status === 403) {
