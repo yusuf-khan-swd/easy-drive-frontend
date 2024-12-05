@@ -1,5 +1,4 @@
 import { authKey } from "@/constants/authKey";
-import { ResponseSuccessType } from "@/types";
 import { getFromLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
@@ -32,11 +31,11 @@ instance.interceptors.response.use(
     // Do something with response data
 
     // ? Below code directly sending response data but not message.
-    const responseObject: ResponseSuccessType = {
-      message: response?.data?.message,
-      data: response?.data?.data,
-      meta: response?.data?.meta,
-    };
+    // const responseObject: ResponseSuccessType = {
+    //   message: response?.data?.message,
+    //   data: response?.data?.data,
+    //   meta: response?.data?.meta,
+    // };
 
     return response;
   },
