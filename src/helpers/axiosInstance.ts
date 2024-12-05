@@ -37,7 +37,7 @@ instance.interceptors.response.use(
       data: response?.data?.data,
       meta: response?.data?.meta,
     };
-    // return responseObject;
+
     return response;
   },
   async function (error) {
