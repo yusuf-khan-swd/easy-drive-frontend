@@ -51,7 +51,8 @@ instance.interceptors.response.use(
     // ! comment out if else block and use gpt solution
     // if (error?.response?.status === 403) {
     //   console.log("403 error ", error?.response);
-    //   // ? I have added this code otherwise there is problem with error response or can remove the if else block
+
+    //   ? I have added this code otherwise there is problem with error response or can remove the if else block
     //   const responseObject: IGenericErrorResponse = {
     //     statusCode: error?.response?.data?.statusCode || 500,
     //     message: error?.response?.data?.message || "Something went wrong",
