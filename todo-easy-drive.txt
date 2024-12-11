@@ -1,6 +1,8 @@
 
 -------------------- 8:55 AM 12/11/2024, we
 
+Done - Axios Setup done properly
+
 Done - Token properly send from axios client to server check using getAllCars api endpoint
 
 -------------------- 10:02 AM 10/23/2024, we
@@ -11,11 +13,13 @@ Step2: if so then logout user
 
 -------------------- 10:05 AM 10/19/2024, sa
 
-Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
+Done - Axios need to properly setup. Axios is not properly setup for both sending token headers or getting responses
 Done - Step1: Make sure when sending token from client using axios server get the token 
 Done - Step2: Get correct response from axios and show response result 
-Step3: For POST or PUT/PATCH request sending update and create data properly. 
+Done - Step3: For POST or PUT/PATCH request sending update and create data properly. 
        Like there is two different way to send data using 'body' property redux way or 'data' property axios way see what to use. Currently I in favor for 'body' way
+[Solution] - In axiosInstance for error or response send directly without any modification. 
+              And problem with 'body' and 'data' conflict solve by in axiosBaseQuery use 'body' property to receive input for POST and set 'data' property value to 'body' property 
 
 -------------------- 10:44 AM 10/7/2024, su
 
