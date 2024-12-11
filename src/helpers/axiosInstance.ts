@@ -67,7 +67,7 @@ instance.interceptors.response.use(
     //   return responseObject;
     // }
 
-    // ! Below code is from ChatGPT solution it work but in receiving end response is not thrown into catch block instead in result also no message or statusCode property
+    // ! Below code is from ChatGPT solution it's work. But in the receiving end, response error is not thrown into catch block instead in result also no message or statusCode property only errorMessages property found
     // const responseObject: IGenericErrorResponse = {
     //   statusCode: error?.response?.data?.statusCode || 500,
     //   message: error?.response?.data?.message || "Something went wrong",
