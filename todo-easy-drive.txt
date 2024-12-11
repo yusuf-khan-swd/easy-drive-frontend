@@ -1,4 +1,7 @@
 
+-------------------- 8:55 AM 12/11/2024, we
+
+Done - Token properly send from axios client to server check using getAllCars api endpoint
 
 -------------------- 10:02 AM 10/23/2024, we
 
