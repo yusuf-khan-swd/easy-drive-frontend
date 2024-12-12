@@ -36,6 +36,8 @@ const ProfilePage = () => {
 
   const user = data?.data;
 
+  console.log(data);
+
   const handleSubmit = async (values: FieldValues) => {
     // console.log(values);
     try {
