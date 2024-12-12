@@ -32,9 +32,9 @@ const carApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${CAR_URL}/${id}`,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
+        // headers: {
+        //   Authorization: `Bearer ${localStorage.getItem(authKey)}`,
+        // },
       }),
       providesTags: ["car"],
     }),
