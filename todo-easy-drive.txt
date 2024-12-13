@@ -1,6 +1,7 @@
 -------------------- 11:02 AM 12/12/2024, th
 
-There is problem in dashboard. Dashboard data is not showing. Confirm user dashboard problem. There could be also problem with admin.
+Done - There is problem in dashboard. Dashboard data is not showing. Confirm user dashboard problem. There could be also problem with admin.
+[Solution] - Problem with token is expired so have to logout and login and it works
 
 -------------------- 8:55 AM 12/11/2024, we
 
