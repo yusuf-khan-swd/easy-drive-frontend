@@ -9,8 +9,7 @@ const reviewApi = baseApi.injectEndpoints({
       query: (reviewData) => ({
         url: REVIEW_URL,
         method: "POST",
-        // body: reviewData, // ? for redux use body property to sending post data
-        data: reviewData, // ? for axios use data property to sending post data
+        body: reviewData,
         headers: {
           Authorization: `Bearer ${localStorage.getItem(authKey)}`,
         },
