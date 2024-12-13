@@ -10,9 +10,9 @@ const reviewApi = baseApi.injectEndpoints({
         url: REVIEW_URL,
         method: "POST",
         body: reviewData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
+        // headers: {
+        //   Authorization: `Bearer ${localStorage.getItem(authKey)}`,
+        // },
       }),
       invalidatesTags: ["review"],
     }),
