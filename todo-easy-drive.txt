@@ -1,3 +1,7 @@
+-------------------- 10:18 AM 12/14/2024, sa
+
+Remove every single authorize token headers from redux api endpoint and check every single api endpoint working fine
+
 -------------------- 11:02 AM 12/12/2024, th
 
 Done - There is problem in dashboard. Dashboard data is not showing. Confirm user dashboard problem. There could be also problem with admin.
