@@ -37,9 +37,6 @@ const reviewApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${REVIEW_URL}/${id}`,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       providesTags: ["review"],
     }),
