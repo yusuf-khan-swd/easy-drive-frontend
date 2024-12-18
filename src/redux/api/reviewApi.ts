@@ -54,9 +54,6 @@ const reviewApi = baseApi.injectEndpoints({
         url: `${REVIEW_URL}/${reviewData._id}`,
         method: "PUT",
         body: reviewData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["review"],
     }),
