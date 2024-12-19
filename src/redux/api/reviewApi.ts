@@ -62,9 +62,6 @@ const reviewApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${REVIEW_URL}/${id}`,
         method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["review"],
     }),
