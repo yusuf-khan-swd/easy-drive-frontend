@@ -1,4 +1,3 @@
-import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const REVIEW_URL = "/reviews";
@@ -18,9 +17,6 @@ const reviewApi = baseApi.injectEndpoints({
       query: () => ({
         url: REVIEW_URL,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       providesTags: ["review"],
     }),
