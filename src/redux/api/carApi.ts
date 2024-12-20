@@ -10,9 +10,6 @@ const carApi = baseApi.injectEndpoints({
         url: CAR_URL,
         method: "POST",
         body: carData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["car"],
     }),
