@@ -26,9 +26,6 @@ const bookingApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${BOOKING_URL}/${id}`,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       providesTags: ["booking"],
     }),
