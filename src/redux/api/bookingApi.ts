@@ -43,9 +43,6 @@ const bookingApi = baseApi.injectEndpoints({
         url: `${BOOKING_URL}/${data._id}`,
         method: "PUT",
         body: data,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["booking", "car"],
     }),
