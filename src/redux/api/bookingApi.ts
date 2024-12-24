@@ -51,9 +51,6 @@ const bookingApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${BOOKING_URL}/my-bookings/${id}`,
         method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["booking", "car"],
     }),
