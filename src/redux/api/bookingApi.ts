@@ -1,4 +1,3 @@
-import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const BOOKING_URL = "/bookings";
@@ -59,9 +58,6 @@ const bookingApi = baseApi.injectEndpoints({
       query: (id: string) => ({
         url: `${BOOKING_URL}/${id}`,
         method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["booking", "car"],
     }),
