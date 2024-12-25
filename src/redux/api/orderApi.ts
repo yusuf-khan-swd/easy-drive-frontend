@@ -10,9 +10,6 @@ const orderApi = baseApi.injectEndpoints({
         url: `${ORDER_URL}/create`,
         method: "POST",
         body: payload,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
     }),
 
