@@ -1,4 +1,3 @@
-import { authKey } from "@/constants/authKey";
 import { baseApi } from "./baseApi";
 
 const PROFILE_URL = "/profile";
@@ -18,9 +17,6 @@ const profileApi = baseApi.injectEndpoints({
         url: `${PROFILE_URL}/${userData._id}`,
         method: "PATCH",
         body: userData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["profile"],
     }),
