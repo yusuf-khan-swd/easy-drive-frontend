@@ -9,9 +9,6 @@ const profileApi = baseApi.injectEndpoints({
       query: (id) => ({
         url: `${PROFILE_URL}/${id}`,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       providesTags: ["profile"],
     }),
