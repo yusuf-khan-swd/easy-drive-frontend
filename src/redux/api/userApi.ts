@@ -18,9 +18,6 @@ const userApi = baseApi.injectEndpoints({
       query: (id) => ({
         url: `${USER_URL}/make-admin/${id}`,
         method: "PATCH",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["user"],
     }),
