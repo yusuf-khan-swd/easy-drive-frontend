@@ -34,9 +34,6 @@ const userApi = baseApi.injectEndpoints({
       query: (id) => ({
         url: `${USER_URL}/${id}`,
         method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       providesTags: ["user"],
     }),
