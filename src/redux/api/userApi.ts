@@ -43,9 +43,6 @@ const userApi = baseApi.injectEndpoints({
         url: `${USER_URL}/${userData._id}`,
         method: "PUT",
         body: userData,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem(authKey)}`,
-        },
       }),
       invalidatesTags: ["user"],
     }),
