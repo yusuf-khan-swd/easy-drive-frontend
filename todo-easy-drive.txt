@@ -1,6 +1,6 @@
 -------------------- 10:18 AM 12/14/2024, sa
 
-Remove every single authorize token headers from redux api endpoint and check every single api endpoint working fine
+[10:57 AM 1/1/2025 - Done] - Remove every single authorize token headers from redux api endpoint and check every single api endpoint working fine
  Did not check every api endpoints working fine. Because check car routes and review api CRUD operation
  In future if there problem with accessing route check that specific route issue for token.
 
