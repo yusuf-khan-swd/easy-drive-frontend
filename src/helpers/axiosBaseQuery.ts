@@ -25,7 +25,7 @@ export const axiosBaseQuery =
       const result = await axiosInstance({
         url: baseUrl + url,
         method,
-        data: body,
+        data: body, // ? Now sending body data in data property for axios
         params,
         headers: {
           "Content-Type": contentType || "application/json",
