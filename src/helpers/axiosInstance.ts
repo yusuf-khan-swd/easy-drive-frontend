@@ -84,6 +84,8 @@ instance.interceptors.response.use(
     //   errorMessages: error?.response?.data?.errorMessages,
     // });
 
+    console.log(error);
+
     // ? Just return error object as it is and it well work fine with redux toolkit query
     return Promise.reject(error);
   }
