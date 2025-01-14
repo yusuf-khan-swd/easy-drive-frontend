@@ -84,10 +84,9 @@ instance.interceptors.response.use(
     //   errorMessages: error?.response?.data?.errorMessages,
     // });
 
-    console.log(error);
-
     if (error?.response?.data.message === "jwt expired") {
       console.log("jwt expired");
+      // removeUser(); // ! Not working
     }
 
     // ? Just return error object as it is and it well work fine with redux toolkit query
