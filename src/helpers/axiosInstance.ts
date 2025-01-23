@@ -1,5 +1,4 @@
 import { authKey } from "@/constants/authKey";
-import { useLogOut } from "@/redux/hooks";
 import { getFromLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
@@ -88,7 +87,8 @@ instance.interceptors.response.use(
     if (error?.response?.data.message === "jwt expired") {
       console.log("jwt expired");
       // localStorage.removeItem(authKey);
-      useLogOut(); // ! This line of code is not working also jwt expired message is not coming in catch block
+      // useLogOut(); // ! This line of code is not working also jwt expired message is not coming in catch block
+      return Promise.reject(error);
     }
 
     // ? Just return error object as it is and it well work fine with redux toolkit query
