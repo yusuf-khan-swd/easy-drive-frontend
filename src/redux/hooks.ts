@@ -29,7 +29,7 @@ export const useDebounced = ({ searchQuery, delay }: IDebounced) => {
   return debouncedValue;
 };
 
-// Can't use inside if block
+// Can't use inside if block so try use a function return from hooks instead see this can work
 export const useLogOut = () => {
   const router = useRouter();
   removeUser();
