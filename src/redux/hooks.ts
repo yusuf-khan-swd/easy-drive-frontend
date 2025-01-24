@@ -1,5 +1,3 @@
-import { removeUser } from "@/services/auth.service";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import type { AppDispatch, RootState } from "./store";
@@ -27,12 +25,4 @@ export const useDebounced = ({ searchQuery, delay }: IDebounced) => {
   }, [searchQuery, delay]);
 
   return debouncedValue;
-};
-
-// Can't use inside if block so try use a function return from hooks instead see this can work
-export const useLogOut = () => {
-  const router = useRouter();
-  removeUser();
-  router.push("/");
-  router.refresh();
 };
