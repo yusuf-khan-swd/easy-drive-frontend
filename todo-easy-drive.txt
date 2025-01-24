@@ -1,5 +1,8 @@
 
+-------------------- 10:15 AM 1/25/2025, sa
 
+After user logged in then token is remove but user is not redirect to login page from dashboard route but unauthorize user can still in dashboard but no data will be shown
+Same with ReviewForm displaying in car details page. After token expired then token remove but review form is not remove but there is message about jwt expired
 
 -------------------- 10:18 AM 12/14/2024, sa
 
