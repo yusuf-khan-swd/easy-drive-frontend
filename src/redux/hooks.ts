@@ -29,6 +29,7 @@ export const useDebounced = ({ searchQuery, delay }: IDebounced) => {
   return debouncedValue;
 };
 
+// Can't use inside if block
 export const useLogOut = () => {
   const router = useRouter();
   removeUser();
