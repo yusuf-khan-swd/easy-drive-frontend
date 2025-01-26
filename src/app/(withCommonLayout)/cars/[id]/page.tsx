@@ -14,6 +14,8 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
   const { email } = getUserInfo();
 
+  console.log("email", email);
+
   const { data, isLoading } = useGetSingleCarQuery(id || "");
   const car = data?.data;
 

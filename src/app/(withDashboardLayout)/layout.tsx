@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
 
+  console.log("isLoggedIn", isLoggedIn());
+
   if (!isLoggedIn()) {
     return router.push("/login");
   }
