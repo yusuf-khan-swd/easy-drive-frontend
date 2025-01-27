@@ -5,16 +5,13 @@ import ReviewForm from "@/components/Common/Review/ReviewForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
-import { getUserInfo, isLoggedIn } from "@/services/auth.service";
+import { isLoggedIn } from "@/services/auth.service";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
 // ! After token expired then token remove but review form is not remove but there is message about jwt expired
 const CarDetails = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
-  const { email } = getUserInfo();
-
-  console.log("email", email);
 
   const { data, isLoading } = useGetSingleCarQuery(id || "");
   const car = data?.data;
