@@ -5,7 +5,7 @@ import ReviewForm from "@/components/Common/Review/ReviewForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
-import { getUserInfo } from "@/services/auth.service";
+import { getUserInfo, isLoggedIn } from "@/services/auth.service";
 import { Typography } from "@mui/material";
 import Link from "next/link";
 
@@ -29,7 +29,7 @@ const CarDetails = ({ params }: { params: { id: string } }) => {
           <div className="grid grid-cols-1 gap-8">
             <CarCard car={car} detailsPage />
           </div>
-          {email ? (
+          {isLoggedIn() ? (
             <ReviewForm carId={id} />
           ) : (
             <Typography component="p" marginTop={3}>
