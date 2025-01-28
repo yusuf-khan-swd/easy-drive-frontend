@@ -23,9 +23,10 @@ Done - Token properly send from axios client to server check using getAllCars ap
 
 -------------------- 10:02 AM 10/23/2024, we
 
-for future - Fixed the issue with JWT expired. 
+[10:53 AM 1/28/2025 - Done] - for future - Fixed the issue with JWT expired. Partially 
 Step1: First get axios error response with jwt expired message or directly use redux error response to check jwt expired message
-Step2: if so then logout user
+        Use jwt expired message to check if token is expired
+Step2: if so then logout user - logout is user is not implemented yet
 
 -------------------- 10:05 AM 10/19/2024, sa
 
