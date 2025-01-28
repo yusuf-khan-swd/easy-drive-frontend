@@ -1,3 +1,7 @@
+-------------------- 11:01 AM 1/28/2025, tu
+
+Jwt Expired issue is partially fixed. But application state is not update so navbar, ReviewForm, and Dashboard state is not update
+Solution1: Use redux store for logged in status like persist store for user info and token status
 
 -------------------- 10:15 AM 1/25/2025, sa
 
