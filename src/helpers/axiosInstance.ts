@@ -85,7 +85,6 @@ instance.interceptors.response.use(
     // });
 
     if (error?.response?.data.message === "jwt expired") {
-      console.log("jwt expired");
       localStorage.removeItem(authKey);
     }
 
