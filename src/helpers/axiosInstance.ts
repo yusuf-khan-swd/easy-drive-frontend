@@ -1,5 +1,4 @@
 import { authKey } from "@/constants/authKey";
-import { useLogOut } from "@/redux/hooks";
 import { getFromLocalStorage } from "@/utils/local-storage";
 import axios from "axios";
 
@@ -84,8 +83,6 @@ instance.interceptors.response.use(
     //     error?.response?.data?.message || error?.data || "Something went wrong",
     //   errorMessages: error?.response?.data?.errorMessages,
     // });
-
-    const logout = useLogOut();
 
     if (error?.response?.data.message === "jwt expired") {
       localStorage.removeItem(authKey);
