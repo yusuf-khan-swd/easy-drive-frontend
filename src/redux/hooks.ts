@@ -32,9 +32,7 @@ export const useDebounced = ({ searchQuery, delay }: IDebounced) => {
 export const useLogOut = () => {
   const router = useRouter();
 
-  return () => {
-    removeUser();
-    // router.push("/");
-    router.refresh();
-  };
+  removeUser();
+  router.push("/");
+  router.refresh();
 };
