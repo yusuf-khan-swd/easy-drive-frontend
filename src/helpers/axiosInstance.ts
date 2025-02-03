@@ -86,6 +86,7 @@ instance.interceptors.response.use(
 
     if (error?.response?.data.message === "jwt expired") {
       localStorage.removeItem(authKey);
+      window.location.reload();
     }
 
     // ? Just return error object as it is and it well work fine with redux toolkit query
