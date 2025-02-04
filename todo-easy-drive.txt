@@ -5,6 +5,7 @@
 
 Jwt Expired issue is partially fixed. After token remove application statue is not updated. Like application component navbar, ReviewForm, and Dashboard state is not update after token is expired or removed.
 Solution1: Use redux store for logged in status like persist store for user info and token status
+[11:47 AM 2/3/2025 - Done] - use window.location.reload() in axios interceptor to reload the page after token is expired. It partially solved the problem. But it is not a good solution. It will not update state of other tab state.
 
 -------------------- 10:15 AM 1/25/2025, sa
 
