@@ -84,6 +84,7 @@ instance.interceptors.response.use(
     //   errorMessages: error?.response?.data?.errorMessages,
     // });
 
+    // TODO: Use redux store to dispatch action to logout user store.dispatch(logout());
     if (error?.response?.data.message === "jwt expired") {
       localStorage.removeItem(authKey);
       window.location.reload();
