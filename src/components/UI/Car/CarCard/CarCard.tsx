@@ -47,11 +47,11 @@ const CarCard = ({
         <div className="p-6">
           <h3 className="text-xl font-semibold text-blue-700 mb-2">{name}</h3>
           <p className="text-gray-700 mb-4">{description}</p>
-          <p className="text-gray-700 mb-2">Color: {color}</p>
-          <p className="text-gray-700 mb-2">
+          <p className="text-gray-700 mb-1">Color: {color}</p>
+          <p className="text-gray-700 mb-1">
             Electric: {isElectric ? "Yes" : "No"}
           </p>
-          <p className="text-gray-900 font-bold mb-2">
+          <p className="text-gray-900 font-bold mb-1">
             Price: {pricePerHour}tk/hour
           </p>
           <p className="mb-2">
