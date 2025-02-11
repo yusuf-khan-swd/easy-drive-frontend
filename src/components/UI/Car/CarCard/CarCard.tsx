@@ -51,9 +51,7 @@ const CarCard = ({
           <p className="text-gray-700 mb-1">
             Electric: {isElectric ? "Yes" : "No"}
           </p>
-          <p className="text-gray-900 font-bold mb-1">
-            Price: {pricePerHour}tk/hour
-          </p>
+          <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
           <p className="mb-2">
             Status:{" "}
             <span
