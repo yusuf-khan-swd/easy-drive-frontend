@@ -1,5 +1,12 @@
 import { TCar } from "@/types/car";
-import { Box, Card, CardContent, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  Typography,
+} from "@mui/material";
 import Link from "next/link";
 
 const CarCard = ({
@@ -37,6 +44,10 @@ const CarCard = ({
             {description}
           </Typography>
         </CardContent>
+        <CardActions>
+          <Button size="small">Share</Button>
+          <Button size="small">Learn More</Button>
+        </CardActions>
       </Card>
       <div className="bg-white rounded-lg shadow-md overflow-hidden border">
         {/* <img
