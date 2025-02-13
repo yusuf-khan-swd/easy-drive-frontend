@@ -56,7 +56,13 @@ const CarCard = ({
           className="w-full h-48 object-cover"
         /> */}
         <div className="p-6">
-          <h3 className="text-2xl font-semibold text-blue-700 mb-2">{name}</h3>
+          <h3 className="text-2xl font-semibold text-blue-700 mb-2">
+            {!detailsPage && !bookingPage ? (
+              <Link href={`/cars/${_id}`}>{name}</Link>
+            ) : (
+              name
+            )}
+          </h3>
           <p className="text-gray-700 mb-4">{description}</p>
           <p className="text-gray-700 mb-1">Color: {color}</p>
           <p className="text-gray-700 mb-1">
