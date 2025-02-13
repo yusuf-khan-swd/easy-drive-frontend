@@ -33,7 +33,7 @@ const CarCard = ({
     <>
       <Card sx={{ marginBottom: 2 }}>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography gutterBottom variant="h5" component="h5">
             {name}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}></Box>
