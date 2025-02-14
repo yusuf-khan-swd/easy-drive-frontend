@@ -31,7 +31,7 @@ const CarCard = ({
 
   return (
     <>
-      <Card sx={{ marginBottom: 2 }}>
+      <Card>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h5">
             {name}
