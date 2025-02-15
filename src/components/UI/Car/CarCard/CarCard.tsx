@@ -34,7 +34,11 @@ const CarCard = ({
       <Card variant="outlined">
         <CardContent>
           <Typography gutterBottom variant="h5" component="h5">
-            {name}
+            {!detailsPage && !bookingPage ? (
+              <Link href={`/cars/${_id}`}>{name}</Link>
+            ) : (
+              name
+            )}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}></Box>
           <Typography
