@@ -68,7 +68,7 @@ const CarCard = ({
             )}
           </h3>
           <p className="text-gray-700 mb-4">{description}</p>
-          <p className="text-gray-700 mb-1">Color: {color}</p>
+          <p className="text-gray-700 mb-1">CarColor: {color}</p>
           <p className="text-gray-700 mb-1">
             Electric: {isElectric ? "Yes" : "No"}
           </p>
