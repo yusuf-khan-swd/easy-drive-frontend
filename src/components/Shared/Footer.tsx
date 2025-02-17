@@ -17,7 +17,9 @@ const Footer = () => {
             Cars
           </Typography>
           <Typography color="#fff">Explore</Typography>
-          <Typography color="#fff">About Us</Typography>
+          <Typography color="#fff" component={Link} href="/about">
+            About Us
+          </Typography>
           <Typography color="#fff">Help</Typography>
           <Typography color="#fff">Account</Typography>
         </Stack>
