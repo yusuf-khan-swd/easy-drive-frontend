@@ -47,6 +47,21 @@ const CarCard = ({
           >
             {description}
           </Typography>
+          <p className="text-gray-700 mb-1">CarColor: {color}</p>
+          <p className="text-gray-700 mb-1">
+            Electric: {isElectric ? "Yes" : "No"}
+          </p>
+          <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
+          <p className="mb-2">
+            Status:{" "}
+            <span
+              className={`${
+                status === "available" ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {status}
+            </span>
+          </p>
         </CardContent>
         <CardActions>
           <Button size="small">Share</Button>
