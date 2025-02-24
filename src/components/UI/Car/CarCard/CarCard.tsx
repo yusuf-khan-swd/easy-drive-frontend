@@ -70,11 +70,6 @@ const CarCard = ({
         </CardActions>
       </Card>
       <div className="bg-white rounded-lg shadow-md overflow-hidden border">
-        {/* <img
-          src={car.image}
-          alt={car.name}
-          className="w-full h-48 object-cover"
-        /> */}
         <div className="p-6">
           <h3 className="text-2xl font-semibold text-blue-700 mb-2">
             {!detailsPage && !bookingPage ? (
