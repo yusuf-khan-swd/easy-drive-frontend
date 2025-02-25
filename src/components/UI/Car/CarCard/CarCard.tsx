@@ -40,10 +40,7 @@ const CarCard = ({
               name
             )}
           </Typography>
-          <Typography
-            variant="body2"
-            sx={{ color: "text.secondary", marginTop: 1 }}
-          >
+          <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
             {description}
           </Typography>
           <Box sx={{}}>
