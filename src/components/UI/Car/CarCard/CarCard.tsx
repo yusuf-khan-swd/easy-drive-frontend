@@ -46,7 +46,7 @@ const CarCard = ({
           >
             {description}
           </Typography>
-          <Box sx={{ display: "flex", alignItems: "center" }}>
+          <Box sx={{}}>
             <p className="text-gray-700 mb-1">CarColor: {color}</p>
             <p className="text-gray-700 mb-1">
               Electric: {isElectric ? "Yes" : "No"}
