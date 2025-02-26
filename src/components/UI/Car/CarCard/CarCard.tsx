@@ -60,7 +60,7 @@ const CarCard = ({
               </span>
             </p>
           </Box>
-          <div className="mb-4">
+          <Box className="mb-4">
             {(detailsPage || bookingPage) && features && (
               <div className="flex space-x-2 items-center">
                 <p>Features:</p>{" "}
@@ -76,7 +76,7 @@ const CarCard = ({
                 </div>
               </div>
             )}
-          </div>
+          </Box>
         </CardContent>
         <CardActions>
           <Button size="small">Share</Button>
