@@ -79,7 +79,6 @@ const CarCard = ({
           </Box>
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
           {!bookingPage && (
             <>
               {detailsPage ? (
@@ -88,9 +87,7 @@ const CarCard = ({
                 </Link>
               ) : (
                 <Link href={`/cars/${_id}`}>
-                  <button className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800 transition-colors duration-300">
-                    View Details
-                  </button>
+                  <Button size="small">View Details</Button>
                 </Link>
               )}
             </>
