@@ -87,7 +87,7 @@ const CarCard = ({
                 </Link>
               ) : (
                 <Link href={`/cars/${_id}`}>
-                  <Button size="small">View Details</Button>
+                  <Button size="small">Details</Button>
                 </Link>
               )}
             </>
