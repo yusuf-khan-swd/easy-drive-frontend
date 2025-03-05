@@ -79,18 +79,15 @@ const CarCard = ({
           </Box>
         </CardContent>
         <CardActions>
-          {!bookingPage && (
-            <>
-              {detailsPage ? (
-                <Link href={`/dashboard/user/booking/${_id}`}>
-                  <Button size="small">Book Now</Button>
-                </Link>
-              ) : (
-                <Link href={`/cars/${_id}`}>
-                  <Button size="small">Details</Button>
-                </Link>
-              )}
-            </>
+          {!bookingPage && !detailsPage && (
+            <Link href={`/cars/${_id}`}>
+              <Button size="small">Details</Button>
+            </Link>
+          )}
+          {detailsPage && (
+            <Link href={`/dashboard/user/booking/${_id}`}>
+              <Button size="small">Book Now</Button>
+            </Link>
           )}
         </CardActions>
       </Card>
