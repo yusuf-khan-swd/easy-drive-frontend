@@ -153,7 +153,7 @@ const ProfilePage = () => {
                   marginRight: "8px",
                 }}
               >
-                Edit
+                {hideUpdateButton ? "Edit" : "Cancel"}
               </Button>
               {!hideUpdateButton && (
                 <Button type="submit" disabled={updateProfileLoading}>
