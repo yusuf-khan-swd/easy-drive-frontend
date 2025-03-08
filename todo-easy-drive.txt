@@ -2,11 +2,11 @@
 
 -------------------- 10:44 AM 2/27/2025, th
 
-[1:08 PM 3/8/2025 Done] - Create Separated Card for car details page
+Create Separated Card for car details page
 
 -------------------- 10:25 AM 2/7/2025, fr
 
-Create Card for Car using MUI Card component
+[1:08 PM 3/8/2025 Done] - Create Card for Car using MUI Card component
 
 -------------------- 11:01 AM 1/28/2025, tu
 
