@@ -2,7 +2,9 @@
 
 -------------------- 10:44 AM 2/27/2025, th
 
-Create Separated Card for car details page
+Create Separate Card for car booking page
+
+Create Separate Card for car details page
 
 -------------------- 10:25 AM 2/7/2025, fr
 
