@@ -67,21 +67,19 @@ const CarCard = ({
             </p>
           </Box>
           {(detailsPage || bookingPage) && features && (
-            <Box sx={{}}>
-              <div className="flex space-x-2 items-center">
-                <p>Features:</p>{" "}
-                <div className="flex flex-wrap space-x-2">
-                  {features?.map((feature: string, index: number) => (
-                    <p
-                      key={index}
-                      className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
-                    >
-                      {feature}
-                    </p>
-                  ))}
-                </div>
+            <div className="flex space-x-2 items-center">
+              <p>Features:</p>{" "}
+              <div className="flex flex-wrap space-x-2">
+                {features?.map((feature: string, index: number) => (
+                  <p
+                    key={index}
+                    className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
+                  >
+                    {feature}
+                  </p>
+                ))}
               </div>
-            </Box>
+            </div>
           )}
         </CardContent>
         <CardActions>
