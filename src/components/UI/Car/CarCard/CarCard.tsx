@@ -55,16 +55,18 @@ const CarCard = ({
               Electric: {isElectric ? "Yes" : "No"}
             </p>
             <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
-            <p className="mb-2">
-              Status:{" "}
-              <span
-                className={`${
-                  status === "available" ? "text-green-600" : "text-red-600"
-                }`}
-              >
-                {status}
-              </span>
-            </p>
+            {status && (
+              <p className="mb-2">
+                Status:{" "}
+                <span
+                  className={`${
+                    status === "available" ? "text-green-600" : "text-red-600"
+                  }`}
+                >
+                  {status}
+                </span>
+              </p>
+            )}
           </Box>
           {(detailsPage || bookingPage) && features && (
             <div className="flex space-x-2 items-center">
