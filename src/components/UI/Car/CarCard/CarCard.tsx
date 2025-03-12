@@ -51,9 +51,11 @@ const CarCard = ({
           </Typography>
           <Box sx={{}}>
             <p className="text-gray-700 mb-1">CarColor: {color}</p>
-            <p className="text-gray-700 mb-1">
-              Electric: {isElectric ? "Yes" : "No"}
-            </p>
+            {isElectric && (
+              <p className="text-gray-700 mb-1">
+                Electric: {isElectric ? "Yes" : "No"}
+              </p>
+            )}
             <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
             {status && (
               <p className="mb-2">
