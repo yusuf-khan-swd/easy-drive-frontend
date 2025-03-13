@@ -56,7 +56,9 @@ const CarCard = ({
                 Electric: {isElectric ? "Yes" : "No"}
               </p>
             )}
-            <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
+            {pricePerHour && (
+              <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
+            )}
             {status && (
               <p className="mb-2">
                 Status:{" "}
