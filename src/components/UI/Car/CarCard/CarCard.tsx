@@ -1,3 +1,4 @@
+import { carStatus } from "@/constants/global";
 import { TCar } from "@/types/car";
 import {
   Box,
@@ -64,7 +65,9 @@ const CarCard = ({
                 Status:{" "}
                 <span
                   className={`${
-                    status === "available" ? "text-green-600" : "text-red-600"
+                    status === carStatus.available
+                      ? "text-green-600"
+                      : "text-red-600"
                   }`}
                 >
                   {status}
