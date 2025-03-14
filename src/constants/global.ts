@@ -16,3 +16,5 @@ export const featureOptions = [
   "Cruise Control",
   "Leather Seats",
 ];
+
+export const carStatus = { available: "available", unavailable: "unavailable" };
