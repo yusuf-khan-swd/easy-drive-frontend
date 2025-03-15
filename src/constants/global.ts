@@ -17,4 +17,7 @@ export const featureOptions = [
   "Leather Seats",
 ];
 
-export const carStatus = { available: "available", unavailable: "unavailable" };
+export const CAR_STATUS = {
+  available: "available",
+  unavailable: "unavailable",
+};
