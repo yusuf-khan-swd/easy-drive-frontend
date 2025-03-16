@@ -51,7 +51,7 @@ const CarCard = ({
             {description}
           </Typography>
           <Box sx={{}}>
-            <p className="text-gray-700 mb-1">CarColor: {color}</p>
+            {color && <p className="text-gray-700 mb-1">CarColor: {color}</p>}
             {isElectric && (
               <p className="text-gray-700 mb-1">
                 Electric: {isElectric ? "Yes" : "No"}
