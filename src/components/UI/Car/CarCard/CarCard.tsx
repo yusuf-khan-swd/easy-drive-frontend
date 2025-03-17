@@ -47,9 +47,11 @@ const CarCard = ({
               name
             )}
           </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
-            {description}
-          </Typography>
+          {description && (
+            <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
+              {description}
+            </Typography>
+          )}
           <Box sx={{}}>
             {color && <p className="text-gray-700 mb-1">CarColor: {color}</p>}
             {isElectric && (
