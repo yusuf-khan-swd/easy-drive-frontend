@@ -31,82 +31,80 @@ const CarCard = ({
   } = car;
 
   return (
-    <>
-      <Card variant="outlined">
-        <CardContent>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="h5"
-            sx={{ fontWeight: 600 }}
-            className="text-blue-700"
-          >
-            {!detailsPage && !bookingPage ? (
-              <Link href={`/cars/${_id}`}>{name}</Link>
-            ) : (
-              name
-            )}
+    <Card variant="outlined">
+      <CardContent>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h5"
+          sx={{ fontWeight: 600 }}
+          className="text-blue-700"
+        >
+          {!detailsPage && !bookingPage ? (
+            <Link href={`/cars/${_id}`}>{name}</Link>
+          ) : (
+            name
+          )}
+        </Typography>
+        {description && (
+          <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
+            {description}
           </Typography>
-          {description && (
-            <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
-              {description}
-            </Typography>
+        )}
+        <Box sx={{}}>
+          {color && <p className="text-gray-700 mb-1">CarColor: {color}</p>}
+          {isElectric && (
+            <p className="text-gray-700 mb-1">
+              Electric: {isElectric ? "Yes" : "No"}
+            </p>
           )}
-          <Box sx={{}}>
-            {color && <p className="text-gray-700 mb-1">CarColor: {color}</p>}
-            {isElectric && (
-              <p className="text-gray-700 mb-1">
-                Electric: {isElectric ? "Yes" : "No"}
-              </p>
-            )}
-            {pricePerHour && (
-              <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
-            )}
-            {status && (
-              <p className="mb-2">
-                Status:{" "}
-                <span
-                  className={`${
-                    status === CAR_STATUS.available
-                      ? "text-green-600"
-                      : "text-red-600"
-                  }`}
+          {pricePerHour && (
+            <p className="font-bold mb-1">Price: {pricePerHour}tk/hour</p>
+          )}
+          {status && (
+            <p className="mb-2">
+              Status:{" "}
+              <span
+                className={`${
+                  status === CAR_STATUS.available
+                    ? "text-green-600"
+                    : "text-red-600"
+                }`}
+              >
+                {status}
+              </span>
+            </p>
+          )}
+        </Box>
+        {(detailsPage || bookingPage) && features && (
+          <div className="flex space-x-2 items-center">
+            <p>Features:</p>{" "}
+            <div className="flex flex-wrap space-x-2">
+              {features?.map((feature: string, index: number) => (
+                <p
+                  key={index}
+                  className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
                 >
-                  {status}
-                </span>
-              </p>
-            )}
-          </Box>
-          {(detailsPage || bookingPage) && features && (
-            <div className="flex space-x-2 items-center">
-              <p>Features:</p>{" "}
-              <div className="flex flex-wrap space-x-2">
-                {features?.map((feature: string, index: number) => (
-                  <p
-                    key={index}
-                    className="bg-slate-300 px-2 py-1 rounded-lg text-sm m-1"
-                  >
-                    {feature}
-                  </p>
-                ))}
-              </div>
+                  {feature}
+                </p>
+              ))}
             </div>
-          )}
-        </CardContent>
-        <CardActions>
-          {!bookingPage && !detailsPage && (
-            <Link href={`/cars/${_id}`}>
-              <Button size="small">Details</Button>
-            </Link>
-          )}
-          {detailsPage && (
-            <Link href={`/dashboard/user/booking/${_id}`}>
-              <Button size="small">Book Now</Button>
-            </Link>
-          )}
-        </CardActions>
-      </Card>
-    </>
+          </div>
+        )}
+      </CardContent>
+      <CardActions>
+        {!bookingPage && !detailsPage && (
+          <Link href={`/cars/${_id}`}>
+            <Button size="small">Details</Button>
+          </Link>
+        )}
+        {detailsPage && (
+          <Link href={`/dashboard/user/booking/${_id}`}>
+            <Button size="small">Book Now</Button>
+          </Link>
+        )}
+      </CardActions>
+    </Card>
   );
 };
 
