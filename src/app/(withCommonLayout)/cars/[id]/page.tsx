@@ -3,7 +3,7 @@
 import CarReviews from "@/components/Common/Review/CarReviews";
 import ReviewForm from "@/components/Common/Review/ReviewForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import CarCard from "@/components/UI/Car/CarCard/CarCard";
+import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
 import { isLoggedIn } from "@/services/auth.service";
 import { Typography } from "@mui/material";

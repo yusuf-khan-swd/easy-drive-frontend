@@ -3,7 +3,7 @@
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import { useGetAllCarsQuery } from "@/redux/api/carApi";
 import { TCar } from "@/types/car";
-import CarCard from "../../Car/CarCard/CarCard";
+import CarCard from "../../Car/CarCard";
 
 const FeaturedCars = () => {
   const { data, isLoading } = useGetAllCarsQuery(undefined);

@@ -2,7 +2,7 @@
 
 import ReturnCarForm from "@/components/Dashboard/ManageReturnCar/ReturnCarForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import CarCard from "@/components/UI/Car/CarCard/CarCard";
+import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 
 const ReturnCar = ({ params }: { params: { id: string } }) => {

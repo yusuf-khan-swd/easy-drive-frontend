@@ -2,7 +2,7 @@
 
 import UpdateBookingForm from "@/components/Dashboard/ManageBooking/UpdateBookingForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import CarCard from "@/components/UI/Car/CarCard/CarCard";
+import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 
 const UpdateBooking = ({ params }: { params: { id: string } }) => {

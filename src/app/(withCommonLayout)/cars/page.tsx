@@ -1,7 +1,7 @@
 "use client";
 
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
-import CarCard from "@/components/UI/Car/CarCard/CarCard";
+import CarCard from "@/components/UI/Car/CarCard";
 import { useGetAllCarsQuery } from "@/redux/api/carApi";
 import { TCar } from "@/types/car";
 import { Box } from "@mui/material";
