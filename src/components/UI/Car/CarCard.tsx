@@ -33,19 +33,21 @@ const CarCard = ({
   return (
     <Card variant="outlined">
       <CardContent>
-        <Typography
-          gutterBottom
-          variant="h5"
-          component="h5"
-          sx={{ fontWeight: 600 }}
-          className="text-blue-700"
-        >
-          {!detailsPage && !bookingPage ? (
-            <Link href={`/cars/${_id}`}>{name}</Link>
-          ) : (
-            name
-          )}
-        </Typography>
+        {name && (
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="h5"
+            sx={{ fontWeight: 600 }}
+            className="text-blue-700"
+          >
+            {!detailsPage && !bookingPage ? (
+              <Link href={`/cars/${_id}`}>{name}</Link>
+            ) : (
+              name
+            )}
+          </Typography>
+        )}
         {description && (
           <Typography variant="body2" sx={{ color: "text.secondary", my: 2 }}>
             {description}
