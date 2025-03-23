@@ -2,7 +2,6 @@
 
 import banner_car from "@/assets/banner_car.png";
 import Link from "next/link";
-import SearchForm from "./SearchForm";
 
 const HeroSection = () => {
   return (
@@ -17,7 +16,7 @@ const HeroSection = () => {
         </p>
 
         {/* Search Form */}
-        <SearchForm />
+        {/* <SearchForm /> */}
 
         {/* Book Now Button */}
         <Link href="/cars">
