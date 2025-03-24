@@ -45,9 +45,9 @@ const Testimonial = () => {
                 <div className="flex">
                   {/* Display stars based on the rating */}
                   {Array.from({ length: testimonial.rating }).map(
-                    (_, starIndex) => (
+                    (_, startIndex) => (
                       <svg
-                        key={starIndex}
+                        key={startIndex}
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5 text-yellow-500"
                         fill="currentColor"
