@@ -1,7 +1,7 @@
-import FeaturedCars from "@/components/Common/HomePage/FeaturedCars/FeaturedCars";
+import FeaturedCars from "@/components/Common/HomePage/FeaturedCars";
 import HeroSection from "@/components/Common/HomePage/HeroSection/HeroSection";
-import Testimonial from "@/components/Common/HomePage/Testimonial/Testimonial";
-import WhyUs from "@/components/Common/HomePage/WhyUs/WhyUs";
+import Testimonial from "@/components/Common/HomePage/Testimonial";
+import WhyUs from "@/components/Common/HomePage/WhyUs";
 
 const Home = () => {
   return (
