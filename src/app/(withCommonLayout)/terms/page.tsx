@@ -1,4 +1,10 @@
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Terms and Conditions - EasyDrive",
+  description: "A Car Rental Service Provider",
+};
 
 const TermsAndConditionPage = () => {
   return (
