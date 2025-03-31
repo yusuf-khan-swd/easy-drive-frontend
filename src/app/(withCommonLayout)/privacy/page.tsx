@@ -1,3 +1,10 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy and Terms of Service - EasyDrive",
+  description: "A Car Rental Service Provider",
+};
+
 const PrivacyAndPolicyPage = () => {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
