@@ -21,3 +21,8 @@ export const CAR_STATUS = {
   available: "available",
   unavailable: "unavailable",
 };
+
+export const WEBSITE_NAME = "EasyDrive";
+export const WEBSITE_DESCRIPTION = "A Car Rental Service Provider";
+export const WEBSITE_URL = "https://easy-drive-frontend.vercel.app";
+export const WEBSITE_LOGO = "/logo.png";
