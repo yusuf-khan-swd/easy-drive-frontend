@@ -98,7 +98,7 @@ const ForgotPasswordPage = () => {
             </Grid>
 
             <Button type="submit" sx={{ width: "100%", my: 2 }}>
-              forgot Password
+              Forgot Password
             </Button>
           </EasyDriveForm>
         )}
