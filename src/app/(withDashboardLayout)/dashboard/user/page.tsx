@@ -1,11 +1,7 @@
 import UserProfile from "./profile/page";
 
 const User = () => {
-  return (
-    <div>
-      <UserProfile />
-    </div>
-  );
+  return <UserProfile />;
 };
 
 export default User;
