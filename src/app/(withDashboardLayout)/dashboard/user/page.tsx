@@ -1,5 +1,5 @@
+import ProfilePage from "@/components/Dashboard/ProfilePage/ProfilePage";
 import { Metadata } from "next";
-import UserProfile from "./profile/page";
 
 export const metadata: Metadata = {
   title: "User Profile - EasyDrive",
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const User = () => {
-  return <UserProfile />;
+  return <ProfilePage />;
 };
 
 export default User;
