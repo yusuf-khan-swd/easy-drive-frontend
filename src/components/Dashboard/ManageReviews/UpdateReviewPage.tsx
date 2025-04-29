@@ -24,8 +24,7 @@ const validationSchema = z.object({
   rating: z.string().min(1, "Rating is required"),
 });
 
-const UpdateReviewPage = ({ params }: { params: { id: string } }) => {
-  const id = params?.id;
+const UpdateReviewPage = ({ id }: { id: string }) => {
   const router = useRouter();
 
   const { data, isLoading } = useGetSingleReviewQuery(id || "");
