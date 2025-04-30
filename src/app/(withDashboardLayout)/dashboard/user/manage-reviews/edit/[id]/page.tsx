@@ -3,11 +3,7 @@ import UpdateReviewPage from "@/components/Dashboard/ManageReviews/UpdateReviewP
 const UpdateReview = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return (
-    <div>
-      <UpdateReviewPage id={id} />
-    </div>
-  );
+  return <UpdateReviewPage id={id} />;
 };
 
 export default UpdateReview;
