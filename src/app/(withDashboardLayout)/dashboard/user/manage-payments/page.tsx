@@ -1,7 +1,7 @@
 import ManagePaymentsPage from "@/components/Dashboard/ManagePayments/ManagePaymentsPage";
 
-const ManagePayment = () => {
+const ManagePayments = () => {
   return <ManagePaymentsPage />;
 };
 
-export default ManagePayment;
+export default ManagePayments;
