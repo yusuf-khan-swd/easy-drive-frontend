@@ -1,6 +1,6 @@
 "use client";
 
-import UpdateBookingForm from "@/components/Dashboard/ManageBooking/UpdateBookingForm";
+import UpdateBookingForm from "@/components/Dashboard/ManageBookings/UpdateBookingForm";
 import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
