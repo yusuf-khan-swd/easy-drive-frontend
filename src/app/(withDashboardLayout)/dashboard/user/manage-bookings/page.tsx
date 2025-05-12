@@ -1,4 +1,4 @@
-import ManageBookingsPage from "@/components/Dashboard/ManageBookings/ManageBookings";
+import ManageBookingsPage from "@/components/Dashboard/ManageBookings/ManageBookingsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
