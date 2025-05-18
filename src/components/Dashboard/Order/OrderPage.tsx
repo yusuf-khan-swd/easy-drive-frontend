@@ -7,8 +7,7 @@ import { getUserInfo } from "@/services/auth.service";
 import { FormEvent, useEffect, useState } from "react";
 import { toast } from "sonner";
 
-const OrderPage = ({ params }: { params: { id: string } }) => {
-  const id = params?.id;
+const OrderPage = ({ id }: { id: string }) => {
   const { userId } = getUserInfo();
 
   const [createOrder, { isLoading: createOrderIsLoading }] =
