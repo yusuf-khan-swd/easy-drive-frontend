@@ -1,9 +1,11 @@
 import UpdateBookingPage from "@/components/Dashboard/ManageBookings/UpdateBookingPage";
 
-const UpdateBooking = () => {
+const UpdateBooking = ({ params }: { params: { id: string } }) => {
+  const id = params?.id;
+
   return (
     <div>
-      <UpdateBookingPage />
+      <UpdateBookingPage id={id} />
     </div>
   );
 };
