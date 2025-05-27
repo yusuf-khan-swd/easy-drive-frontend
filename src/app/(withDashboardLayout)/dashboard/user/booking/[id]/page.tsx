@@ -1,5 +1,11 @@
+import BookingPage from "@/components/Dashboard/Booking/BookingPage";
+
 const Booking = () => {
-  return <div></div>;
+  return (
+    <div>
+      <BookingPage />
+    </div>
+  );
 };
 
 export default Booking;
