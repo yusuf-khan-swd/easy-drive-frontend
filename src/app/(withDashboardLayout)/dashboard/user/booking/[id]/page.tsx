@@ -1,9 +1,11 @@
 import BookingPage from "@/components/Dashboard/Booking/BookingPage";
 
-const Booking = () => {
+const Booking = ({ params }: { params: { id: string } }) => {
+  const id = params?.id;
+
   return (
     <div>
-      <BookingPage />
+      <BookingPage id={id} />
     </div>
   );
 };

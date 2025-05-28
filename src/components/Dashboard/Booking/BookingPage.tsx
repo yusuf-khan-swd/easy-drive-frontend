@@ -5,9 +5,7 @@ import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleCarQuery } from "@/redux/api/carApi";
 
-const BookingPage = ({ params }: { params: { id: string } }) => {
-  const id = params?.id;
-
+const BookingPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetSingleCarQuery(id || "");
   const car = data?.data;
 
