@@ -1,5 +1,7 @@
-const ManageUser = () => {
-  return <div></div>;
+import ManageUsersPage from "@/components/Dashboard/ManageUsers/ManageUsersPage";
+
+const ManageUsers = () => {
+  return <ManageUsersPage />;
 };
 
-export default ManageUser;
+export default ManageUsers;
