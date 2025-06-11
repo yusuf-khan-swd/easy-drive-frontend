@@ -25,8 +25,7 @@ const validationSchema = z.object({
   address: z.string().optional(),
 });
 
-const UpdateUserPage = ({ params }: { params: { id: string } }) => {
-  const id = params?.id;
+const UpdateUserPage = ({ id }: { id: string }) => {
   const router = useRouter();
   const { data, isLoading } = useGetSingleUserQuery(id || "");
 
