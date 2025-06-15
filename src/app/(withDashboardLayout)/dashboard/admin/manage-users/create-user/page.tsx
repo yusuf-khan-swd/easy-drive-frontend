@@ -1,5 +1,7 @@
+import CreateUserPage from "@/components/Dashboard/ManageUsers/CreateUserPage";
+
 const CreateUser = () => {
-  return <div></div>;
+  return <CreateUserPage />;
 };
 
 export default CreateUser;
