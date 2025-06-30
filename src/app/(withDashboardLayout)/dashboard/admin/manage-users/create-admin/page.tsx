@@ -1,7 +1,7 @@
-import CreateAdminPage from "@/components/Dashboard/ManageUsers/CreateAdminPage"
+import CreateAdminPage from "@/components/Dashboard/ManageUsers/CreateAdminPage";
 
 const CreateAdmin = () => {
-  return <CreateAdminPage/>;
-}
+  return <CreateAdminPage />;
+};
 
-export default CreateAdmin
+export default CreateAdmin;
