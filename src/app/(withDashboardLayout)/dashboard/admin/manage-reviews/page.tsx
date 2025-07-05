@@ -1,11 +1,7 @@
-import React from 'react';
+import AdminManageReviewsPage from "@/components/Dashboard/ManageReviews/AdminManageReviewsPage";
 
 const AdminReviews = () => {
-  return (
-    <div>
-      
-    </div>
-  );
+  return <AdminManageReviewsPage />;
 };
 
 export default AdminReviews;
