@@ -1,7 +1,7 @@
 import AdminManageReviewsPage from "@/components/Dashboard/ManageReviews/AdminManageReviewsPage";
 
-const AdminReviews = () => {
+const AdminManageReviews = () => {
   return <AdminManageReviewsPage />;
 };
 
-export default AdminReviews;
+export default AdminManageReviews;
