@@ -1,5 +1,7 @@
+import ManageCarsPage from "@/components/Dashboard/ManageCars/ManageCarsPage";
+
 const ManageCars = () => {
-  return <div></div>;
+  return <ManageCarsPage />;
 };
 
 export default ManageCars;
