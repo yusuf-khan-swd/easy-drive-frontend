@@ -1,5 +1,7 @@
+import CreateCarPage from "@/components/Dashboard/ManageCars/CreateCarPage";
+
 const CreateCar = () => {
-  return <div></div>;
+  return <CreateCarPage />;
 };
 
 export default CreateCar;
