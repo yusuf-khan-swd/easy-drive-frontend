@@ -1,5 +1,11 @@
+import AdminManageBookingsPage from "@/components/Dashboard/ManageBookings/AdminManageBookingsPage";
+
 const AdminManageBookings = () => {
-  return <div></div>;
+  return (
+    <div>
+      <AdminManageBookingsPage />
+    </div>
+  );
 };
 
 export default AdminManageBookings;
