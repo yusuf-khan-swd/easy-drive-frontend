@@ -1,5 +1,7 @@
+import AdminUpdateBookingPage from "@/components/Dashboard/ManageBookings/AdminUpdateBookingPage";
+
 const AdminUpdateBooking = () => {
-  return <div></div>;
+  return <AdminUpdateBookingPage />;
 };
 
 export default AdminUpdateBooking;
