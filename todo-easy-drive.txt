@@ -7,9 +7,9 @@ Use Global Constant for pages metadata
 
 -------------------- 12:41 PM 3/28/2025, fr
 
-Separate server components and client components - 12:36 PM 4/23/2025
+[9:23 AM 8/12/2025 Done] - Separate server components and client components - 12:36 PM 4/23/2025
 
-Add page title and description using Next MetaData in server components
+[9:23 AM 8/12/2025 Done] - Add page title and description using Next MetaData in server components
 
 -------------------- 10:44 AM 2/27/2025, th
 
