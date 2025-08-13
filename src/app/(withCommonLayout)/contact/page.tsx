@@ -2,7 +2,7 @@ import ContactPage from "@/components/Common/ContactPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact - EasyDrive",
+  title: "Contact Us - EasyDrive",
   description: "A Car Rental Service Provider",
 };
 
