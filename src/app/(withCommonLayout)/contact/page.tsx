@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "A Car Rental Service Provider",
 };
 
-const Contact = () => {
+const ContactUs = () => {
   return <ContactPage />;
 };
 
-export default Contact;
+export default ContactUs;
