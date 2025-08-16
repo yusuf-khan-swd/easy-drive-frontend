@@ -9,7 +9,7 @@ interface IContactForm {
   message: string;
 }
 
-const ContactPage = () => {
+const ContactUsPage = () => {
   const [formData, setFormData] = useState<IContactForm>({
     name: "",
     email: "",
@@ -119,4 +119,4 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;
+export default ContactUsPage;

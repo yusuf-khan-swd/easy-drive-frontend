@@ -1,4 +1,4 @@
-import ContactPage from "@/components/Common/ContactUsPage";
+import ContactUsPage from "@/components/Common/ContactUsPage";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 const ContactUs = () => {
-  return <ContactPage />;
+  return <ContactUsPage />;
 };
 
 export default ContactUs;
