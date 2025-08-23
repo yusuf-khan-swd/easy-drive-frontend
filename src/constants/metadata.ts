@@ -7,3 +7,5 @@ export const METADATA_FOR_MAIN_LAYOUT = {
   title: metadataTitle,
   description: metadataDescription,
 };
+
+
