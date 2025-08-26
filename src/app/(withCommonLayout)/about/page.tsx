@@ -1,11 +1,12 @@
 import team1 from "@/assets/team1.png";
 import team2 from "@/assets/team2.png";
+import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us - EasyDrive",
-  description: "A Car Rental Service Provider",
+  description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
 const AboutUs = () => {
