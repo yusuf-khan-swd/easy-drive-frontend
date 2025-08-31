@@ -1,8 +1,9 @@
+import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy and Terms of Service - EasyDrive",
-  description: "A Car Rental Service Provider",
+  description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
 const PrivacyAndPolicyPage = () => {
