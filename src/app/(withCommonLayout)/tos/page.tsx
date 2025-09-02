@@ -1,9 +1,10 @@
+import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service - EasyDrive",
-  description: "A Car Rental Service Provider",
+  description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
 const TermOfServicePage = () => {
