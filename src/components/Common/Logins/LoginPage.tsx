@@ -56,7 +56,6 @@ const LoginPage = () => {
     // ! Below code is for axiosBaseQuery
     try {
       const result = await login(values).unwrap();
-      console.log("login result", result);
       if (result?.data?.token) {
         toast.success(result?.message || "Login Success!!");
         storeUserInfo({ accessToken: result?.data?.token });
