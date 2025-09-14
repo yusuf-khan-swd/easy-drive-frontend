@@ -33,10 +33,8 @@ const RegisterPage = () => {
   const [register, { isLoading }] = useSignupMutation();
 
   const handleRegister = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const result = await register(values).unwrap();
-      console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message);
         router.push("/login");
