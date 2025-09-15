@@ -3,11 +3,11 @@ import ProfilePage from "@/components/Dashboard/ProfilePage/ProfilePage";
 
 const DashboardHome = () => {
   return (
-    <div>
+    <>
       <DashboardDrawer>
         <ProfilePage />
       </DashboardDrawer>
-    </div>
+    </>
   );
 };
 
