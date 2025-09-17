@@ -2,7 +2,7 @@
 
 
 -------------------- 11:00 AM 4/2/2025
-
+[11:22 AM 9/17/2025 Done] - Add global metadata description to Main Layout pages
 Use Global Constant for pages metadata
 
 -------------------- 12:41 PM 3/28/2025, fr
