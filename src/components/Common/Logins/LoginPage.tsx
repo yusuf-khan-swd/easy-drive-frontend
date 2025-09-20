@@ -57,7 +57,7 @@ const LoginPage = () => {
     try {
       const result = await login(values).unwrap();
       if (result?.data?.token) {
-        toast.success(result?.message || "Login Success!!");
+        toast.success(result?.data?.message || "Login Success!!");
         storeUserInfo({ accessToken: result?.data?.token });
         router.push("/dashboard");
       } else {
