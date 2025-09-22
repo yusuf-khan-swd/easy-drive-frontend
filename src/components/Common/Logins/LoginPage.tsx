@@ -35,8 +35,6 @@ const LoginPage = () => {
   const router = useRouter();
 
   const handleLogin = async (values: FieldValues) => {
-    // console.log(values);
-
     // ! Below code is for redux fetchBaseQuery
     // try {
     //   const result = await login(values).unwrap();
