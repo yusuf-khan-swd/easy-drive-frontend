@@ -35,23 +35,6 @@ const LoginPage = () => {
   const router = useRouter();
 
   const handleLogin = async (values: FieldValues) => {
-    // ! Below code is for redux fetchBaseQuery
-    // try {
-    //   const result = await login(values).unwrap();
-    //   console.log("login result", result);
-
-    //   if (result?.data?.token) {
-    //     storeUserInfo({ accessToken: result?.data?.token });
-    //     toast.success(result?.data?.message || "Login Success!!");
-    //     router.push("/dashboard");
-    //   }
-    // } catch (error: any) {
-    //   console.log("Error: ", error);
-    //   setError(error?.data?.message);
-    //   toast.error(error?.data?.message || "login failed");
-    // }
-
-    // ! Below code is for axiosBaseQuery
     try {
       const result = await login(values).unwrap();
       if (result?.data?.token) {
