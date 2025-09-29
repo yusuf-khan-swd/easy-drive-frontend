@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms and Conditions - EasyDrive",
+  title: `Terms and Conditions - ${METADATA_FOR_MAIN_LAYOUT.title}`,
   description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
