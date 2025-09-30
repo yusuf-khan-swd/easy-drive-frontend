@@ -2,7 +2,7 @@ import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy and Terms of Service - EasyDrive",
+  title: `Privacy Policy and Terms of Service - ${METADATA_FOR_MAIN_LAYOUT.title}`,
   description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
