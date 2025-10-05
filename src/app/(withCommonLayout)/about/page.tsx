@@ -5,7 +5,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About Us - EasyDrive",
+  title: `About Us - ${METADATA_FOR_MAIN_LAYOUT.title}`,
   description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
