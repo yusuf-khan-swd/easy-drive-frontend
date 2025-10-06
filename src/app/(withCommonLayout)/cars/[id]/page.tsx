@@ -3,7 +3,7 @@ import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Car Details - EasyDrive",
+  title: `Car Details - ${METADATA_FOR_MAIN_LAYOUT.title}`,
   description: METADATA_FOR_MAIN_LAYOUT.description,
 };
 
