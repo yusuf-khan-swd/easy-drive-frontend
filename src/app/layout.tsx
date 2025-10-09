@@ -1,3 +1,4 @@
+import { METADATA_FOR_MAIN_LAYOUT } from "@/constants/metadata";
 import Providers from "@/lib/Providers";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v14-appRouter";
 import type { Metadata } from "next";
@@ -5,7 +6,7 @@ import { Toaster } from "sonner";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Easy Drive",
+  title: `${METADATA_FOR_MAIN_LAYOUT.title} - Car Rental Made Easy`,
   description: "Welcome to EasyDrive a car rental website",
 };
 
