@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: `${METADATA_FOR_MAIN_LAYOUT.title} - Car Rental Made Easy`,
-  description: "Welcome to EasyDrive a car rental website",
+  description: `${METADATA_FOR_MAIN_LAYOUT.description}`,
 };
 
 export default function RootLayout({
