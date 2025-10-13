@@ -9,3 +9,9 @@ export const METADATA_FOR_MAIN_LAYOUT = {
 };
 
 
+export const METADATA_FOR_DASHBOARD_LAYOUT = {
+  title: metadataTitle,
+  description: metadataDescription,
+};
+
+
