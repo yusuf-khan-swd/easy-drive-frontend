@@ -7,8 +7,8 @@ export const metadata: Metadata = {
   description: `${METADATA_FOR_DASHBOARD_LAYOUT.description}`,
 };
 
-const UserProfile = () => {
+const UserDashboard = () => {
   return <ProfilePage />;
 };
 
-export default UserProfile;
+export default UserDashboard;
