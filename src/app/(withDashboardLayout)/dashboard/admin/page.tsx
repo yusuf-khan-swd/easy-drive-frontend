@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   description: "A Car Rental Service Provider",
 };
 
-const Admin = () => {
+const AdminDashboard = () => {
   return <ProfilePage />;
 };
 
-export default Admin;
+export default AdminDashboard;
