@@ -1,8 +1,9 @@
 import ReturnCarPage from "@/components/Dashboard/ReturnCar/ReturnCarPage";
+import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Return Car - EasyDrive",
+  title: `Return Car - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
   description: "A Car Rental Service Provider",
 };
 
