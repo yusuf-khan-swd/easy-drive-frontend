@@ -1,8 +1,9 @@
 import OrderPage from "@/components/Dashboard/Order/OrderPage";
+import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Car Order - EasyDrive",
+  title: `Car Order - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
   description: "A Car Rental Service Provider",
 };
 
