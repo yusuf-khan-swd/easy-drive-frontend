@@ -4,7 +4,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Car Order - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
-  description: "A Car Rental Service Provider",
+  description: METADATA_FOR_DASHBOARD_LAYOUT.description,
 };
 
 const Order = ({ params }: { params: { id: string } }) => {
