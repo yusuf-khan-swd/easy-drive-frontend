@@ -1,8 +1,9 @@
 import UpdateBookingPage from "@/components/Dashboard/ManageBookings/UpdateBookingPage";
+import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Update Booking - EasyDrive",
+  title: `Update Booking - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
   description: "A Car Rental Service Provider",
 };
 
