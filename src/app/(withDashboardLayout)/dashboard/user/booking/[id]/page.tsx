@@ -1,8 +1,9 @@
 import BookingPage from "@/components/Dashboard/Booking/BookingPage";
+import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Booking - EasyDrive",
+  title: `Booking - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
   description: "A Car Rental Service Provider",
 };
 
