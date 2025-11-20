@@ -1,8 +1,9 @@
 import CreateAdminPage from "@/components/Dashboard/ManageUsers/CreateAdminPage";
+import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Create Admin - EasyDrive",
+  title: `Create Admin - ${METADATA_FOR_DASHBOARD_LAYOUT.title}`,
   description: "A Car Rental Service Provider",
 };
 
