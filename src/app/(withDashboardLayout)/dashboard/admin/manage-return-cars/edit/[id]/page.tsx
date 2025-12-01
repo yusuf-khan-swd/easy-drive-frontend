@@ -1,4 +1,4 @@
-import AdminReturnCarPage from "@/components/Dashboard/ManageReturnCar/AdminReturnCarPage";
+import AdminReturnCarPage from "@/components/Dashboard/ManageReturnCar/ReturnCarByAdminPage";
 import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
