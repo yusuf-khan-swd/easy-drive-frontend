@@ -1,4 +1,4 @@
-import AdminReturnCarPage from "@/components/Dashboard/ManageReturnCar/ReturnCarByAdminPage";
+import ReturnCarByAdminPage from "@/components/Dashboard/ManageReturnCar/ReturnCarByAdminPage";
 import { METADATA_FOR_DASHBOARD_LAYOUT } from "@/constants/metadata";
 import { Metadata } from "next";
 
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const AdminReturnCar = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
-  return <AdminReturnCarPage id={id} />;
+  return <ReturnCarByAdminPage id={id} />;
 };
 
 export default AdminReturnCar;

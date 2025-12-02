@@ -5,7 +5,7 @@ import LoadingSpinner from "@/components/Shared/LoadingSpinner";
 import CarCard from "@/components/UI/Car/CarCard";
 import { useGetSingleBookingQuery } from "@/redux/api/bookingApi";
 
-const AdminReturnCarPage = ({ id }: { id: string }) => {
+const ReturnCarByAdminPage = ({ id }: { id: string }) => {
   const { data, isLoading } = useGetSingleBookingQuery(id || "");
   const booking = data?.data;
   const car = booking?.car;
@@ -30,4 +30,4 @@ const AdminReturnCarPage = ({ id }: { id: string }) => {
   );
 };
 
-export default AdminReturnCarPage;
+export default ReturnCarByAdminPage;
