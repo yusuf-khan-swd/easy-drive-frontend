@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   description: METADATA_FOR_DASHBOARD_LAYOUT.description,
 };
 
-const AdminReturnCar = ({ params }: { params: { id: string } }) => {
+const ReturnCarByAdmin = ({ params }: { params: { id: string } }) => {
   const id = params?.id;
 
   return <ReturnCarByAdminPage id={id} />;
 };
 
-export default AdminReturnCar;
+export default ReturnCarByAdmin;
