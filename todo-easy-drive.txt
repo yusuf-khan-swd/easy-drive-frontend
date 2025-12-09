@@ -2,7 +2,7 @@
 
 -------------------- 10:33 AM 11/28/2025, fr
 [Done - 12:09 PM 12/3/2025] - Change AdminReturnCar component name to ReturnCarByAdmin. And AdminReturnCarPage component name to ReturnCarByAdminPage
-Change ReturnCar component name to ReturnCarByUser. And ReturnCarPage component name to ReturnCarByUserPage
+[Done - 11:22 AM 12/8/2025] - Change ReturnCar component name to ReturnCarByUser. And ReturnCarPage component name to ReturnCarByUserPage
 
 -------------------- 11:00 AM 4/2/2025
 [11:22 AM 9/17/2025 Done Partially] - Add only description from global metadata to only Main Layout pages
