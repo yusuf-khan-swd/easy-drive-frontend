@@ -1,5 +1,7 @@
+import UpdateCarPage from "@/components/Dashboard/ManageCars/UpdateCarPage";
+
 const UpdateCar = () => {
-  return <div></div>;
+  return <UpdateCarPage />;
 };
 
 export default UpdateCar;
