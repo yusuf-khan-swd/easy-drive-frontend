@@ -22,8 +22,7 @@ interface UpdateCarFormData {
   pricePerHour: number;
 }
 
-const UpdateCarPage = ({ params }: { params: { id: string } }) => {
-  const id = params?.id;
+const UpdateCarPage = ({ id }: { id: string }) => {
   const router = useRouter();
 
   const { data, isLoading } = useGetSingleCarQuery(id || "");
