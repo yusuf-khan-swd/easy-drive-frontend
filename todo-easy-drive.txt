@@ -5,6 +5,7 @@
 [Done - 11:22 AM 12/8/2025] - Change ReturnCar component name to ReturnCarByUser. And ReturnCarPage component name to ReturnCarByUserPage
 
 -------------------- 11:00 AM 4/2/2025
+[10:58 AM 12/23/2025 Done] - Add description and title from global metadata METADATA_FOR_DASHBOARD_LAYOUT to Dashboard Layout pages 
 [11:22 AM 9/17/2025 Done] - Add description and title from global metadata METADATA_FOR_MAIN_LAYOUT to Main Layout pages
 Use Global Constant for pages metadata
 
