@@ -2,7 +2,7 @@
 
 -------------------- 11:57 AM 12/27/2025, sa
 Check locally everything is working.
-
+Then upload to vercel.
 
 -------------------- 10:33 AM 11/28/2025, fr
 [Done - 12:09 PM 12/3/2025] - Change AdminReturnCar component name to ReturnCarByAdmin. And AdminReturnCarPage component name to ReturnCarByAdminPage
