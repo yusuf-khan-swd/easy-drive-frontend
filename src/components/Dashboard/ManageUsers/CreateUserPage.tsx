@@ -28,7 +28,6 @@ const CreateUserPage = () => {
   const [register, { isLoading }] = useSignupMutation();
 
   const handleRegister = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const result = await register(values).unwrap();
       if (result?.data?._id) {
