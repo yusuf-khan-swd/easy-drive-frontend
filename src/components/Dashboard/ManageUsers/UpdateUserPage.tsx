@@ -41,7 +41,6 @@ const UpdateUserPage = ({ id }: { id: string }) => {
   const [updateUser] = useUpdateUserMutation();
 
   const handleUpdateUser = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const updatedUserData = { ...values, _id: id };
       const result = await updateUser(updatedUserData).unwrap();
