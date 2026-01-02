@@ -44,7 +44,6 @@ const UpdateUserPage = ({ id }: { id: string }) => {
     try {
       const updatedUserData = { ...values, _id: id };
       const result = await updateUser(updatedUserData).unwrap();
-      // console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message || "Update User Success");
         router.push("/dashboard/admin/manage-users");
