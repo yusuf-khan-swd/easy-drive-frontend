@@ -18,7 +18,6 @@ import { toast } from "sonner";
 const ManageUsersPage = () => {
   const query: Record<string, any> = {};
   const [searchTerm, setSearchTerm] = useState<string>("");
-  // console.log(searchTerm);
 
   const debouncedTerm = useDebounced({
     searchQuery: searchTerm,
