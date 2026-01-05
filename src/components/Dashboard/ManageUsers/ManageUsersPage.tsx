@@ -36,7 +36,6 @@ const ManageUsersPage = () => {
 
   const handleMakeAdmin = async (id: string) => {
     try {
-      // console.log(id);
       const result = await makeAdmin(id).unwrap();
       toast.success(result?.message || "Making user to an admin successfully");
     } catch (error: any) {
