@@ -1,5 +1,8 @@
 
 
+-------------------- 10:53 AM 1/7/2026, we
+Use .trim() method for all input
+
 -------------------- 11:57 AM 12/27/2025, sa
 Check locally everything is working.
 Then upload to vercel. 
