@@ -30,7 +30,7 @@ const UpdateBookingForm = ({ booking }: { booking: any }) => {
         const updateBookingData = {
           _id: booking?._id,
           date,
-          startTime,
+          startTime: startTime.trim(),
         };
 
         const result = await updateBooking(updateBookingData).unwrap();
