@@ -20,7 +20,7 @@ const validationSchema = z.object({
   email: z.string().trim().email("Please enter a valid email address!"),
   password: z.string().min(6, "Must be at least 6 characters"),
   phone: z.string().trim().optional(),
-  address: z.string().optional(),
+  address: z.string().trim().optional(),
 });
 
 //  TODO: For Login and register try to use server action because it is more secure
@@ -44,7 +44,7 @@ const RegisterPage = () => {
     } catch (error: any) {
       console.log("Error: ", error);
       toast.error(
-        error?.data?.message || error?.data?.data || "Registration failed"
+        error?.data?.message || error?.data?.data || "Registration failed",
       );
     }
   };
