@@ -17,7 +17,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const validationSchema = z.object({
-  email: z.string().email("Please enter a valid email address!"),
+  email: z.string().trim().email("Please enter a valid email address!"),
   password: z.string().min(6, "Must be at least 6 characters"),
 });
 
