@@ -13,7 +13,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const validationSchema = z.object({
-  title: z.string().min(1, "Title is required"),
+  title: z.string().trim().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   rating: z.string().min(1, "Rating is required"),
 });
@@ -40,7 +40,7 @@ const ReviewForm = ({ carId }: { carId: string }) => {
     } catch (error: any) {
       console.log("Error: ", error);
       toast.error(
-        error?.data?.message || error?.data?.data || "Review Submit failed"
+        error?.data?.message || error?.data?.data || "Review Submit failed",
       );
     }
   };
