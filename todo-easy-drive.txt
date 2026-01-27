@@ -1,7 +1,7 @@
 
 
 -------------------- 10:53 AM 1/7/2026, we
-Use .trim() method for all string type inputs
+Use .trim() method for removing spaces before and after in all string type inputs
 
 -------------------- 11:57 AM 12/27/2025, sa
 Check locally everything is working.
