@@ -14,7 +14,7 @@ import { z } from "zod";
 
 const validationSchema = z.object({
   title: z.string().trim().min(1, "Title is required"),
-  description: z.string().min(1, "Description is required"),
+  description: z.string().trim().min(1, "Description is required"),
   rating: z.string().min(1, "Rating is required"),
 });
 
