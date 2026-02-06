@@ -28,7 +28,6 @@ const CreateAdminPage = () => {
   const [createAdmin, { isLoading }] = useCreateAdminMutation();
 
   const handleRegister = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const result = await createAdmin(values).unwrap();
       if (result?.data?._id) {
