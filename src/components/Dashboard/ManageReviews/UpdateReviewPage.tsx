@@ -39,7 +39,6 @@ const UpdateReviewPage = ({ id }: { id: string }) => {
   };
 
   const handleSubmit = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const reviewData = {
         ...values,
