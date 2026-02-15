@@ -15,7 +15,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const validationSchema = z.object({
-  name: z.string().min(1, "Please enter your name!"),
+  name: z.string().trim().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
   password: z.string().min(6, "Must be at least 6 characters"),
   phone: z.string().optional(),
@@ -38,7 +38,7 @@ const CreateUserPage = () => {
     } catch (error: any) {
       console.log("Error: ", error);
       toast.error(
-        error?.data?.message || error?.data?.data || "Registration failed"
+        error?.data?.message || error?.data?.data || "Registration failed",
       );
     }
   };
