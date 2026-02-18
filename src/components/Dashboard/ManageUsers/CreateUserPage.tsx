@@ -18,7 +18,7 @@ const validationSchema = z.object({
   name: z.string().trim().min(1, "Please enter your name!"),
   email: z.string().trim().email("Please enter a valid email address!"),
   password: z.string().min(6, "Must be at least 6 characters"),
-  phone: z.string().optional(),
+  phone: z.string().trim().optional(),
   address: z.string().optional(),
 });
 
