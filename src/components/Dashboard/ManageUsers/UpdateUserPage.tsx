@@ -19,7 +19,7 @@ import { toast } from "sonner";
 import { z } from "zod";
 
 const validationSchema = z.object({
-  name: z.string().min(1, "Please enter your name!"),
+  name: z.string().trim().min(1, "Please enter your name!"),
   email: z.string().email("Please enter a valid email address!"),
   phone: z.string().optional(),
   address: z.string().optional(),
@@ -51,7 +51,7 @@ const UpdateUserPage = ({ id }: { id: string }) => {
     } catch (error: any) {
       console.log("Error: ", error);
       toast.error(
-        error?.data?.message || error?.data?.data || "Update User failed"
+        error?.data?.message || error?.data?.data || "Update User failed",
       );
     }
   };
