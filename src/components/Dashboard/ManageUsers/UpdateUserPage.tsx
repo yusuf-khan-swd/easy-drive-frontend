@@ -22,7 +22,7 @@ const validationSchema = z.object({
   name: z.string().trim().min(1, "Please enter your name!"),
   email: z.string().trim().email("Please enter a valid email address!"),
   phone: z.string().trim().optional(),
-  address: z.string().optional(),
+  address: z.string().trim().optional(),
 });
 
 const UpdateUserPage = ({ id }: { id: string }) => {
