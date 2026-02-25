@@ -32,7 +32,7 @@ const UpdateUserPage = ({ id }: { id: string }) => {
   const user = data?.data;
 
   const defaultValues = {
-    name: user?.name || "abc",
+    name: user?.name || "",
     email: user?.email || "",
     phone: user?.phone || "",
     address: user?.address || "",
