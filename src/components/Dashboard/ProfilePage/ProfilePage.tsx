@@ -39,7 +39,6 @@ const ProfilePage = () => {
   console.log(data);
 
   const handleSubmit = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const updatedProfileData = { ...values, _id: userId };
       const result = await updateProfile(updatedProfileData).unwrap();
@@ -51,7 +50,7 @@ const ProfilePage = () => {
     } catch (error: any) {
       console.log("Error: ", error);
       toast.error(
-        error?.data?.message || error?.data?.data || "Profile Update failed"
+        error?.data?.message || error?.data?.data || "Profile Update failed",
       );
     }
   };
