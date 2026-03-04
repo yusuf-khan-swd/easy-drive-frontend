@@ -22,7 +22,7 @@ import { useState } from "react";
 const validationSchema = z.object({
   name: z.string().trim().min(1, "Please enter your name!"),
   email: z.string().trim().email("Please enter a valid email address!"),
-  phone: z.string().optional(),
+  phone: z.string().trim().optional(),
   address: z.string().optional(),
 });
 
