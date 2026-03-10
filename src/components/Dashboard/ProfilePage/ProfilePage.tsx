@@ -40,7 +40,6 @@ const ProfilePage = () => {
     try {
       const updatedProfileData = { ...values, _id: userId };
       const result = await updateProfile(updatedProfileData).unwrap();
-      // console.log({ result });
       if (result?.data?._id) {
         toast.success(result?.message || "Profile Update Success");
         setHideUpdateButton(true);
