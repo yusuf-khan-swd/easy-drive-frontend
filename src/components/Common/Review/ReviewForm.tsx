@@ -22,7 +22,6 @@ const ReviewForm = ({ carId }: { carId: string }) => {
   const [review, { isLoading }] = useCreateReviewMutation();
 
   const handleReviewSubmit = async (values: FieldValues) => {
-    // console.log(values);
     try {
       const reviewData = {
         ...values,
