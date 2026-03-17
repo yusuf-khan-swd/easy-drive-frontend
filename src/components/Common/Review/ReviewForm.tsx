@@ -30,7 +30,7 @@ const ReviewForm = ({ carId }: { carId: string }) => {
       };
 
       const result = await review(reviewData).unwrap();
-      console.log({ result });
+
       if (result?.message) {
         toast.success(result?.message || "Review Submit Success!!");
       } else {
