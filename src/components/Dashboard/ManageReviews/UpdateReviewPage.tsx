@@ -47,6 +47,7 @@ const UpdateReviewPage = ({ id }: { id: string }) => {
       };
 
       const result = await updateReview(reviewData).unwrap();
+
       if (result?.message) {
         toast.success(result?.message || "Review Update Success!!");
         router.push("/dashboard/user/manage-reviews");
