@@ -1,4 +1,5 @@
 
+Test Vs code installation with git and github connection
 
 -------------------- 10:53 AM 1/7/2026, we
 [Done - 10:49 AM 3/6/2026] - Use .trim() method for removing spaces before and after in all string type inputs
