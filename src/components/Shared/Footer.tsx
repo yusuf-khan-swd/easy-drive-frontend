@@ -45,7 +45,7 @@ const Footer = () => {
           py={3}
         >
           <Typography component="p" color="white">
-            &copy;{year} EasyDrive . All Rights Reserved.
+            &copy;2024 - {year} EasyDrive . All Rights Reserved.
           </Typography>
           <Typography
             variant="h4"
