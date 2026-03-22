@@ -1,4 +1,15 @@
 
+-------------------- 10:53 AM 1/7/2026, su
+const year = new Date().getFullYear(); - In footer not working in live website date show 2024 instead 2026
+Solutions: 
+Option A: Make it client-side
+  const [year, setYear] = useState(null);
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+  
+or "use client" for footer component
 
 -------------------- 10:53 AM 1/7/2026, we
 [Done - 10:49 AM 3/6/2026] - Use .trim() method for removing spaces before and after in all string type inputs
