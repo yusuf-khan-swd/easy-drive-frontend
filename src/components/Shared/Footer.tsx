@@ -6,6 +6,8 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 
+// TODO: fixed date issue because of server component it did not update the year when the year changes, need to find a solution for this issue
+
 const Footer = () => {
   const year = new Date().getFullYear();
 
