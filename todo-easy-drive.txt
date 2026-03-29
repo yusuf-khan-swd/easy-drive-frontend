@@ -1,6 +1,7 @@
 
 -------------------- 10:53 AM 1/7/2026, su
-const year = new Date().getFullYear(); - In footer not working in live website date show 2024 instead 2026
+const year = new Date().getFullYear(); - Footer Date issue it is not updating year because footer is server component so footer is generated in build time so that's why year is not updating in footer
+
 Solutions: 
 Option A: Make it client-side
   const [year, setYear] = useState(null);
