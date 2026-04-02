@@ -1,6 +1,6 @@
 
 -------------------- 10:53 AM 1/7/2026, su
-const year = new Date().getFullYear(); - Footer Date issue setYear year not updating because footer is server component so footer is generated in build time so that's why year is not updating in footer
+const year = new Date().getFullYear(); - Footer Date issue year is not updating. It is because footer is server component so footer is generated in build time so that's why year is not updating in footer
 
 Solutions: 
 Option A: Make it client-side
