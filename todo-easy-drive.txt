@@ -25,15 +25,15 @@ After that check live website working.
 [Done - 11:22 AM 12/8/2025] - Change ReturnCar component name to ReturnCarByUser. And ReturnCarPage component name to ReturnCarByUserPage
 
 -------------------- 11:00 AM 4/2/2025
-[10:58 AM 12/23/2025 Done] - Add description and title from global metadata METADATA_FOR_DASHBOARD_LAYOUT to Dashboard Layout pages 
-[11:22 AM 9/17/2025 Done] - Add description and title from global metadata METADATA_FOR_MAIN_LAYOUT to Main Layout pages
+[Done - 10:58 AM 12/23/2025] - Add description and title from global metadata METADATA_FOR_DASHBOARD_LAYOUT to Dashboard Layout pages 
+[Done - 11:22 AM 9/17/2025] - Add description and title from global metadata METADATA_FOR_MAIN_LAYOUT to Main Layout pages
 Use Global Constant for pages metadata
 
 -------------------- 12:41 PM 3/28/2025, fr
 
-[9:23 AM 8/12/2025 Done] - Separate server components and client components - 12:36 PM 4/23/2025
+[Done - 9:23 AM 8/12/2025] - Separate server components and client components - 12:36 PM 4/23/2025
 
-[9:23 AM 8/12/2025 Done] - Add page title and description using Next MetaData in server components
+[Done - 9:23 AM 8/12/2025] - Add page title and description using Next MetaData in server components
 
 -------------------- 10:44 AM 2/27/2025, th
 
@@ -43,13 +43,13 @@ Create Separate Card for car details page
 
 -------------------- 10:25 AM 2/7/2025, fr
 
-[1:08 PM 3/8/2025 Done] - Create Card for Car using MUI Card component
+[Done - 1:08 PM 3/8/2025] - Create Card for Car using MUI Card component
 
 -------------------- 11:01 AM 1/28/2025, tu
 
 Jwt Expired issue is partially fixed. After token remove application statue is not updated. Like application component navbar, ReviewForm, and Dashboard state is not update after token is expired or removed.
 Solution1: Use redux store for logged in status like persist store for user info and token status
-[11:47 AM 2/3/2025 - Done] - use window.location.reload() in axios interceptor to reload the page after token is expired. It partially solved the problem. But it is not a good solution. It will not update state of other tab state.
+[Done - 11:47 AM 2/3/2025] - use window.location.reload() in axios interceptor to reload the page after token is expired. It partially solved the problem. But it is not a good solution. It will not update state of other tab state.
 
 -------------------- 10:15 AM 1/25/2025, sa
 
@@ -58,7 +58,7 @@ Same with ReviewForm displaying in car details page. After token expired then to
 
 -------------------- 10:18 AM 12/14/2024, sa
 
-[10:57 AM 1/1/2025 - Done] - Remove every single authorize token headers from redux api endpoint and check every single api endpoint working fine
+[Done - 10:57 AM 1/1/2025] - Remove every single authorize token headers from redux api endpoint and check every single api endpoint working fine
  Did not check every api endpoints working fine. Because it will take time, only check car routes and review api CRUD operation
  In future if there problem with accessing route check that specific route issue for token.
 
@@ -75,7 +75,7 @@ Done - Token properly send from axios client to server check using getAllCars ap
 
 -------------------- 10:02 AM 10/23/2024, we
 
-[10:53 AM 1/28/2025 - Done] - for future - Fixed the issue with JWT expired. Partially 
+[Done - 10:53 AM 1/28/2025] - for future - Fixed the issue with JWT expired. Partially 
 Step1: First get axios error response with jwt expired message or directly use redux error response to check jwt expired message
         Use jwt expired message to check if token is expired
 Step2: if so then logout user - logout is user is not implemented yet
