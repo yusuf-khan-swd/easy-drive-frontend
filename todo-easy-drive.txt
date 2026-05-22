@@ -27,7 +27,7 @@ After that check live website working.
 -------------------- 11:00 AM 4/2/2025
 [Done - 10:58 AM 12/23/2025] - Add description and title from global metadata METADATA_FOR_DASHBOARD_LAYOUT to Dashboard Layout pages 
 [Done - 11:22 AM 9/17/2025] - Add description and title from global metadata METADATA_FOR_MAIN_LAYOUT to Main Layout pages
-Use Global Constant for pages metadata
+Done - Use Global Constant for pages metadata
 
 -------------------- 12:41 PM 3/28/2025, fr
 
